@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
 
     //Singleton
     public static GameManager gm;
@@ -40,16 +41,30 @@ public class GameManager : MonoBehaviour {
     public GameObject hideUI;
     public Image enemyHealthBar;
     public bool movedStick;
-    
+
+    [Header("Ultimate Int Checks")]
+    public bool[] comboAttack;
+    public bool comboStateReached;
 
     public Button[] buttons;
+
+    [Header("Pause/Game Feel")]
+    public float pTimer;
+    public float turnDelay;
+    public float enemyDelay;
+    public bool enemyTurn;
+    public int index;
+
+
     // Use this for initialization
     void Start()
     {
         gm = this;
         timer = 3f;
-        generateEnemies(1,3);
+        generateEnemies(2, 4);
         es = GameObject.Find("EventSystem").GetComponent<EventSystem>();
+
+
     }
 
     // Update is called once per frame
@@ -58,7 +73,7 @@ public class GameManager : MonoBehaviour {
         //Player selects their target
         if (gameState == 0)
         {
-            for (var i=0; i < buttons.Length; i++)
+            for (var i = 0; i < buttons.Length; i++)
             {
                 buttons[i].interactable = false;
             }
@@ -66,6 +81,7 @@ public class GameManager : MonoBehaviour {
             mg.score = 0;
             for (int i = 0; i < enemyList.Length; i++)
             {
+
                 if (i == playerSelect)
                 {
                     enemyList[i].glow();
@@ -88,7 +104,7 @@ public class GameManager : MonoBehaviour {
                 buttons[i].interactable = true;
             }
             //Assigns a button to the event system, if it doesn't have one
-            if (es.currentSelectedGameObject  != buttons[0].gameObject && !selectingAttack)
+            if (es.currentSelectedGameObject != buttons[0].gameObject && !selectingAttack)
             {
                 es.SetSelectedGameObject(buttons[0].gameObject);
                 selectingAttack = true;
@@ -140,6 +156,7 @@ public class GameManager : MonoBehaviour {
                     if (whichGame == 1)
                     {
                         mg.Tenderizer();
+                        comboAttack[0] = true;
                         combatText.text = "Mash the shoulder buttons!";
                     }
 
@@ -147,6 +164,7 @@ public class GameManager : MonoBehaviour {
                     else if (whichGame == 2)
                     {
                         mg.SauceToss();
+                        comboAttack[1] = true;
                         combatText.text = "Spin the analog stick!";
                     }
 
@@ -154,7 +172,7 @@ public class GameManager : MonoBehaviour {
                     else if (whichGame == 3)
                     {
                         mg.OregenoStun();
-                        //mg.generateCircles();
+                        comboAttack[2] = true;
                         combatText.text = "Press X on time!";
                     }
 
@@ -167,8 +185,31 @@ public class GameManager : MonoBehaviour {
                 //When the timer runs out...
                 else
                 {
-                    //Damages the enemy
-                    enemyList[playerSelect].takeDamage(mg.score, whichGame);
+                    comboStateReached = true;
+
+                    for (int i = 0; i < comboAttack.Length; i++)
+                    {
+                        if (comboAttack[i] == false)
+                        {
+                            comboStateReached = false;
+                            break;
+                        }
+                    }
+
+                    //If the ulimate attack is successful, executes it here:
+                    if (comboStateReached)
+                    {
+                        combatText.text = "ULTIMATE MOVE! MEATBALLISTIC MISSILE!";
+                        for (int j = 0; j < enemyList.Length; j++)
+                        {
+                            enemyList[j].takeDamage(30);
+                        }
+                    }
+                    else
+                    {
+                        //Damages the enemy
+                        enemyList[playerSelect].takeDamage(mg.score, whichGame);
+                    }
 
                     //Disables the minigame
                     mg.oreganoMinigame.gameObject.SetActive(false);
@@ -181,22 +222,59 @@ public class GameManager : MonoBehaviour {
         //Enemy Attacks the player
         else if (gameState == 3)
         {
-            
-            
+
+
+
+            enemyList[index].attack();
+            //enemyList[index].callOut();
+            gameState = 4;
+            index++;
+
+            //ensures that we'll never go over the enemy list
+            if (index > enemyList.Length - 1)
+            {
+                enemyTurn = false;
+            }
+            else
+            {
+                enemyTurn = true;
+                pTimer = enemyDelay;
+            }
+
             print("IM ATTACKING");
-            
-            for (int i = 0; i < enemyList.Length; i++)
+
+            /*for (int i = 0; i < enemyList.Length; i++)
             {
                 
                 enemyList[i].attack();
-            }
-            
-            
-            
-                gameState = 0;
-            
+                
+            }*/
+
+
+            gameState = 4;
+
         }
-       
+        else if (gameState == 4)
+        {
+            pTimer -= Time.deltaTime;
+            if (pTimer <= 0)
+            {
+                pTimer = turnDelay;
+                if (!enemyTurn)
+                {
+                    gameState = 0;
+                    index = 0;
+
+
+                }
+                else
+                {
+                    gameState = 3;
+                }
+            }
+        }
+
+
     }
 
     //Recieves an integer from the button, then, activates that minigame

@@ -908,7 +908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee5c4950e5eef0e44a79bfb4c7a01516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  es: {fileID: 0}
+  es: {fileID: 1749484054}
   combatText: {fileID: 1913625161}
   mg: {fileID: 1593572772}
   timerText: {fileID: 1081170786}
@@ -927,10 +927,17 @@ MonoBehaviour:
   enemyHealthBar: {fileID: 114561464770761800, guid: 5d79c72928c7b87498619ae0519cd7e1,
     type: 2}
   movedStick: 0
+  comboAttack: 000000
+  comboStateReached: 0
   buttons:
   - {fileID: 398247737}
   - {fileID: 919994378}
   - {fileID: 128126678}
+  pTimer: 3
+  turnDelay: 3
+  enemyDelay: 1
+  enemyTurn: 0
+  index: 0
 --- !u!1 &747785878
 GameObject:
   m_ObjectHideFlags: 0
