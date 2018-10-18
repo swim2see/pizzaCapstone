@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 public class EnemyChefRevamp : Enemy
 {
     void Start()
@@ -44,7 +44,8 @@ public class EnemyChefRevamp : Enemy
 
         if (health <= 0)
         {
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
+            gameObject.SetActive(false);
         }
 
     }
@@ -65,6 +66,9 @@ public class EnemyChefRevamp : Enemy
     }
     public void normAttack()
     {
+        transform.DOPunchScale(new Vector3(0, .01f, 0), .5f, 1, 0);
+        
+
         print("IM REALLY LAYING THE HURT");
         GameManager.gm.p.health -= (int)Random.Range(10, 15);
         if (GameManager.gm.gameState == 3)
