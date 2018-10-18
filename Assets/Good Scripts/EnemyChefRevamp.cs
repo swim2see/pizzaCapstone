@@ -29,11 +29,12 @@ public class EnemyChefRevamp : Enemy
             if (Random.Range(0, 1) > 0.5f)
             {
                 normAttack();
+
             }
             else
             {
                 isDefending = true;
-                enemyBarks.text = "I'm bracing myself!";
+
             }
         }
         if (health < 10)
@@ -55,12 +56,26 @@ public class EnemyChefRevamp : Enemy
         health += (Random.Range(5, 10));//heal by ten percent
         mana -= (maxMana * .5f);
         enemyBarks.text = "Ayy, I'm healing here!";
+
+    }
+
+    public void ResetEnemyBark()
+    {
+        enemyBarks.text = "";
     }
     public void normAttack()
     {
         print("IM REALLY LAYING THE HURT");
         GameManager.gm.p.health -= (int)Random.Range(10, 15);
-        enemyBarks.text = "Spaghett' lost!";
+        if (GameManager.gm.gameState == 3)
+        {
+            enemyBarks.text = "Spaghett' lost!";
+
+        }
+        else
+        {
+            enemyBarks.text = "";
+        }
     }
 
 
