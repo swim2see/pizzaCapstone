@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
+
 public abstract class Enemy : MonoBehaviour
 {
     //Key enemy attributes
@@ -42,6 +44,9 @@ public abstract class Enemy : MonoBehaviour
         {
             health -= dmg;
         }
+        transform.DOPunchPosition(new Vector3(0,.5f,0),  .5f,  20,  1, false);
+
+       //transform.DOMoveY(10f, 1f).SetEase(Ease.InOutBounce).OnComplete(defend);
     }
 
     public void defend()
