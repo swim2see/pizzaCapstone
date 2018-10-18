@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Text")]
     public Text combatText;
+    public Text descriptorText;
 
     [Header("Minigames")]
     public Minigames mg;
@@ -109,7 +110,19 @@ public class GameManager : MonoBehaviour
                 es.SetSelectedGameObject(buttons[0].gameObject);
                 selectingAttack = true;
             }
-
+            print(es.currentSelectedGameObject);
+            if (es.currentSelectedGameObject == buttons[0].gameObject)
+            {
+                descriptorText.text = "ITS THE TENDERIZER BABY";
+            }
+            if (es.currentSelectedGameObject == buttons[1].gameObject)
+            {
+                descriptorText.text = "ITS THE SAUCE BABY";
+            }
+            if (es.currentSelectedGameObject == buttons[2].gameObject)
+            {
+                descriptorText.text = "ITS THE SEASONING BABY";
+            }
             //If a button is clicked 
             if (Input.GetButtonDown("Submit"))
             {
