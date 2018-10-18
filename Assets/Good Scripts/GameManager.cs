@@ -140,7 +140,7 @@ public class GameManager : MonoBehaviour
                 //...Display the timer
                 if (timer > 0)
                 {
-                    timerText.text = timer.ToString();
+                    timerText.text = timer.ToString("f0");
                 }
 
                 //If the timer goes below zero, won't display negatives
