@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
+
 public abstract class Enemy : MonoBehaviour
 {
     //Key enemy attributes
@@ -42,6 +44,7 @@ public abstract class Enemy : MonoBehaviour
         {
             health -= dmg;
         }
+        
     }
 
     public void defend()
