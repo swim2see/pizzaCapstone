@@ -617,6 +617,60 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 800, y: 568.75}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &254850856
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 254850858}
+  - component: {fileID: 254850857}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &254850857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 254850856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 924d2402e91e9b149b48110abfd1f78b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sources:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  sourcePrefab: {fileID: 1338251763687050, guid: 839702e920010ae4eba98ea378a1ce0b,
+    type: 2}
+  sourceNum: 10
+--- !u!4 &254850858
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 254850856}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.6386821, y: 0.23151192, z: 0.013006719}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &398247735
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,7 +803,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 547639480}
-  - component: {fileID: 547639479}
   - component: {fileID: 547639482}
   - component: {fileID: 547639481}
   m_Layer: 0
@@ -759,37 +812,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &547639479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 547639478}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec154ddea3d8a0949a63da830d3a2135, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ai: {fileID: 1328801195}
-  combatText: {fileID: 1913625161}
-  squeezeScript: {fileID: 0}
-  stirSauce: {fileID: 0}
-  oCircles: {fileID: 0}
-  oBar: {fileID: 1396374652}
-  oreganoHolder: {fileID: 1036946217}
-  rotationCountText: {fileID: 747785880}
-  timerText: {fileID: 1081170786}
-  squeezeCountText: {fileID: 981879307}
-  spinCountText: {fileID: 747785880}
-  button1: {fileID: 398247737}
-  button2: {fileID: 919994378}
-  button3: {fileID: 128126678}
-  tenderizerGame: 0
-  stirringGame: 0
-  oreganoGame: 0
-  ultimateMoveSound: {fileID: 547639481}
-  playerHealthBar: {fileID: 1129612220}
-  p: {fileID: 0}
 --- !u!4 &547639480
 Transform:
   m_ObjectHideFlags: 0
@@ -940,6 +962,9 @@ MonoBehaviour:
   enemyDelay: 1
   enemyTurn: 0
   index: 0
+  gameSoundsManager: {fileID: 254850857}
+  mainsong: {fileID: 8300000, guid: ca24a667861716a43ae8b6402c843305, type: 3}
+  select: {fileID: 8300000, guid: b394b7c3bfc94aa49bb2819886ffb08c, type: 3}
 --- !u!1 &747785878
 GameObject:
   m_ObjectHideFlags: 0

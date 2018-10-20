@@ -56,8 +56,16 @@ public class GameManager : MonoBehaviour
     public bool enemyTurn;
     public int index;
 
+    [Header("Sounds")]
+    public soundScript gameSoundsManager;
+    public AudioClip mainsong;
+    public AudioClip select;
 
     // Use this for initialization
+    private void Awake()
+    {
+        gameSoundsManager.Play(mainsong,.75f);
+    }
     void Start()
     {
         gm = this;
@@ -65,7 +73,7 @@ public class GameManager : MonoBehaviour
         generateEnemies(2, 4);
         es = GameObject.Find("EventSystem").GetComponent<EventSystem>();
 
-
+        
     }
 
     // Update is called once per frame
@@ -126,6 +134,7 @@ public class GameManager : MonoBehaviour
             //If a button is clicked 
             if (Input.GetButtonDown("Submit"))
             {
+                gameSoundsManager.Play(select);
                 //hideUI.SetActive(false);
                 for (var i = 0; i < buttons.Length; i++)
                 {
