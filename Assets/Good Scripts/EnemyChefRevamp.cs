@@ -73,7 +73,8 @@ public class EnemyChefRevamp : Enemy
         GameManager.gm.p.health -= (int)Random.Range(10, 15);
         if (GameManager.gm.gameState == 3)
         {
-            enemyBarks.text = "\"" + "Spaghett' lost, punk!" + "\"";
+            int barkNumber = Random.Range(0, 3);
+            enemyBarks.text = possibleBarks[barkNumber].ToString();
 
         }
         else

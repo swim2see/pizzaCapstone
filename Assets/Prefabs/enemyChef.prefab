@@ -239,6 +239,10 @@ MonoBehaviour:
   glowObj: {fileID: 1376954257738700}
   enemyImage: {fileID: 114301555569850028}
   enemyBarks: {fileID: 114192182551085304}
+  possibleBarks:
+  - '"I''ll turn ya into swiss cheese!"'
+  - '"Lights out, pizza boy!"'
+  - '"Spaghett'' lost!"'
   enemyHealthBar: {fileID: 114561464770761800}
 --- !u!114 &114296644902400174
 MonoBehaviour:

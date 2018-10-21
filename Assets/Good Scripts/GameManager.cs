@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour
             print(es.currentSelectedGameObject);
             if (es.currentSelectedGameObject == buttons[0].gameObject)
             {
-                descriptorText.text = "ITS THE TENDERIZER BABY";
+                descriptorText.text = "Tenderizer: Harness the power of your fists to tenderize raw meat before throwing it at your foe." + "\n" + "Mash the shoulder buttons to increase the strength of this attack";
             }
             if (es.currentSelectedGameObject == buttons[1].gameObject)
             {
@@ -322,8 +322,8 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < num; i++)
         {
             //Grabs relevant component of Chef
-            Vector3 temp = new Vector3(i * 3f, 0f, 0f) + gameObject.transform.position;
-            enemyList[i] = Instantiate(enemyPrefab, temp, Quaternion.identity).GetComponent<Enemy>();
+            Vector3 temp = new Vector3(i * 4f, 0f, 0f) + gameObject.transform.position;
+            enemyList[i] = Instantiate(enemyPrefab, temp-new Vector3(3,0,0), Quaternion.identity).GetComponent<Enemy>();
 
             //Sets enemy instance to be child of this object
             enemyList[i].gameObject.transform.SetParent(gameObject.transform, true);

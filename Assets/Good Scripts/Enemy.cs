@@ -17,6 +17,7 @@ public abstract class Enemy : MonoBehaviour
     public Image enemyImage;
 
     public Text enemyBarks;
+    public string[] possibleBarks;
 
     //Prefabs & Visuals
     [Header("Visuals")]
