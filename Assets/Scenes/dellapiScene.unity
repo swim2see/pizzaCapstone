@@ -957,8 +957,8 @@ MonoBehaviour:
   - {fileID: 398247737}
   - {fileID: 919994378}
   - {fileID: 128126678}
-  pTimer: 3
-  turnDelay: 3
+  pTimer: 2
+  turnDelay: 2
   enemyDelay: 1
   enemyTurn: 0
   index: 0

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-
+using DG.Tweening;
 public class GameManager : MonoBehaviour
 {
 
@@ -87,6 +87,7 @@ public class GameManager : MonoBehaviour
                 buttons[i].interactable = false;
             }
             combatText.text = "Select a target!";
+            
             mg.score = 0;
             for (int i = 0; i < enemyList.Length; i++)
             {
@@ -134,7 +135,8 @@ public class GameManager : MonoBehaviour
             //If a button is clicked 
             if (Input.GetButtonDown("Submit"))
             {
-                gameSoundsManager.Play(select);
+                print("select)");
+                
                 //hideUI.SetActive(false);
                 for (var i = 0; i < buttons.Length; i++)
                 {
@@ -147,6 +149,7 @@ public class GameManager : MonoBehaviour
         //Activates the minigame
         else if (gameState == 2)
         {
+            
             selectingAttack = false;
             //If a minigame is being played....
             if (gameActive)
@@ -302,13 +305,14 @@ public class GameManager : MonoBehaviour
     //Recieves an integer from the button, then, activates that minigame
     public void activiateMinigame(int x)
     {
+        gameSoundsManager.Play(select);
         whichGame = x;
         gameState = 2;
         gameActive = true;
     }
 
 
-    //This function will generate a series of random enemies (according to params)
+    //This function will generate a series of ranom enemies (according to params)
     //and set them to the EnemyList
     public void generateEnemies(int min, int max)
     {
@@ -365,6 +369,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetButtonDown("Submit"))
         {
             gameState = 1;
+            combatText.transform.DOPunchScale(new Vector3(0, .01f, 0), .5f, 1, 0);
         }
     }
 }
