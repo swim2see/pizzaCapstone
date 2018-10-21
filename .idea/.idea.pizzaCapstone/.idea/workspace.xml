@@ -12,14 +12,178 @@
     <session id="-2110233612">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="cs" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="C#" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="cs" value="790" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="C#" value="790" />
         </counts>
       </usages-collector>
     </session>
   </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Good Scripts/Overworld Scripts/InteractableObject.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <marker date="1539889143437" expanded="false" signature="6:78" ph="..." />
+                <marker date="1539889143437" expanded="true" signature="127:437" ph="{...}" />
+                <marker date="1539889143437" expanded="true" signature="366:373" ph="{...}" />
+                <marker date="1539889143437" expanded="true" signature="428:435" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Good Scripts/Overworld Scripts/FungusTrigger.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1155">
+              <caret line="77" column="70" selection-start-line="77" selection-start-column="70" selection-end-line="77" selection-end-column="70" />
+              <folding>
+                <marker date="1540141784077" expanded="true" signature="38:110" ph="..." />
+                <marker date="1540141784077" expanded="true" signature="156:7985" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="213:353" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="567:777" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="672:750" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="897:1442" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="1124:1302" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="1506:2527" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="1713:2521" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="2631:3745" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="2845:3739" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="4095:4508" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="4123:4502" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="4561:4672" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="4716:4786" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="4836:4910" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="4973:5050" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="5328:5704" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="5391:5522" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="5566:5698" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="6219:7192" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="6418:6484" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="6773:7186" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="6822:7176" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="6965:7162" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="7009:7144" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="7240:7727" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="7327:7447" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="7367:7437" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="7566:7631" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="7853:7983" ph="{...}" />
+                <marker date="1540141784077" expanded="true" signature="7879:7926" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Good Scripts/Overworld Scripts/FungusBoolTrigger.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="780">
+              <caret line="55" column="7" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
+              <folding>
+                <marker date="1540152720313" expanded="false" signature="6:92" ph="..." />
+                <marker date="1540152720313" expanded="true" signature="140:1112" ph="{...}" />
+                <marker date="1540152720313" expanded="true" signature="242:361" ph="{...}" />
+                <marker date="1540152720313" expanded="true" signature="416:523" ph="{...}" />
+                <marker date="1540152720313" expanded="true" signature="472:520" ph="{...}" />
+                <marker date="1540152720313" expanded="true" signature="621:807" ph="{...}" />
+                <marker date="1540152720313" expanded="true" signature="653:804" ph="{...}" />
+                <marker date="1540152720313" expanded="true" signature="857:999" ph="{...}" />
+                <marker date="1540152720313" expanded="true" signature="889:996" ph="{...}" />
+                <marker date="1540152720313" expanded="true" signature="1002:1110" ph="/* public void ChangeBool() ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Good Scripts/Overworld Scripts/PlayerNavigation.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="31" column="57" selection-start-line="31" selection-start-column="57" selection-end-line="31" selection-end-column="57" />
+              <folding>
+                <marker date="1540154530539" expanded="false" signature="6:78" ph="..." />
+                <marker date="1540154530539" expanded="true" signature="126:1037" ph="{...}" />
+                <marker date="1540154530539" expanded="true" signature="235:297" ph="{...}" />
+                <marker date="1540154530539" expanded="true" signature="315:1032" ph="{...}" />
+                <marker date="1540154530539" expanded="true" signature="383:473" ph="{...}" />
+                <marker date="1540154530539" expanded="true" signature="539:621" ph="{...}" />
+                <marker date="1540154530539" expanded="true" signature="687:772" ph="{...}" />
+                <marker date="1540154530539" expanded="true" signature="838:924" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Good Scripts/Overworld Scripts/CameraScript.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+              <folding>
+                <marker date="1540158076259" expanded="false" signature="6:78" ph="..." />
+                <marker date="1540158076259" expanded="true" signature="121:518" ph="{...}" />
+                <marker date="1540158076259" expanded="true" signature="200:207" ph="{...}" />
+                <marker date="1540158076259" expanded="true" signature="262:269" ph="{...}" />
+                <marker date="1540158076259" expanded="true" signature="319:392" ph="{...}" />
+                <marker date="1540158076259" expanded="true" signature="351:389" ph="{...}" />
+                <marker date="1540158076259" expanded="true" signature="442:516" ph="{...}" />
+                <marker date="1540158076259" expanded="true" signature="474:513" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>change</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Good Scripts/Overworld Scripts/PlayerNavigation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Good Scripts/Overworld Scripts/InteractableObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Good Scripts/Overworld Scripts/CameraScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Good Scripts/Overworld Scripts/FungusBoolTrigger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Fungus/Scripts/Components/Flowchart.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Good Scripts/Overworld Scripts/FungusTrigger.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Good Scripts/Overworld Scripts/FungusTrigger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Good Scripts/Overworld Scripts/FungusBoolTrigger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Good Scripts/Overworld Scripts/PlayerNavigation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Good Scripts/Overworld Scripts/CameraScript.cs" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -38,13 +202,13 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="SolutionExplorer">
-        <option name="show-all-files" value="false" />
-      </pane>
+      <pane id="FileSystemExplorer" />
       <pane id="UnityExplorer">
         <option name="show-hidden-items" value="false" />
       </pane>
-      <pane id="FileSystemExplorer" />
+      <pane id="SolutionExplorer">
+        <option name="show-all-files" value="false" />
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -91,11 +255,12 @@
       <option name="presentableId" value="Default" />
       <updated>1539889051513</updated>
       <workItem from="1539889053050" duration="595000" />
+      <workItem from="1540141496087" duration="9513000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="595000" />
+    <option name="totallyTimeSpent" value="10108000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -110,17 +275,9 @@
     <frame x="-3" y="3" width="1936" height="1096" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="NuGet" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Unity" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Unit Tests" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -128,12 +285,20 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Errors In Solution" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Unit Tests Coverage" />
+      <window_info anchor="bottom" id="NuGet" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Unity" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Unit Tests" order="12" />
+      <window_info anchor="bottom" id="Terminal" order="13" />
+      <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Errors In Solution" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Unit Tests Coverage" order="5" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,5 +318,372 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Assets/Fungus/Scripts/Components/Flowchart.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="518" selection-start-line="518" selection-end-line="518" />
+          <folding>
+            <marker date="1531866470000" expanded="true" signature="0:242" ph="/* This code is part of the Fungus library (http://fungusgames.com) maintained by Chris Gregan (http://twitter.co ... */" />
+            <marker date="1531866470000" expanded="false" signature="250:418" ph="..." />
+            <marker date="1531866470000" expanded="true" signature="436:45025" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="443:635" ph="/// Visual scripting controller for the Flowchart programming language. ... " />
+            <marker date="1531866470000" expanded="true" signature="724:45023" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="4150:4324" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="4376:4428" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="4438:4589" ph="/* There must be an Event System in the scene for Say and Menu input to work. ... */" />
+            <marker date="1531866470000" expanded="true" signature="4639:5296" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="4685:4737" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="4869:5234" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="5068:5220" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="5430:5480" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="5523:6095" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="5583:5937" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="6139:6424" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="6472:7180" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="6541:6630" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="6835:7115" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="6985:7101" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="7227:8233" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="7250:7403" ph="/* Make sure item ids are unique and monotonically increasing. ... */" />
+            <marker date="1531866470000" expanded="true" signature="7553:7822" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="7680:7765" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="7942:8223" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="8077:8164" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="8285:10451" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="8308:8685" ph="/* Delete any unreferenced components which shouldn't exist any more ... */" />
+            <marker date="1531866470000" expanded="true" signature="8857:9068" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="8970:9054" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="9237:9764" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="9386:9639" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="9508:9621" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="9667:9750" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="9899:10441" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="10058:10311" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="10180:10293" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="10339:10427" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="10524:10626" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="10636:43349" ph="Public members" />
+            <marker date="1531866470000" expanded="true" signature="10668:10779" ph="/// Cached list of flowchart objects in the scene for fast lookup. ... " />
+            <marker date="1531866470000" expanded="true" signature="10881:11082" ph="/// Sends a message to all Flowchart objects in the current scene. ... " />
+            <marker date="1531866470000" expanded="true" signature="11152:11464" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="11310:11454" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="11474:11566" ph="/// Scroll position of Flowchart editor window. ... " />
+            <marker date="1531866470000" expanded="true" signature="11674:11769" ph="/// Scroll position of Flowchart variables window. ... " />
+            <marker date="1531866470000" expanded="true" signature="11904:11977" ph="/// Show the variables pane. ... " />
+            <marker date="1531866470000" expanded="true" signature="12106:12197" ph="/// Height of command block view in inspector. ... " />
+            <marker date="1531866470000" expanded="true" signature="12321:12408" ph="/// Zoom level of Flowchart editor window. ... " />
+            <marker date="1531866470000" expanded="true" signature="12499:12592" ph="/// Scrollable area for Flowchart editor window. ... " />
+            <marker date="1531866470000" expanded="true" signature="12712:12817" ph="/// Current actively selected block in the Flowchart editor. ... " />
+            <marker date="1531866470000" expanded="true" signature="12860:13110" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="12887:12971" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="12988:13099" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="13238:13338" ph="/// Currently selected command in the Flowchart editor. ... " />
+            <marker date="1531866470000" expanded="true" signature="13439:13548" ph="/// The list of variables that can be accessed by the Flowchart. ... " />
+            <marker date="1531866470000" expanded="true" signature="13636:13742" ph="/// Description text displayed in the Flowchart editor window ... " />
+            <marker date="1531866470000" expanded="true" signature="13826:13953" ph="/// Slow down execution in the editor to make it easier to visualise program flow. ... " />
+            <marker date="1531866470000" expanded="true" signature="14032:14149" ph="/// Use command color when displaying the command list in the inspector. ... " />
+            <marker date="1531866470000" expanded="true" signature="14235:14427" ph="/// Saves the selected block and commands when saving the scene. Helps avoid version control conflicts if you've  ... " />
+            <marker date="1531866470000" expanded="true" signature="14513:14636" ph="/// Unique identifier for identifying this flowchart in localized string keys. ... " />
+            <marker date="1531866470000" expanded="true" signature="14726:14839" ph="/// Display line numbers in the command list in the Block inspector. ... " />
+            <marker date="1531866470000" expanded="true" signature="14929:15063" ph="/// Lua Environment to be used by default for all Execute Lua commands in this Flowchart. ... " />
+            <marker date="1531866470000" expanded="true" signature="15153:15309" ph="/// The ExecuteLua command adds a global Lua variable with this name bound to the flowchart prior to executing. ... " />
+            <marker date="1531866470000" expanded="true" signature="15399:15502" ph="/// Position in the center of all blocks in the flowchart. ... " />
+            <marker date="1531866470000" expanded="true" signature="15572:15700" ph="/// Variable to track flowchart's version so components can update to new versions. ... " />
+            <marker date="1531866470000" expanded="true" signature="15766:15866" ph="/// Returns true if the Flowchart gameobject is active. ... " />
+            <marker date="1531866470000" expanded="true" signature="15897:15966" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="15976:16063" ph="/// Returns the Flowchart gameobject name. ... " />
+            <marker date="1531866470000" expanded="true" signature="16095:16151" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="16161:16374" ph="/// Returns the next id to assign to a new flowchart item. ... " />
+            <marker date="1531866470000" expanded="true" signature="16406:16943" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="16545:16667" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="16775:16903" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="16953:17061" ph="/// Create a new block node which you can then add commands to. ... " />
+            <marker date="1531866470000" expanded="true" signature="17120:17383" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="17393:17505" ph="/// Returns the named Block in the flowchart, or null if not found. ... " />
+            <marker date="1531866470000" expanded="true" signature="17562:17896" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="17673:17860" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="17776:17846" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="17906:18084" ph="/// &lt;summary&gt; ... " />
+            <marker date="1531866470000" expanded="true" signature="18139:18239" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="18249:18446" ph="/// &lt;summary&gt; ... " />
+            <marker date="1531866470000" expanded="true" signature="18510:18740" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="18557:18655" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="18672:18730" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="18758:18905" ph="/// &lt;summary&gt; ... " />
+            <marker date="1531866470000" expanded="true" signature="18964:19334" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="19052:19178" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="19217:19324" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="19356:19447" ph="/// Stops an executing Block in the Flowchart. ... " />
+            <marker date="1531866470000" expanded="true" signature="19503:19823" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="19591:19717" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="19755:19813" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="19833:20139" ph="/// Execute a child block in the flowchart. ... " />
+            <marker date="1531866470000" expanded="true" signature="20241:20967" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="20282:20398" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="20456:20624" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="20743:20801" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="20977:21070" ph="/// Stop all executing Blocks in this Flowchart. ... " />
+            <marker date="1531866470000" expanded="true" signature="21114:21413" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="21225:21403" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="21319:21389" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="21423:21601" ph="/// Sends a message to this Flowchart only. ... " />
+            <marker date="1531866470000" expanded="true" signature="21667:21956" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="21802:21946" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="21966:22113" ph="/// Returns a new variable key that is guaranteed not to clash with any existing variable in the list. ... " />
+            <marker date="1531866470000" expanded="true" signature="22216:23555" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="22677:22738" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="22798:23545" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="22910:23430" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="23073:23151" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="23244:23412" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="23463:23531" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="23565:23711" ph="/// Returns a new Block key that is guaranteed not to clash with any existing Block in the Flowchart. ... " />
+            <marker date="1531866470000" expanded="true" signature="23805:24894" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="23967:24055" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="24165:24884" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="24275:24769" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="24409:24487" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="24583:24751" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="24802:24870" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="24904:25046" ph="/// Returns a new Label key that is guaranteed not to clash with any existing Label in the Block. ... " />
+            <marker date="1531866470000" expanded="true" signature="25133:26301" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="25295:25362" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="25472:26291" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="25639:26176" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="25822:25900" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="25990:26158" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="26209:26277" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="26311:26727" ph="/// Returns the variable with the specified key, or null if the key is not found. ... " />
+            <marker date="1531866470000" expanded="true" signature="26775:27082" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="26839:27046" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="26959:27032" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="27092:27425" ph="/// Returns the variable with the specified key, or null if the key is not found. ... " />
+            <marker date="1531866470000" expanded="true" signature="27488:27865" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="27552:27764" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="27672:27750" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="27875:28065" ph="/// Register a new variable with the Flowchart at runtime.  ... " />
+            <marker date="1531866470000" expanded="true" signature="28146:28642" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="28210:28566" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="28309:28552" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="28410:28534" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="28652:28752" ph="/// Checks if a given variable exists in the flowchart. ... " />
+            <marker date="1531866470000" expanded="true" signature="28804:29086" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="28868:29050" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="28967:29036" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="29096:29197" ph="/// Returns the list of variable names in the Flowchart. ... " />
+            <marker date="1531866470000" expanded="true" signature="29248:29573" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="29366:29537" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="29449:29523" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="29583:29697" ph="/// Gets a list of all variables with public scope in this Flowchart. ... " />
+            <marker date="1531866470000" expanded="true" signature="29756:30135" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="29876:30088" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="29994:30074" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="30145:30293" ph="/// Gets the value of a boolean variable. ... " />
+            <marker date="1531866470000" expanded="true" signature="30352:30634" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="30457:30549" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="30566:30624" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="30644:30822" ph="/// Sets the value of a boolean variable. ... " />
+            <marker date="1531866470000" expanded="true" signature="30893:31076" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="30998:31066" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="31086:31231" ph="/// Gets the value of an integer variable. ... " />
+            <marker date="1531866470000" expanded="true" signature="31289:31568" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="31395:31487" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="31504:31558" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="31578:31757" ph="/// Sets the value of an integer variable. ... " />
+            <marker date="1531866470000" expanded="true" signature="31827:32011" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="31933:32001" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="32021:32163" ph="/// Gets the value of a float variable. ... " />
+            <marker date="1531866470000" expanded="true" signature="32221:32497" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="32325:32415" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="32432:32487" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="32507:32683" ph="/// Sets the value of a float variable. ... " />
+            <marker date="1531866470000" expanded="true" signature="32753:32935" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="32857:32925" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="32945:33103" ph="/// Gets the value of a string variable. ... " />
+            <marker date="1531866470000" expanded="true" signature="33163:33441" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="33268:33359" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="33376:33431" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="33451:33628" ph="/// Sets the value of a string variable. ... " />
+            <marker date="1531866470000" expanded="true" signature="33700:33883" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="33805:33873" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="33893:34043" ph="/// Gets the value of a GameObject variable. ... " />
+            <marker date="1531866470000" expanded="true" signature="34111:34400" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="34221:34316" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="34333:34390" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="34410:34591" ph="/// Sets the value of a GameObject variable. ... " />
+            <marker date="1531866470000" expanded="true" signature="34671:34858" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="34780:34848" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="34868:35017" ph="/// Gets the value of a Transform variable. ... " />
+            <marker date="1531866470000" expanded="true" signature="35083:35370" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="35192:35286" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="35303:35360" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="35380:35560" ph="/// Sets the value of a Transform variable. ... " />
+            <marker date="1531866470000" expanded="true" signature="35638:35824" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="35746:35814" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="35834:35970" ph="/// Set the block objects to be hidden or visible depending on the hideComponents property. ... " />
+            <marker date="1531866470000" expanded="true" signature="36016:37613" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="36058:37070" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="36181:36494" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="36363:36476" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="36610:36760" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="36891:37056" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="37087:37603" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="37234:37589" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="37358:37436" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="37623:37709" ph="/// Clears the list of selected commands. ... " />
+            <marker date="1531866470000" expanded="true" signature="37761:37819" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="37829:37926" ph="/// Adds a command to the list of selected commands. ... " />
+            <marker date="1531866470000" expanded="true" signature="37990:38138" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="38053:38128" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="38148:38232" ph="/// Clears the list of selected blocks. ... " />
+            <marker date="1531866470000" expanded="true" signature="38282:38338" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="38348:38441" ph="/// Adds a block to the list of selected blocks. ... " />
+            <marker date="1531866470000" expanded="true" signature="38499:38639" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="38558:38629" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="38649:38748" ph="/// Reset the commands and variables in the Flowchart. ... " />
+            <marker date="1531866470000" expanded="true" signature="38823:39383" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="38864:39129" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="38993:39115" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="39162:39373" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="39234:39359" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="39393:39539" ph="/// Override this in a Flowchart subclass to filter which commands are shown in the Add Command list. ... " />
+            <marker date="1531866470000" expanded="true" signature="39620:40129" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="39687:40093" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="40009:40079" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="40139:40253" ph="/// Returns true if there are any executing blocks in this Flowchart. ... " />
+            <marker date="1531866470000" expanded="true" signature="40302:40626" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="40413:40590" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="40507:40576" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="40636:40742" ph="/// Returns a list of all executing blocks in this Flowchart. ... " />
+            <marker date="1531866470000" expanded="true" signature="40798:41201" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="40962:41154" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="41056:41140" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="41211:41576" ph="/// Substitute variables in the input text with the format {$VarName} ... " />
+            <marker date="1531866470000" expanded="true" signature="41640:43329" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="41692:41780" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="42290:43029" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="42566:43015" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="42797:42997" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="43178:43244" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="43261:43319" ph="{...}" />
+            <marker date="1531866470000" expanded="false" signature="43359:45017" ph="IStringSubstituter implementation" />
+            <marker date="1531866470000" expanded="true" signature="43410:43731" ph="/// Implementation of StringSubstituter.ISubstitutionHandler which matches any public variable in the Flowchart. ... " />
+            <marker date="1531866470000" expanded="true" signature="43846:44997" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="44178:44957" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="44447:44943" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="44556:44634" ph="{...}" />
+            <marker date="1531866470000" expanded="true" signature="44721:44925" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Good Scripts/Overworld Scripts/CameraScript.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <marker date="1540158076259" expanded="false" signature="6:78" ph="..." />
+            <marker date="1540158076259" expanded="true" signature="121:518" ph="{...}" />
+            <marker date="1540158076259" expanded="true" signature="200:207" ph="{...}" />
+            <marker date="1540158076259" expanded="true" signature="262:269" ph="{...}" />
+            <marker date="1540158076259" expanded="true" signature="319:392" ph="{...}" />
+            <marker date="1540158076259" expanded="true" signature="351:389" ph="{...}" />
+            <marker date="1540158076259" expanded="true" signature="442:516" ph="{...}" />
+            <marker date="1540158076259" expanded="true" signature="474:513" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Good Scripts/Overworld Scripts/PlayerNavigation.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="31" column="57" selection-start-line="31" selection-start-column="57" selection-end-line="31" selection-end-column="57" />
+          <folding>
+            <marker date="1540154530539" expanded="false" signature="6:78" ph="..." />
+            <marker date="1540154530539" expanded="true" signature="126:1037" ph="{...}" />
+            <marker date="1540154530539" expanded="true" signature="235:297" ph="{...}" />
+            <marker date="1540154530539" expanded="true" signature="315:1032" ph="{...}" />
+            <marker date="1540154530539" expanded="true" signature="383:473" ph="{...}" />
+            <marker date="1540154530539" expanded="true" signature="539:621" ph="{...}" />
+            <marker date="1540154530539" expanded="true" signature="687:772" ph="{...}" />
+            <marker date="1540154530539" expanded="true" signature="838:924" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Good Scripts/Overworld Scripts/FungusBoolTrigger.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="55" column="7" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
+          <folding>
+            <marker date="1540152720313" expanded="false" signature="6:92" ph="..." />
+            <marker date="1540152720313" expanded="true" signature="140:1112" ph="{...}" />
+            <marker date="1540152720313" expanded="true" signature="242:361" ph="{...}" />
+            <marker date="1540152720313" expanded="true" signature="416:523" ph="{...}" />
+            <marker date="1540152720313" expanded="true" signature="472:520" ph="{...}" />
+            <marker date="1540152720313" expanded="true" signature="621:807" ph="{...}" />
+            <marker date="1540152720313" expanded="true" signature="653:804" ph="{...}" />
+            <marker date="1540152720313" expanded="true" signature="857:999" ph="{...}" />
+            <marker date="1540152720313" expanded="true" signature="889:996" ph="{...}" />
+            <marker date="1540152720313" expanded="true" signature="1002:1110" ph="/* public void ChangeBool() ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Good Scripts/Overworld Scripts/FungusTrigger.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1155">
+          <caret line="77" column="70" selection-start-line="77" selection-start-column="70" selection-end-line="77" selection-end-column="70" />
+          <folding>
+            <marker date="1540141784077" expanded="true" signature="38:110" ph="..." />
+            <marker date="1540141784077" expanded="true" signature="156:7985" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="213:353" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="567:777" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="672:750" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="897:1442" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="1124:1302" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="1506:2527" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="1713:2521" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="2631:3745" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="2845:3739" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="4095:4508" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="4123:4502" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="4561:4672" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="4716:4786" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="4836:4910" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="4973:5050" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="5328:5704" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="5391:5522" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="5566:5698" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="6219:7192" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="6418:6484" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="6773:7186" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="6822:7176" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="6965:7162" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="7009:7144" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="7240:7727" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="7327:7447" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="7367:7437" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="7566:7631" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="7853:7983" ph="{...}" />
+            <marker date="1540141784077" expanded="true" signature="7879:7926" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Good Scripts/Overworld Scripts/InteractableObject.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <marker date="1539889143437" expanded="false" signature="6:78" ph="..." />
+            <marker date="1539889143437" expanded="true" signature="127:437" ph="{...}" />
+            <marker date="1539889143437" expanded="true" signature="366:373" ph="{...}" />
+            <marker date="1539889143437" expanded="true" signature="428:435" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

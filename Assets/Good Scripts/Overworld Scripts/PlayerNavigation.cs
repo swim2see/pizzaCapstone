@@ -15,16 +15,21 @@ public class PlayerNavigation : MonoBehaviour {
  
 	void Update() {
  
-		if (Input.GetKey(KeyCode.D) && position.position == direction) {
+		if (Input.GetKey(KeyCode.D) && position.position == direction)
+		{
+			transform.rotation = Quaternion.Euler(0,0,-90);
 			direction += Vector3.right;
 		}
 		if (Input.GetKey(KeyCode.W) && position.position == direction) {
+			transform.rotation = Quaternion.Euler(0,0,0);
 			direction += Vector3.up;
 		}
 		if (Input.GetKey(KeyCode.A) && position.position == direction) {
+			transform.rotation = Quaternion.Euler(0,0,90);
 			direction += Vector3.left;
 		}
 		if (Input.GetKey(KeyCode.S) && position.position == direction) {
+			transform.rotation = Quaternion.Euler(0,0,180);
 			direction += Vector3.down;
 		}
      

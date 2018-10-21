@@ -8,6 +8,7 @@ TagManager:
   - oCircle2
   - oCircle3
   - OreganoBar
+  - NPC
   layers:
   - Default
   - TransparentFX
