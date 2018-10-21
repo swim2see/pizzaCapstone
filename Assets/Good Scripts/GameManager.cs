@@ -247,9 +247,7 @@ public class GameManager : MonoBehaviour
         //Enemy Attacks the player
         else if (gameState == 3)
         {
-
-
-
+            
             enemyList[index].attack();
             //enemyList[index].callOut();
             gameState = 4;
@@ -276,7 +274,7 @@ public class GameManager : MonoBehaviour
             }*/
 
 
-            gameState = 4;
+            //gameState = 4;
 
         }
         else if (gameState == 4)
