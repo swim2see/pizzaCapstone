@@ -8,6 +8,7 @@ public class FungusBoolTrigger : MonoBehaviour
 
 	public Flowchart flowchart;
 	public bool pHere;
+	public bool inMenu;
 	
 	// Use this for initialization
 	void Awake () {
@@ -19,10 +20,16 @@ public class FungusBoolTrigger : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
 		
-		if (pHere == true && Input.GetKeyDown(KeyCode.E))
+		if (pHere == true && (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("joystick button 1")))
 		{
 			flowchart.ExecuteBlock("TalkBlock");
+			inMenu = true;
 		}
+
+		/*if (flowchart. == false)
+		{
+			inMenu = false;
+		}*/
 	}
 
 	//Detects when you are standing next to an NPC

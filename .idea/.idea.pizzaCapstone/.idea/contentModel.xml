@@ -907,6 +907,7 @@
             <e p="CameraScript.cs" t="Include" />
             <e p="FungusBoolTrigger.cs" t="Include" />
             <e p="FungusTrigger.cs" t="Include" />
+            <e p="GridMovement.cs" t="Include" />
             <e p="InteractableObject.cs" t="Include" />
             <e p="PlayerNavigation.cs" t="Include" />
           </e>
@@ -923,6 +924,9 @@
           <e p="OreganoStun.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="potSpinning.cs" t="Include" />
+        </e>
+        <e p="Sounds" t="Include">
+          <e p="soundScript.cs" t="Include" />
         </e>
       </e>
       <e p="Library" t="ExcludeRecursive" />
