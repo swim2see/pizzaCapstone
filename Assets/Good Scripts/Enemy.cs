@@ -19,6 +19,8 @@ public abstract class Enemy : MonoBehaviour
     public Text enemyBarks;
     public string[] possibleBarks;
 
+    public bool halfAttack;
+
     //Prefabs & Visuals
     [Header("Visuals")]
     public Image enemyHealthBar;
@@ -66,5 +68,9 @@ public abstract class Enemy : MonoBehaviour
     public void unglow()
     {
         glowObj.SetActive(false);
+    }
+    public void setStatusEffect()
+    {
+
     }
 }

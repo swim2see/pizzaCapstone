@@ -64,18 +64,28 @@ public class EnemyChefRevamp : Enemy
     {
         enemyBarks.text = "";
     }
+    public void setStatusEffect(int x)
+    {
+        x = Player.p.effectInt;
+
+        if (x == 2)
+        {
+            halfAttack = true;
+        }
+    }
     public void normAttack()
     {
         transform.DOPunchScale(new Vector3(0, .01f, 0), .5f, 1, 0);
         
 
         print("IM REALLY LAYING THE HURT");
-        if (Player.p.effectInt != 2)
+        if (halfAttack!=true)
         {
             GameManager.gm.p.health -= (int)Random.Range(10, 15);
         }
         else
         {
+            print("halfattack" + halfAttack);
             GameManager.gm.p.health -= (int)Random.Range(5, 7);
         }
         

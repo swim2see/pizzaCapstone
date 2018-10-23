@@ -237,6 +237,7 @@ public class GameManager : MonoBehaviour
                     {
                         //Damages the enemy
                         enemyList[playerSelect].takeDamage(mg.score, whichGame);
+                        enemyList[playerSelect].setStatusEffect();
                         if (whichGame == 2)
                         {
                             p.health += (mg.score / 2);

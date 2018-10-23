@@ -31,9 +31,9 @@ public class Player : MonoBehaviour {
 			Destroy(this.gameObject);
 		}
 
-        if (GameManager.gm.whichGame == 3)
+        if (GameManager.gm.whichGame == 2)
         {
-            effectInt=3;
+            effectInt=2;
         }
 	}
 }
