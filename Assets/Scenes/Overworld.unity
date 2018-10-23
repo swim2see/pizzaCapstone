@@ -203,6 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c28764ac3e6baff4ebfb719d8bfe54db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fT: {fileID: 348023368}
 --- !u!50 &8819186
 Rigidbody2D:
   serializedVersion: 4
@@ -772,8 +773,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: d7ecbad1cbbf62447ba1921132f36908, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -790,8 +791,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 348023362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5, y: 3.507, z: -5.140625}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalPosition: {x: 3.534, y: 3.412, z: -5.140625}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 7}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -808,18 +809,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.0008232668}
+  m_Offset: {x: -0.16337204, y: 0.44083858}
   m_SpriteTilingProperty:
-    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 10, y: 10}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.15835346}
+  m_Size: {x: 4.9605207, y: 4.9992394}
   m_EdgeRadius: 0
 --- !u!50 &348023366
 Rigidbody2D:
@@ -870,6 +871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flowchart: {fileID: 1009904884}
   pHere: 0
+  inMenu: 0
 --- !u!1 &421523198
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,9 +1440,8 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1009904887}
-  selectedCommands:
-  - {fileID: 1009904894}
+  - {fileID: 1009904898}
+  selectedCommands: []
   variables:
   - {fileID: 1009904889}
   description: 
@@ -1466,7 +1467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 1
   indentLevel: 0
-  storyText: I'm begging you. Please fight me.
+  storyText: Ay! Whats can I gets for you?
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1732,7 +1733,7 @@ MonoBehaviour:
     vector3Val: {x: 0, y: 0, z: 0}
 --- !u!114 &1009904894
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1009904883}
@@ -1745,12 +1746,12 @@ MonoBehaviour:
   indentLevel: 0
   _sceneName:
     stringRef: {fileID: 0}
-    stringVal: 
+    stringVal: dellapiScene
   loadingImage: {fileID: 0}
   sceneNameOLD: 
 --- !u!114 &1009904895
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1009904883}
@@ -1761,7 +1762,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 10
   indentLevel: 0
-  storyText: Christ, thank you.
+  storyText: Get ova here, ya cazool!
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1776,7 +1777,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1009904896
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1009904883}
@@ -1787,7 +1788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 11
   indentLevel: 0
-  storyText: Please. I'm desperate.
+  storyText: That's the stuff!
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1813,9 +1814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 9
   indentLevel: 0
-  text: 'Do not fight rat.
-
-'
+  text: Papi's pizza
   description: 
   targetBlock: {fileID: 1009904898}
   hideIfVisited: 0
@@ -1864,9 +1863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 7
   indentLevel: 0
-  text: 'Fight
-
-'
+  text: Gimme one of em knuckle sandwiches
   description: 
   targetBlock: {fileID: 1009904887}
   hideIfVisited: 0
@@ -1895,7 +1892,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1065678803
 AudioListener:
   m_ObjectHideFlags: 0

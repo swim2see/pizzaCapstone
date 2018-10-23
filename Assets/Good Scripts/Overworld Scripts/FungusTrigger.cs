@@ -1,4 +1,6 @@
 ﻿// http://pastebin.com/UPzuCUM4
+
+/*
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -175,3 +177,4 @@ public class FungusTrigger : MonoBehaviour {
         }
     }
 }
+*/

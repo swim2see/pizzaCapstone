@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/dellapiScene.unity
+    guid: 778a8bbff5cb91c49a1a1fe71ab46d4c
   m_configObjects: {}
