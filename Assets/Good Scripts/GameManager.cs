@@ -234,6 +234,10 @@ public class GameManager : MonoBehaviour
                     {
                         //Damages the enemy
                         enemyList[playerSelect].takeDamage(mg.score, whichGame);
+                        if (whichGame == 2)
+                        {
+                            p.health += (mg.score / 2);
+                        }
                     }
 
                     //Disables the minigame
