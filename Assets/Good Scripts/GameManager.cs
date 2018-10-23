@@ -86,6 +86,7 @@ public class GameManager : MonoBehaviour
             {
                 if (enemyList[i].dead)
                 {
+
                     continue;
                 }
                 enemyList[i].resetStatusEffect();
@@ -272,6 +273,7 @@ public class GameManager : MonoBehaviour
         //Enemy Attacks the player
         else if (gameState == 3)
         {
+            combatText.text = "Enemy's Turn!";
             if (enemyList[index].dead == false)
             {
                 enemyList[index].attack();
@@ -363,6 +365,7 @@ public class GameManager : MonoBehaviour
     //number of enemies, wraps aound to the other side
     public void selectTarget()
     {
+        
         if (playerSelect == 0)
         {
             if (enemyList[playerSelect] != null)
@@ -386,6 +389,11 @@ public class GameManager : MonoBehaviour
             }
         }
         //hideUI.SetActive(false);
+        if (enemyList[playerSelect].dead == true)
+        {
+
+            playerSelect++;
+        }
         for (var i = 0; i < buttons.Length; i++)
         {
             buttons[i].interactable = false;

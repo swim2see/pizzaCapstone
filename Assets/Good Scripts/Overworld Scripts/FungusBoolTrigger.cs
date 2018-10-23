@@ -9,7 +9,7 @@ public class FungusBoolTrigger : MonoBehaviour
 	public Flowchart flowchart;
 	public bool pHere;
 	public bool inMenu;
-	
+    public bool buttonPressed;
 	// Use this for initialization
 	void Awake () {
 		flowchart.SetBooleanVariable("NPCSpeaker", false);
@@ -19,18 +19,33 @@ public class FungusBoolTrigger : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-		
-		if (pHere == true && (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("joystick button 1")))
+
+        if (Input.GetButtonDown("Submit"))
+        {
+            print("pressed");
+        }
+
+		if (pHere == true && Input.GetButtonDown("Submit") && !buttonPressed)
 		{
 			flowchart.ExecuteBlock("TalkBlock");
+            buttonPressed = true;
 			inMenu = true;
 		}
 
-		/*if (flowchart. == false)
+        if (Input.GetButton("joystick button 1"))
+        {
+            buttonPressed = true;
+        }
+        else
+        {
+            buttonPressed = false;
+        }
+
+        /*if (flowchart. == false)
 		{
 			inMenu = false;
 		}*/
-	}
+    }
 
 	//Detects when you are standing next to an NPC
 	private void OnTriggerEnter2D(Collider2D other)
