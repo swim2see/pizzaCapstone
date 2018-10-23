@@ -229,6 +229,9 @@ public class GameManager : MonoBehaviour
                         {
                             enemyList[j].takeDamage(30);
                         }
+                        comboAttack[0] = false;
+                        comboAttack[1] = false;
+                        comboAttack[2] = false;
                     }
                     else
                     {
@@ -371,7 +374,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetButtonDown("Submit"))
         {
             gameState = 1;
-            combatText.transform.DOPunchScale(new Vector3(0, .01f, 0), .5f, 1, 0);
+            
         }
     }
 }

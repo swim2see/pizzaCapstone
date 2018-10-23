@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
-    public static player p;
+    public static Player p;
     //player attributes go here
     [Header("Attributes")]
     public float health;
@@ -14,7 +14,7 @@ public class Player : MonoBehaviour {
     //All visual related info goes here
     [Header("UI/Visuals")]
     public Image playerHealthBar;
-    public float effectInt;
+    public int effectInt;
 
     // Use this for initialization
     void Start ()

@@ -72,9 +72,13 @@ public class EnemyChefRevamp : Enemy
         print("IM REALLY LAYING THE HURT");
         if (Player.p.effectInt != 2)
         {
-
+            GameManager.gm.p.health -= (int)Random.Range(10, 15);
         }
-        GameManager.gm.p.health -= (int)Random.Range(10, 15);
+        else
+        {
+            GameManager.gm.p.health -= (int)Random.Range(5, 7);
+        }
+        
         if (GameManager.gm.gameState == 3)
         {
             int barkNumber = Random.Range(0, 3);
