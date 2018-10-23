@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using DG.Tweening;
 public class EnemyChefRevamp : Enemy
 {
@@ -34,7 +35,7 @@ public class EnemyChefRevamp : Enemy
             else
             {
                 isDefending = true;
-
+                enemyBarks.text = "I'm defending!";
             }
         }
         if (health < 10)
@@ -44,8 +45,10 @@ public class EnemyChefRevamp : Enemy
 
         if (health <= 0)
         {
-            //Destroy(this.gameObject);
-            gameObject.SetActive(false);
+            Destroy(gameObject);
+            Image im = this.gameObject.GetComponent<Image>();
+            Destroy(im);
+           
         }
 
     }
@@ -64,21 +67,13 @@ public class EnemyChefRevamp : Enemy
     {
         enemyBarks.text = "";
     }
-    public void setStatusEffect(int x)
-    {
-        x = Player.p.effectInt;
-
-        if (x == 2)
-        {
-            halfAttack = true;
-        }
-    }
+    
     public void normAttack()
     {
         transform.DOPunchScale(new Vector3(0, .01f, 0), .5f, 1, 0);
         
 
-        print("IM REALLY LAYING THE HURT");
+        
         if (halfAttack!=true)
         {
             GameManager.gm.p.health -= (int)Random.Range(10, 15);

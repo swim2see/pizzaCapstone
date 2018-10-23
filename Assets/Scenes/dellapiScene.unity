@@ -1146,6 +1146,7 @@ MonoBehaviour:
   maxHealth: 0
   mana: 0
   playerHealthBar: {fileID: 1129612220}
+  effectInt: 0
 --- !u!4 &822185922
 Transform:
   m_ObjectHideFlags: 0
@@ -1190,6 +1191,7 @@ MonoBehaviour:
   maxHealth: 0
   mana: 0
   playerHealthBar: {fileID: 1129612220}
+  effectInt: 0
 --- !u!224 &911494974
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1733,7 +1735,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &1082325572
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2271,6 +2273,8 @@ MonoBehaviour:
   enemyImage: {fileID: 0}
   enemyBarks: {fileID: 0}
   possibleBarks: []
+  halfAttack: 0
+  dead: 0
   enemyHealthBar: {fileID: 114561464770761800, guid: 5d79c72928c7b87498619ae0519cd7e1,
     type: 2}
 --- !u!4 &1544659888

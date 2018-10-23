@@ -17,10 +17,15 @@ public class Player : MonoBehaviour {
     public int effectInt;
 
     // Use this for initialization
+    private void Awake()
+    {
+        p = this;
+    }
     void Start ()
     {
 	    maxHealth = 100;
 	    health = 100;
+        
     }
 	
 	// Update is called once per frame
@@ -31,9 +36,6 @@ public class Player : MonoBehaviour {
 			Destroy(this.gameObject);
 		}
 
-        if (GameManager.gm.whichGame == 2)
-        {
-            effectInt=2;
-        }
+        
 	}
 }

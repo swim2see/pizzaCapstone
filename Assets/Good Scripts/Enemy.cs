@@ -21,12 +21,20 @@ public abstract class Enemy : MonoBehaviour
 
     public bool halfAttack;
 
+    public bool dead;
     //Prefabs & Visuals
     [Header("Visuals")]
     public Image enemyHealthBar;
 
     public abstract void attack();
 
+    public void Update()
+    {
+        if (health <= 0)
+        {
+            dead = true;
+        }
+    }
     public void takeDamage(float dmg)
     {
         if (isDefending)
@@ -62,15 +70,32 @@ public abstract class Enemy : MonoBehaviour
 
     public void glow()
     {
-        glowObj.SetActive(true);
+        
+            glowObj.SetActive(true);
+        
     }
 
     public void unglow()
     {
-        glowObj.SetActive(false);
+       
+            glowObj.SetActive(false);
+        
     }
-    public void setStatusEffect()
-    {
 
+    public void setStatusEffect(int x)
+    {
+        if (x == 3)
+        {
+            halfAttack = true;
+        }
+        else
+        {
+            halfAttack = false;
+        }
     }
+    public void resetStatusEffect()
+    {
+        halfAttack = false;
+    }
+
 }

@@ -82,6 +82,14 @@ public class GameManager : MonoBehaviour
         //Player selects their target
         if (gameState == 0)
         {
+            for(int i=0; i<enemyList.Length; i++)
+            {
+                if (enemyList[i].dead)
+                {
+                    continue;
+                }
+                enemyList[i].resetStatusEffect();
+            }
             for (var i = 0; i < buttons.Length; i++)
             {
                 buttons[i].interactable = false;
@@ -94,11 +102,17 @@ public class GameManager : MonoBehaviour
 
                 if (i == playerSelect)
                 {
-                    enemyList[i].glow();
+                    if (enemyList[i] != null)
+                    {
+                        enemyList[i].glow();
+                    }
                 }
                 else
                 {
-                    enemyList[i].unglow();
+                    if (enemyList[i] != null)
+                    {
+                        enemyList[i].unglow();
+                    }
                 }
                 selectTarget();
             }
@@ -119,18 +133,18 @@ public class GameManager : MonoBehaviour
                 es.SetSelectedGameObject(buttons[0].gameObject);
                 selectingAttack = true;
             }
-            print(es.currentSelectedGameObject);
+            //print(es.currentSelectedGameObject);
             if (es.currentSelectedGameObject == buttons[0].gameObject)
             {
-                descriptorText.text = "Tenderizer: Harness the power of your fists to tenderize raw meat before throwing it at your foe." + "\n" + "Mash the shoulder buttons to increase the strength of this attack";
+                descriptorText.text = "Tenderize raw meat before throwing it at your foe." + "\n" + "Mash the shoulder buttons to increase the strength of this attack";
             }
             if (es.currentSelectedGameObject == buttons[1].gameObject)
             {
-                descriptorText.text = "ITS THE SAUCE BABY";
+                descriptorText.text = "Douse your enemy in your family's secret pasta sauce recipe, healing yourself in the process." + "\n" + "Spin the analog stick clockwise to increase sauce potency.";
             }
             if (es.currentSelectedGameObject == buttons[2].gameObject)
             {
-                descriptorText.text = "ITS THE SEASONING BABY";
+                descriptorText.text = "Paralyze an enemy with the power of seasoning, halving their attack." + "\n" + "Press X to the beat to apply more oregano."; 
             }
             //If a button is clicked 
             if (Input.GetButtonDown("Submit"))
@@ -143,6 +157,8 @@ public class GameManager : MonoBehaviour
                     buttons[i].interactable = false;
                 }
                 //gameState = 3;
+
+                
             }
         }
 
@@ -237,11 +253,12 @@ public class GameManager : MonoBehaviour
                     {
                         //Damages the enemy
                         enemyList[playerSelect].takeDamage(mg.score, whichGame);
-                        enemyList[playerSelect].setStatusEffect();
+                        enemyList[playerSelect].setStatusEffect(whichGame);
                         if (whichGame == 2)
                         {
                             p.health += (mg.score / 2);
                         }
+                       
                     }
 
                     //Disables the minigame
@@ -255,8 +272,10 @@ public class GameManager : MonoBehaviour
         //Enemy Attacks the player
         else if (gameState == 3)
         {
-            
-            enemyList[index].attack();
+            if (enemyList[index].dead == false)
+            {
+                enemyList[index].attack();
+            }
             //enemyList[index].callOut();
             gameState = 4;
             index++;
@@ -315,6 +334,7 @@ public class GameManager : MonoBehaviour
         whichGame = x;
         gameState = 2;
         gameActive = true;
+        
     }
 
 
@@ -329,6 +349,7 @@ public class GameManager : MonoBehaviour
         //Spawns list.length number of enemies
         for (int i = 0; i < num; i++)
         {
+
             //Grabs relevant component of Chef
             Vector3 temp = new Vector3(i * 4f, 0f, 0f) + gameObject.transform.position;
             enemyList[i] = Instantiate(enemyPrefab, temp-new Vector3(3,0,0), Quaternion.identity).GetComponent<Enemy>();
@@ -342,6 +363,28 @@ public class GameManager : MonoBehaviour
     //number of enemies, wraps aound to the other side
     public void selectTarget()
     {
+        if (playerSelect == 0)
+        {
+            if (enemyList[playerSelect] != null)
+            {
+                descriptorText.text = "Remy" + "\n" + "Level 7 Pizza Rat" + "\n" + "Health:" + enemyList[playerSelect].health.ToString();
+            }
+            
+        }
+        if (playerSelect == 1)
+        {
+            if (enemyList[playerSelect] != null)
+            {
+                descriptorText.text = "Reginald" + "\n" + "Level 6 Pizza Rat" + "\n" + "Health:" + enemyList[playerSelect].health.ToString();
+            }
+        }
+        if (playerSelect == 2)
+        {
+            if (enemyList[playerSelect] != null)
+            {
+                descriptorText.text = "Raymond" + "\n" + "Level 5 Pizza Rat" + "\n" + "Health:" + enemyList[playerSelect].health.ToString();
+            }
+        }
         //hideUI.SetActive(false);
         for (var i = 0; i < buttons.Length; i++)
         {
