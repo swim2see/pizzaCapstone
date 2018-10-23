@@ -70,6 +70,10 @@ public class EnemyChefRevamp : Enemy
         
 
         print("IM REALLY LAYING THE HURT");
+        if (Player.p.effectInt != 2)
+        {
+
+        }
         GameManager.gm.p.health -= (int)Random.Range(10, 15);
         if (GameManager.gm.gameState == 3)
         {

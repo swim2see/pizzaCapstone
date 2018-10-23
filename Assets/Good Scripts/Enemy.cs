@@ -47,14 +47,11 @@ public abstract class Enemy : MonoBehaviour
             health -= dmg;
         }
         transform.DOPunchPosition(new Vector3(0,.5f,0),  .5f,  20,  1, false);
-        enemyImage.DOColor(Color.red, 1f);
+        //enemyImage.DOColor(Color.red, 1f);
         
        //transform.DOMoveY(10f, 1f).SetEase(Ease.InOutBounce).OnComplete(defend);
     }
-    public void statusEffect()
-    {
-     
-    }
+    
 
     public void defend()
     {

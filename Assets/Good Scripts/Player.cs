@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
-
+    public static player p;
     //player attributes go here
     [Header("Attributes")]
     public float health;
@@ -14,7 +14,7 @@ public class Player : MonoBehaviour {
     //All visual related info goes here
     [Header("UI/Visuals")]
     public Image playerHealthBar;
-
+    public float effectInt;
 
     // Use this for initialization
     void Start ()
@@ -30,5 +30,10 @@ public class Player : MonoBehaviour {
 		{
 			Destroy(this.gameObject);
 		}
+
+        if (GameManager.gm.whichGame == 3)
+        {
+            effectInt=3;
+        }
 	}
 }
