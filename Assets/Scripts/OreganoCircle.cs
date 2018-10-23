@@ -56,7 +56,7 @@ public class OreganoCircle : MonoBehaviour
 				correctInputs += 1; 
 			}
 	
-			Debug.Log("Butt: " + butDead);
+			//Debug.Log("Butt: " + butDead);
 			if (butAct == true)
 			{
 				StartCoroutine("ActiveFrames");

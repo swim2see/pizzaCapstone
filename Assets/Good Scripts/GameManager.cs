@@ -171,7 +171,7 @@ public class GameManager : MonoBehaviour
             //If a minigame is being played....
             if (gameActive)
             {
-                scoreText.text = "Score: " + mg.score;
+                scoreText.text = "Damage: " + mg.score;
                 //hideUI.SetActive(false);
                 for (var i = 0; i < buttons.Length; i++)
                 {
@@ -253,7 +253,9 @@ public class GameManager : MonoBehaviour
                     else
                     {
                         //Damages the enemy
+                        if (whichGame != 2) { 
                         enemyList[playerSelect].takeDamage(mg.score, whichGame);
+                    }
                         enemyList[playerSelect].setStatusEffect(whichGame);
                         if (whichGame == 2)
                         {
@@ -274,7 +276,7 @@ public class GameManager : MonoBehaviour
         else if (gameState == 3)
         {
             combatText.text = "Enemy's Turn!";
-            if (enemyList[index].dead == false)
+            if (enemyList[index]!=null)
             {
                 enemyList[index].attack();
             }
