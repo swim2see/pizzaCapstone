@@ -12,13 +12,13 @@ public class EnemyChefRevamp : Enemy
         mana = 50;
         glowObj.SetActive(false);
     }
-    public void Update()
+     void Update()
     {
         enemyHealthBar.fillAmount = health / maxHealth;
-        if (GameManager.gm.gameState != 3)
-        {
-            enemyBarks.text = "";
-        }
+        //if (GameManager.gm.gameState != 3)
+        //{
+        //    enemyBarks.text = "";
+        //}
     }
     public override void attack()
     {
@@ -94,6 +94,7 @@ public class EnemyChefRevamp : Enemy
             enemyBarks.text = possibleBarks[barkNumber].ToString();
 
         }
+
         else
         {
             enemyBarks.text = "";
