@@ -274,8 +274,18 @@ public class GameManager : MonoBehaviour
                     mg.oreganoMinigame.gameObject.SetActive(false);
                     gameActive = false;
                     timer = 3;
-                    gameState = 3;
+                    gameState = 5;
                 }
+            }
+        }
+        else if(gameState == 5)
+        {
+            pTimer -= Time.deltaTime;
+            if (pTimer <= 0)
+            {
+                pTimer = turnDelay;
+                gameState = 3;
+                scoreText.GetComponent<RectTransform>().DOAnchorPos(new Vector2(-513, 162), .5f);
             }
         }
         //Enemy Attacks the player
@@ -347,7 +357,9 @@ public class GameManager : MonoBehaviour
 
 
         scoreText.GetComponent<RectTransform>().DOAnchorPos(new Vector2(-355, 162), .5f);
-        
+        allButtons.GetComponent<RectTransform>().DOAnchorPos(new Vector2(0, 29), .5f);
+        timerText.GetComponent<RectTransform>().DOAnchorPos(new Vector2(374, 197), .5f);
+
     }
 
 
@@ -365,11 +377,12 @@ public class GameManager : MonoBehaviour
 
             //Grabs relevant component of Chef
             Vector3 temp = new Vector3(i * 4f, 0f, 0f) + gameObject.transform.position;
-            enemyList[i] = Instantiate(enemyPrefab, temp-new Vector3(3,0,0), Quaternion.identity).GetComponent<Enemy>();
-            
+            enemyList[i] = Instantiate(enemyPrefab, temp - new Vector3(3, 0, 0), Quaternion.identity).GetComponent<Enemy>();
+
 
             //Sets enemy instance to be child of this object
             enemyList[i].gameObject.transform.SetParent(gameObject.transform, true);
+            
         }
     }
 
