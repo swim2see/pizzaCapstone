@@ -47,7 +47,9 @@ public class GameManager : MonoBehaviour
     public bool[] comboAttack;
     public bool comboStateReached;
 
+    [Header("Buttons")]
     public Button[] buttons;
+    public GameObject allButtons;
 
     [Header("Pause/Game Feel")]
     public float pTimer;
@@ -118,8 +120,9 @@ public class GameManager : MonoBehaviour
                         enemyList[i].unglow();
                     }
                 }
-                selectTarget();
+                
             }
+            selectTarget();
         }
 
         //Player selects their attack
@@ -429,10 +432,12 @@ public class GameManager : MonoBehaviour
         }
 
         //Goes from target selection to the minigame
-        if (Input.GetButtonDown("Submit"))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             gameState = 1;
-            combatText.transform.DOPunchScale(new Vector3(1, 1, 0), .5f, 1, 1);
+            combatText.transform.DOPunchScale(new Vector3(1, 1, 0), .5f, 1, 0);
+            print("hey");
+            allButtons.transform.DOMove(new Vector3 (0,10,0), .5f);
         }
     }
 }
