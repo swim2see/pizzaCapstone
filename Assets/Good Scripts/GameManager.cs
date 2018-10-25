@@ -344,6 +344,9 @@ public class GameManager : MonoBehaviour
         whichGame = x;
         gameState = 2;
         gameActive = true;
+
+
+        scoreText.GetComponent<RectTransform>().DOAnchorPos(new Vector2(-355, 162), .5f);
         
     }
 
@@ -363,6 +366,7 @@ public class GameManager : MonoBehaviour
             //Grabs relevant component of Chef
             Vector3 temp = new Vector3(i * 4f, 0f, 0f) + gameObject.transform.position;
             enemyList[i] = Instantiate(enemyPrefab, temp-new Vector3(3,0,0), Quaternion.identity).GetComponent<Enemy>();
+            
 
             //Sets enemy instance to be child of this object
             enemyList[i].gameObject.transform.SetParent(gameObject.transform, true);
@@ -432,12 +436,12 @@ public class GameManager : MonoBehaviour
         }
 
         //Goes from target selection to the minigame
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetButtonDown("Submit"))
         {
             gameState = 1;
             combatText.transform.DOPunchScale(new Vector3(1, 1, 0), .5f, 1, 0);
             print("hey");
-            allButtons.transform.DOMove(new Vector3 (0,10,0), .5f);
+            allButtons.GetComponent<RectTransform>().DOAnchorPos(new Vector2(0, 227), .5f);
         }
     }
 }
