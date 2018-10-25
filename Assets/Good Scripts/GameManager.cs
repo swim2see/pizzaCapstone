@@ -82,6 +82,7 @@ public class GameManager : MonoBehaviour
         //Player selects their target
         if (gameState == 0)
         {
+            
             for(int i=0; i<enemyList.Length; i++)
             {
                 if (enemyList[i].dead)
@@ -95,6 +96,8 @@ public class GameManager : MonoBehaviour
             {
                 buttons[i].interactable = false;
             }
+
+            
             combatText.text = "Select a target!";
             
             mg.score = 0;
@@ -365,6 +368,7 @@ public class GameManager : MonoBehaviour
 
     //Selects a target using the control stick; if the player goes over the
     //number of enemies, wraps aound to the other side
+    
     public void selectTarget()
     {
         
@@ -428,7 +432,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetButtonDown("Submit"))
         {
             gameState = 1;
-            
+            combatText.transform.DOPunchScale(new Vector3(1, 1, 0), .5f, 1, 1);
         }
     }
 }
