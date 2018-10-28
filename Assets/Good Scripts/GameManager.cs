@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [Header("Text")]
     public Text combatText;
     public Text descriptorText;
+    public Text delayText;
 
     [Header("Minigames")]
     public Minigames mg;
@@ -71,7 +72,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         gm = this;
-        timer = 3f;
+        timer = 3.5f;
         generateEnemies(2, 4);
         es = GameObject.Find("EventSystem").GetComponent<EventSystem>();
 
@@ -152,6 +153,7 @@ public class GameManager : MonoBehaviour
             {
                 descriptorText.text = "Paralyze an enemy with the power of seasoning, halving their attack." + "\n" + "Press X to the beat to apply more oregano."; 
             }
+
             //If a button is clicked 
             if (Input.GetButtonDown("Submit"))
             {
@@ -163,8 +165,22 @@ public class GameManager : MonoBehaviour
                     buttons[i].interactable = false;
                 }
                 //gameState = 3;
-
+                descriptorText.text = "";
                 
+            }
+        }
+
+        else if (gameState == 6)
+        {
+            delayText.text = pTimer.ToString("f0");
+            pTimer -= Time.deltaTime;
+            if (pTimer <= 0)
+            {
+                pTimer = turnDelay;
+                gameState = 2;
+                scoreText.GetComponent<RectTransform>().DOAnchorPos(new Vector2(-355, 162), .5f);
+                allButtons.GetComponent<RectTransform>().DOAnchorPos(new Vector2(0, 29), .5f);
+                timerText.GetComponent<RectTransform>().DOAnchorPos(new Vector2(374, 197), .5f);
             }
         }
 
@@ -274,8 +290,21 @@ public class GameManager : MonoBehaviour
                     mg.oreganoMinigame.gameObject.SetActive(false);
                     gameActive = false;
                     timer = 3;
-                    gameState = 3;
-                }*/
+                    gameState = 5;
+                }
+            }
+        }
+        else if(gameState == 5)
+        {
+            pTimer -= Time.deltaTime;
+            if (pTimer <= 0)
+            {
+                pTimer = turnDelay;
+                gameState = 3;
+                combatText.transform.DOPunchScale(new Vector3(1, 1, 0), .5f, 1, 0);
+                scoreText.GetComponent<RectTransform>().DOAnchorPos(new Vector2(-600, 162), .5f);
+                timerText.text = "";
+                timerText.GetComponent<RectTransform>().DOAnchorPos(new Vector2(513, 197), .5f);
             }
         }
         //Enemy Attacks the player
@@ -342,9 +371,12 @@ public class GameManager : MonoBehaviour
     {
         gameSoundsManager.Play(select);
         whichGame = x;
-        gameState = 2;
+        gameState = 6;
         gameActive = true;
+
+
         
+
     }
 
 
@@ -362,10 +394,12 @@ public class GameManager : MonoBehaviour
 
             //Grabs relevant component of Chef
             Vector3 temp = new Vector3(i * 4f, 0f, 0f) + gameObject.transform.position;
-            enemyList[i] = Instantiate(enemyPrefab, temp-new Vector3(3,0,0), Quaternion.identity).GetComponent<Enemy>();
+            enemyList[i] = Instantiate(enemyPrefab, temp - new Vector3(3, 0, 0), Quaternion.identity).GetComponent<Enemy>();
+
 
             //Sets enemy instance to be child of this object
             enemyList[i].gameObject.transform.SetParent(gameObject.transform, true);
+            
         }
     }
 
@@ -432,12 +466,12 @@ public class GameManager : MonoBehaviour
         }
 
         //Goes from target selection to the minigame
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetButtonDown("Submit"))
         {
             gameState = 1;
             combatText.transform.DOPunchScale(new Vector3(1, 1, 0), .5f, 1, 0);
             print("hey");
-            allButtons.transform.DOMove(new Vector3 (0,10,0), .5f);
+            allButtons.GetComponent<RectTransform>().DOAnchorPos(new Vector2(0, 227), .5f);
         }
     }
 }
