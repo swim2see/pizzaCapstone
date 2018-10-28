@@ -89,7 +89,6 @@ public class GameManager : MonoBehaviour
             {
                 if (enemyList[i].dead)
                 {
-
                     continue;
                 }
                 enemyList[i].resetStatusEffect();
@@ -198,9 +197,10 @@ public class GameManager : MonoBehaviour
                 }
 
                 //Minigames are played here, as long as the timer is going
+                /*
                 if (timer > 0)
                 {
-                    //Tenderizer minigam
+                    //Tenderizer minigame
                     if (whichGame == 1)
                     {
                         mg.Tenderizer();
@@ -275,7 +275,7 @@ public class GameManager : MonoBehaviour
                     gameActive = false;
                     timer = 3;
                     gameState = 3;
-                }
+                }*/
             }
         }
         //Enemy Attacks the player

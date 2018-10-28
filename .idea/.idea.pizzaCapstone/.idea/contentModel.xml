@@ -21,6 +21,22 @@
             <e p="readme.txt" t="Include" />
           </e>
         </e>
+        <e p="DOTween Examples" t="Include">
+          <e p="Basics.cs" t="Include" />
+          <e p="CustomPlugin Example" t="Include">
+            <e p="CustomPluginExampleBrain.cs" t="Include" />
+            <e p="CustomRange.cs" t="Include" />
+            <e p="CustomRangePlugin.cs" t="Include" />
+          </e>
+          <e p="Example Assets" t="Include">
+            <e p="DragTarget.cs" t="Include" />
+          </e>
+          <e p="Follow.cs" t="Include" />
+          <e p="Materials.cs" t="Include" />
+          <e p="Paths.cs" t="Include" />
+          <e p="Sequences.cs" t="Include" />
+          <e p="UGUI.cs" t="Include" />
+        </e>
         <e p="Fungus" t="Include">
           <e p="Docs" t="Include">
             <e p="LICENSE.txt" t="Include" />
@@ -899,6 +915,7 @@
           </e>
         </e>
         <e p="Good Scripts" t="Include">
+          <e p="ComboAttack.cs" t="Include" />
           <e p="Enemy.cs" t="Include" />
           <e p="EnemyChefRevamp.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
@@ -924,6 +941,13 @@
           <e p="OreganoStun.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="potSpinning.cs" t="Include" />
+          <e p="TestScripts" t="Include">
+            <e p="testEnemy.cs" t="Include" />
+            <e p="testEnemyChef.cs" t="Include" />
+            <e p="testGameManager.cs" t="Include" />
+            <e p="testMinigames.cs" t="Include" />
+            <e p="testPlayer.cs" t="Include" />
+          </e>
         </e>
         <e p="Sounds" t="Include">
           <e p="soundScript.cs" t="Include" />

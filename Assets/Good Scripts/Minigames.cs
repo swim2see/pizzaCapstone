@@ -8,6 +8,15 @@ public class Minigames : MonoBehaviour {
     //Variables related to the GameManager
     public int score;
 
+    private float timer;
+
+    public enum microgames
+    {
+        Tenderizer,
+        SauceToss,
+        OreganoStun
+    };
+
     //Minigame specific variables
     [Header("Sauce Toss")]
     Vector2 lastDirection;
@@ -32,12 +41,31 @@ public class Minigames : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+	    //...Display the timer
+	   /* if (timer > 0)
+	    {
+	        timerText.text = timer.ToString("f0");
+	    }
+
+	    //If the timer goes below zero, won't display negatives
+	    else
+	    {
+	        timerText.text = "0.0";
+	    }*/
+
 	}
 
 
     //Press the shoulder buttons to increase the score
-    public void Tenderizer()
+    public void Tenderizer(ComboAttack attack)
+    {
+        timer = 3f;
+        //We are calling the tenderizer Coroutine every tenth of a second, until the timer expires, in which case we call the minigame stopper 
+        StartCoroutine(minigameStopper(StartCoroutine(TenderizerCouroutine(attack)),attack));
+
+    }
+
+    private IEnumerator TenderizerCouroutine(ComboAttack attack)
     {
         if (Input.GetButtonDown("joystick button 4"))
         {
@@ -47,6 +75,18 @@ public class Minigames : MonoBehaviour {
         {
             score += 1;
         }
+        //ten times a second, it will run the code inside of here
+        yield return new WaitForSeconds(.1f);
+    }
+    
+    //use this to stop ALL minigames
+    private IEnumerator minigameStopper(Coroutine thingToStop, ComboAttack attack)
+    {
+       yield return new WaitForSeconds(timer);
+        StopCoroutine(thingToStop);
+        //after it stops the minigame, it advances us to the next game in the list
+        attack.playSpell();
+        
     }
 
     //Rotate the sticks in order to increment the score
