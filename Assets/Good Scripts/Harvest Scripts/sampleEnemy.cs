@@ -13,6 +13,7 @@ public class sampleEnemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         //cam = GameObject.Find("Main Camera").GetComponent<CamControl>();
         player = GameObject.FindWithTag("Player");
+        transform.position = new Vector2(Random.Range(-6, 6), Random.Range(-3, 3));
     }
 
     // Update is called once per frame
@@ -34,6 +35,7 @@ public class sampleEnemy : MonoBehaviour
             {
                 vel = (transform.position - playerPos).normalized * spd * 1.5f;
             }
+
             rb.MovePosition(transform.position + vel);
         }
     }
