@@ -7,20 +7,26 @@ public class ComboAttack : MonoBehaviour
 {
     public List<Minigames.microgames> minigameList;
 
-    public int score = 0;
+    public static int score = 0;
 
     public Minigames mg;
+    public GameManager gm;
 
     private int curGame = 0;
     //every time this is called, it will advance to the next game, and then wait until the timer is up
     public void playSpell()
     {
+        gm.gameState = 2;
+        Debug.Log(curGame);
         score += mg.score;
         //stops the function if the minigame list is satisfied 
         if (curGame >= minigameList.Count)
         {
             minigameList.Clear();
             curGame = 0;
+            score = 0;
+            mg.oreganoMinigame.gameObject.SetActive(false);
+            gm.gameState = 3;
             return;
         }
 
@@ -36,14 +42,14 @@ public class ComboAttack : MonoBehaviour
             //Sause Toss minigame
             else if (game == Minigames.microgames.SauceToss)
             {
-                mg.SauceToss();
+                mg.SauceToss(this);
                // combatText.text = "Spin the analog stick!";
             }
 
             //Orgeno Stun minigame
             else if (game == Minigames.microgames.OreganoStun)
             {
-                mg.OregenoStun();
+                mg.OregenoStun(this);
                 //combatText.text = "Press X on time!";
             }
 
@@ -59,9 +65,10 @@ public class ComboAttack : MonoBehaviour
     public void meatBallMissile()
     {
        minigameList.Add(Minigames.microgames.Tenderizer);
-       //minigameList.Add(Minigames.microgames.OreganoStun);
-       //minigameList.Add(Minigames.microgames.SauceToss);
-        minigameList.Add(Minigames.microgames.Tenderizer);
+       minigameList.Add(Minigames.microgames.SauceToss);
+       minigameList.Add(Minigames.microgames.OreganoStun);
+
+        //minigameList.Add(Minigames.microgames.Tenderizer);
        playSpell();
     }
 }

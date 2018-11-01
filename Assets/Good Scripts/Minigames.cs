@@ -90,7 +90,13 @@ public class Minigames : MonoBehaviour {
     }
 
     //Rotate the sticks in order to increment the score
-    public void SauceToss()
+    public void SauceToss(ComboAttack attack)
+    {
+        timer = 3f;
+        StartCoroutine(minigameStopper(StartCoroutine(SauceTossCouroutine(attack)),attack));
+    }
+    
+    private IEnumerator SauceTossCouroutine(ComboAttack attack)
     {
         if (rotationI >= 4)
         {
@@ -149,14 +155,29 @@ public class Minigames : MonoBehaviour {
         {
             quadrant = 4;
         }
+        //ten times a second, it will run the code inside of here
+        yield return new WaitForSeconds(.1f);
     }
 
     //
-    public int OregenoStun()
+    public int OregenoStun(ComboAttack attack)
+    {
+        timer = 3f;
+ 
+        //oreganoMinigame.gameObject.SetActive(true);
+        return score;
+        StartCoroutine(minigameStopper(StartCoroutine(OreganoStunCouroutine(attack)),attack));
+        
+    }
+    
+    private IEnumerator OreganoStunCouroutine(ComboAttack attack)
     {
         oreganoMinigame.gameObject.SetActive(true);
+       // generateCircles();
         
-        return score;
+        //return score;
+        //ten times a second, it will run the code inside of here
+        yield return new WaitForSeconds(.1f);
     }
     
     public void generateCircles()

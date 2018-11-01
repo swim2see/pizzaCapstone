@@ -212,33 +212,33 @@
 //                    timerText.text = "0.0";
 //                }
 
-//                //Minigames are played here, as long as the timer is going
-//                /*
-//                if (timer > 0)
-//                {
-//                    //Tenderizer minigame
-//                    if (whichGame == 1)
-//                    {
-//                        mg.Tenderizer();
-//                        comboAttack[0] = true;
-//                        combatText.text = "Mash the shoulder buttons!";
-//                    }
+                //Minigames are played here, as long as the timer is going
+                //COMMENT THIS SHIT OUT IF YOU WANNA DO BRENDAN
+                if (timer > 0)
+                {
+                    //Tenderizer minigame
+                    if (whichGame == 1)
+                    {
+                        //mg.Tenderizer();
+                        comboAttack[0] = true;
+                        combatText.text = "Mash the shoulder buttons!";
+                    }
 
-//                    //Sause Toss minigame
-//                    else if (whichGame == 2)
-//                    {
-//                        mg.SauceToss();
-//                        comboAttack[1] = true;
-//                        combatText.text = "Spin the analog stick!";
-//                    }
+                    //Sause Toss minigame
+                    else if (whichGame == 2)
+                    {
+                        //mg.SauceToss();
+                        comboAttack[1] = true;
+                        combatText.text = "Spin the analog stick!";
+                    }
 
-//                    //Orgeno Stun minigame
-//                    else if (whichGame == 3)
-//                    {
-//                        mg.OregenoStun();
-//                        comboAttack[2] = true;
-//                        combatText.text = "Press X on time!";
-//                    }
+                    //Orgeno Stun minigame
+                    else if (whichGame == 3)
+                    {
+                        //mg.OregenoStun();
+                        comboAttack[2] = true;
+                        combatText.text = "Press X on time!";
+                    }
 
 //                    //Emergency overflow catch
 //                    else
@@ -260,29 +260,29 @@
 //                        }
 //                    }
 
-//                    //If the ulimate attack is successful, executes it here:
-//                    if (comboStateReached)
-//                    {
-//                        combatText.text = "ULTIMATE MOVE! MEATBALLISTIC MISSILE!";
-//                        for (int j = 0; j < enemyList.Length; j++)
-//                        {
-//                            enemyList[j].takeDamage(30);
-//                        }
-//                        comboAttack[0] = false;
-//                        comboAttack[1] = false;
-//                        comboAttack[2] = false;
-//                    }
-//                    else
-//                    {
-//                        //Damages the enemy
-//                        if (whichGame != 2) { 
-//                        enemyList[playerSelect].takeDamage(mg.score, whichGame);
-//                    }
-//                        enemyList[playerSelect].setStatusEffect(whichGame);
-//                        if (whichGame == 2)
-//                        {
-//                            p.health += (mg.score / 2);
-//                        }
+                    //If the ulimate attack is successful, executes it here:
+                    if (comboStateReached)
+                    {
+                        combatText.text = "ULTIMATE MOVE! MEATBALLISTIC MISSILE!";
+                        for (int j = 0; j < enemyList.Length; j++)
+                        {
+                            enemyList[j].takeDamage(30);
+                        }
+                        comboAttack[0] = false;
+                        comboAttack[1] = false;
+                        comboAttack[2] = false;
+                    }
+                    else
+                    {
+                        //Damages the enemy
+                        if (whichGame != 2) { 
+                        enemyList[playerSelect].takeDamage(ComboAttack.score, whichGame);
+                    }
+                        enemyList[playerSelect].setStatusEffect(whichGame);
+                        if (whichGame == 2)
+                        {
+                            p.health += (mg.score / 2);
+                        }
                        
 //                    }
 
@@ -355,16 +355,14 @@
 //                    index = 0;
 
 
-//                }
-//                else
-//                {
-//                    gameState = 3;
-//                }
-//            }
-//        }
-
-
-//    }
+                }
+                else
+                {
+                    gameState = 3;
+                }
+            }
+        }
+    }
 
 //    //Recieves an integer from the button, then, activates that minigame
 //    public void activiateMinigame(int x)
@@ -374,19 +372,16 @@
 //        gameState = 6;
 //        gameActive = true;
 
-
-        
-
-//    }
+    }
 
 
-//    //This function will generate a series of ranom enemies (according to params)
-//    //and set them to the EnemyList
-//    public void generateEnemies(int min, int max)
-//    {
-//        //Determines the Length of the List
-//        int num = (int)Random.Range(min, max);
-//        enemyList = new Enemy[num];
+    //This function will generate a series of ranom enemies (according to params)
+    //and set them to the EnemyList
+     public void generateEnemies(int min, int max)
+    {
+        //Determines the Length of the List
+        int num = (int)Random.Range(min, max);
+        enemyList = new Enemy[num];
 
 //        //Spawns list.length number of enemies
 //        for (int i = 0; i < num; i++)
@@ -406,8 +401,8 @@
 //    //Selects a target using the control stick; if the player goes over the
 //    //number of enemies, wraps aound to the other side
     
-//    public void selectTarget()
-//    {
+     public void selectTarget()
+    {
         
 //        if (playerSelect == 0)
 //        {
