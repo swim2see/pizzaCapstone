@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-[RequireComponent(typeof(BoxCollider2D))]
+
 public class sampleEnemyRunSpot : MonoBehaviour {
     public Transform[] positions;
 
     private Vector3 screenPoint;
     private Vector3 offset;
-    public bool dragging;
+    public float distance;
+    public bool isDragging;
     // Use this for initialization
     void Start () {
         DOTween.SetTweensCapacity(2000, 100);
-        //GetNewTargetAndMove();
+        GetNewTargetAndMove();
     }
 
     // Update is called once per frame
@@ -23,32 +24,34 @@ public class sampleEnemyRunSpot : MonoBehaviour {
 
     }
 
-    //public void GetNewTargetAndMove()
-    //{
-    //    if (!dragging) { 
-    //    Vector2 newTarget = new Vector2(Random.Range(-4, 4), Random.Range(-4, 4));
-    //    transform.DOMove(newTarget, 1.0f).OnComplete(GetNewTargetAndMove);
-    //}
-    //}
-
-    public void OnMouseDown()
+    public void GetNewTargetAndMove()
     {
-        screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+        if (!isDragging)
+        {
+            Vector2 newTarget = new Vector2(Random.Range(-4, 4), Random.Range(-4, 4));
+            transform.DOMove(newTarget, 1.0f).OnComplete(GetNewTargetAndMove);
+        }
+        
+    }
 
-        offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
 
-        dragging = true;
+    private void OnMouseDrag()
+    {
+        isDragging = true;
+        Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, distance);
+        Vector3 objectPos = Camera.main.ScreenToWorldPoint(mousePos);
+
+        transform.position = objectPos;
 
     }
-     public void OnMouseUp()
+    private void OnMouseUp()
     {
-        dragging = false;
+        isDragging = false;
+        GetNewTargetAndMove();
     }
-   public void OnMouseDrag()
+
+    private void OnCollisionEnter(Collision collision)
     {
-        Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-
-        Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
-
+        
     }
 }
