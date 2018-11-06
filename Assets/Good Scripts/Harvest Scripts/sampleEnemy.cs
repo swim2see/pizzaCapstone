@@ -58,9 +58,10 @@ public class sampleEnemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "bag")
         {
-            if (!isDragging)
+            if (isDragging)
             {
                 HarvestManager.hm.ingredientCountA++;
+                Destroy(gameObject);
             }
         }
     }

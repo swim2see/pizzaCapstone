@@ -46,9 +46,10 @@ public class mouseDrag : MonoBehaviour {
     {
         if (collision.gameObject.tag == "bag")
         {
-            if (!isDragging)
+            if (isDragging)
             {
                 HarvestManager.hm.ingredientCountC++;
+                Destroy(gameObject);
             }
         }
     }
