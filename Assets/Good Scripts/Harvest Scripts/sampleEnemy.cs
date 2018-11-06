@@ -8,6 +8,7 @@ public class sampleEnemy : MonoBehaviour
     Rigidbody2D rb;
     public float spd;
     public float distance;
+    bool isDragging;
     // Use this for initialization
     void Start()
     {
@@ -42,11 +43,25 @@ public class sampleEnemy : MonoBehaviour
     }
     private void OnMouseDrag()
     {
-        
+        isDragging = true;
         Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, distance);
         Vector3 objectPos = Camera.main.ScreenToWorldPoint(mousePos);
 
         transform.position = objectPos;
 
+    }
+    private void OnMouseUp()
+    {
+        isDragging = false;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "bag")
+        {
+            if (!isDragging)
+            {
+                HarvestManager.hm.ingredientCountA++;
+            }
+        }
     }
 }

@@ -40,9 +40,16 @@ public class mouseDrag : MonoBehaviour {
     private void OnMouseUp()
     {
         isDragging = false;
+        _centre = transform.position;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.tag == "bag")
+        {
+            if (!isDragging)
+            {
+                HarvestManager.hm.ingredientCountC++;
+            }
+        }
     }
 }

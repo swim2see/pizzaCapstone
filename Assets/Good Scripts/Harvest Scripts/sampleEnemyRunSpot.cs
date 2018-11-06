@@ -29,7 +29,7 @@ public class sampleEnemyRunSpot : MonoBehaviour {
         if (!isDragging)
         {
             Vector2 newTarget = new Vector2(Random.Range(-4, 4), Random.Range(-4, 4));
-            transform.DOMove(newTarget, 1.0f).OnComplete(GetNewTargetAndMove);
+            transform.DOMove(newTarget, 1.5f).OnComplete(GetNewTargetAndMove);
         }
         
     }
@@ -50,8 +50,14 @@ public class sampleEnemyRunSpot : MonoBehaviour {
         GetNewTargetAndMove();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.tag == "bag")
+        {
+            if (isDragging)
+            {
+                HarvestManager.hm.ingredientCountB++;
+            }
+        }
     }
 }
