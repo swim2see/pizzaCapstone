@@ -5,15 +5,29 @@ using UnityEngine;
 public class mouseDrag : MonoBehaviour {
     public float distance;
     bool isDragging;
-	// Use this for initialization
-	void Start () {
-		
-	}
+
+    public float RotateSpeed;
+    public float Radius;
+
+    private Vector2 _centre;
+    private float _angle;
+    // Use this for initialization
+    void Start () {
+        _centre = transform.position;
+        RotateSpeed = Random.Range(1.5f, 2.5f);
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (!isDragging)
+        {
+            _angle += RotateSpeed * Time.deltaTime;
+
+            var offset = new Vector2(Mathf.Sin(_angle), Mathf.Cos(_angle)) * Radius;
+            transform.position = _centre + offset;
+        }
+        }
+    
 
     private void OnMouseDrag()
     {
@@ -26,5 +40,9 @@ public class mouseDrag : MonoBehaviour {
     private void OnMouseUp()
     {
         isDragging = false;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
     }
 }

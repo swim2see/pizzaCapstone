@@ -7,6 +7,7 @@ public class sampleEnemy : MonoBehaviour
     GameObject player;
     Rigidbody2D rb;
     public float spd;
+    public float distance;
     // Use this for initialization
     void Start()
     {
@@ -38,5 +39,14 @@ public class sampleEnemy : MonoBehaviour
 
             rb.MovePosition(transform.position + vel);
         }
+    }
+    private void OnMouseDrag()
+    {
+        
+        Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, distance);
+        Vector3 objectPos = Camera.main.ScreenToWorldPoint(mousePos);
+
+        transform.position = objectPos;
+
     }
 }
