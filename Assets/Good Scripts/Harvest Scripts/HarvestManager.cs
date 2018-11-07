@@ -12,10 +12,21 @@ public class HarvestManager : MonoBehaviour {
     public Text ingredientTextA;
     public Text ingredientTextB;
     public Text ingredientTextC;
+
+    public List<ingredientClass> bag = new List<ingredientClass>();
+
     // Use this for initialization
     void Start () {
         hm = this;
-	}
+        bag.Add(ingredientCountA);
+        bag.Remove(3);
+        int temp= bag[1];
+
+        for(int i = 0; i < ingredientCountA; i++)
+        {
+            bag.Add();
+        }
+      }
 	
 	// Update is called once per frame
 	void Update () {

@@ -9,6 +9,9 @@ public class sampleEnemy : MonoBehaviour
     public float spd;
     public float distance;
     bool isDragging;
+
+    public ingredientClass thisIngredient;
+
     // Use this for initialization
     void Start()
     {
@@ -16,6 +19,9 @@ public class sampleEnemy : MonoBehaviour
         //cam = GameObject.Find("Main Camera").GetComponent<CamControl>();
         player = GameObject.FindWithTag("Player");
         transform.position = new Vector2(Random.Range(-6, 6), Random.Range(-3, 3));
+
+        thisIngredient.ingredientNumber = 1;
+        thisIngredient.ingredientType = 1;
     }
 
     // Update is called once per frame
@@ -60,7 +66,7 @@ public class sampleEnemy : MonoBehaviour
         {
             if (isDragging)
             {
-                HarvestManager.hm.ingredientCountA++;
+                HarvestManager.hm.bag.Add(thisIngredient);
                 Destroy(gameObject);
             }
         }
