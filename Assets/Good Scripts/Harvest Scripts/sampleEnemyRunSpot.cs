@@ -77,6 +77,7 @@ public class sampleEnemyRunSpot : MonoBehaviour {
             if (isDragging)
             {
                 HarvestManager.hm.ingredientCountB++;
+                HarvestManager.hm.BagAddition();
                 Destroy(gameObject);
             }
         }

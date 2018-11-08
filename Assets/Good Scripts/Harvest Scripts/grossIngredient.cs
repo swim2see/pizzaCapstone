@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class sampleEnemy : MonoBehaviour
-{
-    GameObject player;
+public class grossIngredient : MonoBehaviour {
+    GameObject bag;
     Rigidbody2D rb;
     public float spd;
     public float distance;
@@ -17,7 +16,7 @@ public class sampleEnemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         //cam = GameObject.Find("Main Camera").GetComponent<CamControl>();
-        player = GameObject.FindWithTag("Player");
+        bag = GameObject.FindWithTag("bag");
         transform.position = new Vector2(Random.Range(-6, 6), Random.Range(-3, 3));
 
         thisIngredient.ingredientNumber = 1;
@@ -28,20 +27,20 @@ public class sampleEnemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (player != null)
+        if (bag != null)
         {
-            GameObject playerObj;
-            Vector3 playerPos;
-            playerObj = GameObject.FindWithTag("Player");
-            playerPos = playerObj.transform.position;
+            GameObject bagObj;
+            Vector3 bagPos;
+            bagObj = GameObject.FindWithTag("bag");
+            bagPos = bagObj.transform.position;
             Vector3 vel;
-            if (Vector2.Distance(transform.position, playerPos) > 5f)
+            if (Vector2.Distance(transform.position, bagPos) > 5f)
             {
-                vel = (transform.position-playerPos).normalized * spd / 2;
+                vel = (bagPos-transform.position).normalized * spd / 2;
             }
             else
             {
-                vel = (transform.position - playerPos).normalized * spd * 1.5f;
+                vel = (bagPos-transform.position).normalized * spd * 1.5f;
             }
 
             rb.MovePosition(transform.position + vel);

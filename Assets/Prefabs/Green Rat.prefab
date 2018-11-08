@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61495273464807108}
   - component: {fileID: 114875958160419598}
   - component: {fileID: 50880208750706434}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Green Rat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 10
   RotateSpeed: 2.5
-  Radius: 2.5
+  Radius: 2
 --- !u!212 &212938300803224032
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -11,10 +11,12 @@ public class mouseDrag : MonoBehaviour {
 
     private Vector2 _centre;
     private float _angle;
+    Rigidbody2D rb;
     // Use this for initialization
     void Start () {
         _centre = transform.position;
         RotateSpeed = Random.Range(1.5f, 2.5f);
+        rb = GetComponent<Rigidbody2D>();
     }
 	
 	// Update is called once per frame
@@ -24,7 +26,8 @@ public class mouseDrag : MonoBehaviour {
             _angle += RotateSpeed * Time.deltaTime;
 
             var offset = new Vector2(Mathf.Sin(_angle), Mathf.Cos(_angle)) * Radius;
-            transform.position = _centre + offset;
+            //transform.position = _centre + offset;
+            rb.MovePosition(_centre+offset);
         }
         }
     
@@ -49,6 +52,7 @@ public class mouseDrag : MonoBehaviour {
             if (isDragging)
             {
                 HarvestManager.hm.ingredientCountC++;
+                HarvestManager.hm.BagAddition();
                 Destroy(gameObject);
             }
         }
