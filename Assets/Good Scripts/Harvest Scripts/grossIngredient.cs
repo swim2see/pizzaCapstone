@@ -17,10 +17,9 @@ public class grossIngredient : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         //cam = GameObject.Find("Main Camera").GetComponent<CamControl>();
         bag = GameObject.FindWithTag("bag");
-        transform.position = new Vector2(Random.Range(-6, 6), Random.Range(-3, 3));
+        
 
-        thisIngredient.ingredientNumber = 1;
-        thisIngredient.ingredientType = 1;
+    
     }
 
     // Update is called once per frame
@@ -34,16 +33,14 @@ public class grossIngredient : MonoBehaviour {
             bagObj = GameObject.FindWithTag("bag");
             bagPos = bagObj.transform.position;
             Vector3 vel;
-            if (Vector2.Distance(transform.position, bagPos) > 5f)
-            {
+           
                 vel = (bagPos-transform.position).normalized * spd / 2;
-            }
-            else
-            {
-                vel = (bagPos-transform.position).normalized * spd * 1.5f;
-            }
+                rb.MovePosition(transform.position + vel);
+            
+            
+           
 
-            rb.MovePosition(transform.position + vel);
+            
         }
     }
     private void OnMouseDrag()
@@ -65,8 +62,7 @@ public class grossIngredient : MonoBehaviour {
         {
             if (isDragging)
             {
-                HarvestManager.hm.bag.Add(thisIngredient);
-                HarvestManager.hm.BagAddition();
+                
                 Destroy(gameObject);
             }
         }

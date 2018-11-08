@@ -35,9 +35,9 @@ public class sampleEnemyRunSpot : MonoBehaviour {
         {
             prevPos = newTarget;
             newTarget = new Vector2(Random.Range(-4, 4), Random.Range(-4, 4)); 
-            print(newTarget);
+            
         }
-        print(Mathf.Abs((Vector2.Distance(prevPos, newTarget))));
+        //print(Mathf.Abs((Vector2.Distance(prevPos, newTarget))));
 
         vel = (newTarget - prevPos).normalized * speed / 2;
         rb.MovePosition((Vector2)transform.position + vel);
