@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mouseDrag : MonoBehaviour {
+public class sampleEnemyCircle : MonoBehaviour {
     public float distance;
     bool isDragging;
 
@@ -51,7 +51,7 @@ public class mouseDrag : MonoBehaviour {
         {
             if (isDragging)
             {
-                HarvestManager.hm.ingredientCountC++;
+                //HarvestManager.hm.ingredientCountC++;
                 HarvestManager.hm.BagAddition();
                 Destroy(gameObject);
             }

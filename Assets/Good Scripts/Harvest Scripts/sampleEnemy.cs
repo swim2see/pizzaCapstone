@@ -66,7 +66,8 @@ public class sampleEnemy : MonoBehaviour
         {
             if (isDragging)
             {
-                HarvestManager.hm.bag.Add(thisIngredient);
+                HarvestManager.hm.bag.Add(HarvestManager.hm.bread);
+                HarvestManager.hm.breadCount++;
                 HarvestManager.hm.BagAddition();
                 Destroy(gameObject);
             }

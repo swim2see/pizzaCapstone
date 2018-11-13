@@ -31,11 +31,14 @@ public class sampleEnemyRunSpot : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         // Grab a free Sequence to use
-        if (Mathf.Abs((Vector2.Distance((Vector2)transform.position,newTarget)))<targetDistance)
+        if (!isDragging)
         {
-            prevPos = newTarget;
-            newTarget = new Vector2(Random.Range(-4, 4), Random.Range(-4, 4)); 
-            
+            if (Mathf.Abs((Vector2.Distance((Vector2)transform.position, newTarget))) < targetDistance)
+            {
+                prevPos = newTarget;
+                newTarget = new Vector2(Random.Range(-11, 5), Random.Range(-3, 6));
+
+            }
         }
         //print(Mathf.Abs((Vector2.Distance(prevPos, newTarget))));
 
@@ -76,7 +79,7 @@ public class sampleEnemyRunSpot : MonoBehaviour {
         {
             if (isDragging)
             {
-                HarvestManager.hm.ingredientCountB++;
+                //HarvestManager.hm.ingredientCountB++;
                 HarvestManager.hm.BagAddition();
                 Destroy(gameObject);
             }
