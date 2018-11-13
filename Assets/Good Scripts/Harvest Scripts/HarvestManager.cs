@@ -42,9 +42,14 @@ public class HarvestManager : MonoBehaviour {
 
     public GameObject[] buttons;
     public bool[] spellIngredient;
+
+    public enemyHarvest eH;
+
+    public int gameState;
     // Use this for initialization
     void Start()
     {
+        gameState = 0;
         hm = this;
         //  bag.Add(ingredientCountA);
         //  bag.Remove(3);
@@ -144,50 +149,56 @@ public class HarvestManager : MonoBehaviour {
         {
             print("PIZZA TIME");
             spellText.text = "PIZZA SLAM!";
+            eH.health -= 10;
            
         }
         if (spellIngredient[0] && spellIngredient[1] && spellIngredient[3])
         {
             print("PIZZA TIME");
             spellText.text = "Meatball Parmageddon";
+            eH.health -= 10;
 
-           
+
         }
         if (spellIngredient[0] && spellIngredient[1] && spellIngredient[4])
         {
             print("PIZZA TIME");
             spellText.text = "Socked Cheese";
-            
+            eH.health -= 10;
+
         }
         if (spellIngredient[1] && spellIngredient[2] && spellIngredient[3])
         {
             print("PIZZA TIME");
             spellText.text = "Chicken Parm Pulverizer";
-            
+            eH.health -= 10;
+
         }
         if (spellIngredient[0] && spellIngredient[2] && spellIngredient[3])
         {
             print("PIZZA TIME");
             spellText.text = "Meatball Submission";
-           
-        }
-        if (spellIngredient[1] && spellIngredient[3] && spellIngredient[4])
-        {
-            print("PIZZA TIME");
-            spellText.text = "Something disgusting";
+            eH.health -= 10;
 
         }
         if (spellIngredient[1] && spellIngredient[3] && spellIngredient[4])
         {
             print("PIZZA TIME");
-            spellText.text = "Something disgusting";
-
+            spellText.text = "Food Abomination";
+            eH.health -= 10;
         }
+        if (spellIngredient[1] && spellIngredient[2] && spellIngredient[4])
+        {
+            print("PIZZA TIME");
+            spellText.text = "Sock Soup w/ Cheese";
+            eH.health -= 10;
+        }
+
         if (spellIngredient[2] && spellIngredient[3] && spellIngredient[4])
         {
             print("PIZZA TIME");
             spellText.text = "Spaghetti and Feetballs (Spaghetti not included)";
-           
+            eH.health -= 10;
         }
        
        
@@ -195,6 +206,7 @@ public class HarvestManager : MonoBehaviour {
         {
             buttons[i].GetComponent<Image>().color = Color.white;
         }
+        totalIngredients = 0;
         spellIngredient[0] = false;
         spellIngredient[1] = false;
         spellIngredient[2] = false;
