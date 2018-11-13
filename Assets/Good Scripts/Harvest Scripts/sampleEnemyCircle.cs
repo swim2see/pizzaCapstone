@@ -53,6 +53,11 @@ public class sampleEnemyCircle : MonoBehaviour {
             {
                 //HarvestManager.hm.ingredientCountC++;
                 HarvestManager.hm.BagAddition();
+                HarvestManager.hm.bag.Add(HarvestManager.hm.sauce);
+                HarvestManager.hm.sauceCount++;
+
+                HarvestManager.hm.bag.Add(HarvestManager.hm.sock);
+                HarvestManager.hm.sockCount++;
                 Destroy(gameObject);
             }
         }

@@ -60,11 +60,12 @@ public class grossIngredient : MonoBehaviour {
     {
         if (collision.gameObject.tag == "bag")
         {
-            if (isDragging)
-            {
-                
+
+            HarvestManager.hm.bag.Add(HarvestManager.hm.sock);
+            HarvestManager.hm.bag.Add(HarvestManager.hm.sock);
+            HarvestManager.hm.sockCount += 2;
                 Destroy(gameObject);
-            }
+            
         }
     }
 }

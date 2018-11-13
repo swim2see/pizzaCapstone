@@ -7,12 +7,14 @@ using UnityEngine.EventSystems;
 
 public class HarvestManager : MonoBehaviour {
     public static HarvestManager hm;
+    [Header ("Bag Ints")]
     public int bread;
     public int cheese;
     public int sauce;
     public int meat;
     public int sock;
 
+    [Header ("Ingredient Counts")]
     public int breadCount;
     public int cheeseCount;
     public int sauceCount;
@@ -20,13 +22,15 @@ public class HarvestManager : MonoBehaviour {
     public int sockCount;
 
     public int totalIngredients;
-
+    [Header ("Text")]
     public Text breadText;
     public Text cheeseText;
     public Text sauceText;
     public Text meatText;
     public Text sockText;
+    public Text spellText;
 
+    [Header ("Bag")]
     public List<int> bag = new List<int>();
    
 
@@ -59,10 +63,10 @@ public class HarvestManager : MonoBehaviour {
         //ingredientTextB.text = "Ingredient B: " + ingredientCountB.ToString();
         //ingredientTextC.text = "Ingredient C: " + ingredientCountC.ToString();
         breadText.text = "Bread: " + breadCount.ToString();
-        cheeseText.text = "Cheese: " + breadCount.ToString();
-        sauceText.text = "Sauce: " + breadCount.ToString();
-        meatText.text = "Meat: " + breadCount.ToString();
-        sockText.text = "Socks: " + breadCount.ToString();
+        cheeseText.text = "Cheese: " + cheeseCount.ToString();
+        sauceText.text = "Sauce: " + sauceCount.ToString();
+        meatText.text = "Meat: " + meatCount.ToString();
+        sockText.text = "Socks: " + sockCount.ToString();
         if (totalIngredients == 3)
         {
             makeASpell();
@@ -75,121 +79,127 @@ public class HarvestManager : MonoBehaviour {
 
     public void Button1()
     {
-        buttons[0].GetComponent<Image>().color = Color.red;
-        totalIngredients++;
-        spellIngredient[0] = true;
-        bag.Remove(bread);
-        breadCount--;
+        if (!spellIngredient[0] && breadCount>0)
+        {
+            buttons[0].GetComponent<Image>().color = Color.red;
+            totalIngredients++;
+            spellIngredient[0] = true;
+            bag.Remove(bread);
+            breadCount--;
+        }
 
     }
     public void Button2()
     {
-        buttons[1].GetComponent<Image>().color = Color.red;
-        totalIngredients++;
-        spellIngredient[1] = true;
-        bag.Remove(sauce);
-        sauceCount--;
+        if (!spellIngredient[1] && cheeseCount > 0)
+        {
+            buttons[1].GetComponent<Image>().color = Color.red;
+            totalIngredients++;
+            spellIngredient[1] = true;
+            bag.Remove(cheese);
+            cheeseCount--;
+        }
     }
     public void Button3()
     {
-        buttons[2].GetComponent<Image>().color = Color.red;
-        totalIngredients++;
-        spellIngredient[2] = true;
-        bag.Remove(cheese);
-        cheeseCount--;
+        if (!spellIngredient[2] && sauceCount > 0)
+        {
+            buttons[2].GetComponent<Image>().color = Color.red;
+            totalIngredients++;
+            spellIngredient[2] = true;
+            bag.Remove(sauce);
+            sauceCount--;
+        }
     }
     public void Button4()
     {
-        buttons[3].GetComponent<Image>().color = Color.red;
-        totalIngredients++;
-        spellIngredient[3] = true;
-        bag.Remove(meat);
-        meatCount--;
+        if (!spellIngredient[3] && meatCount > 0)
+        {
+            buttons[3].GetComponent<Image>().color = Color.red;
+            totalIngredients++;
+            spellIngredient[3] = true;
+            bag.Remove(meat);
+            meatCount--;
+        }
     }
     public void Button5()
     {
-        buttons[4].GetComponent<Image>().color = Color.red;
-        totalIngredients++;
-        spellIngredient[4] = true;
-        bag.Remove(sock);
-        sockCount--;
+        if (!spellIngredient[4] && sockCount > 0)
+        {
+            buttons[4].GetComponent<Image>().color = Color.red;
+            totalIngredients++;
+            spellIngredient[4] = true;
+            bag.Remove(sock);
+            sockCount--;
+        }
     }
     public void makeASpell()
     {
+        //0= bread
+        //1= cheese
+        //2=sauce
+        //3=meat
+        //4=sock
         if(spellIngredient[0] && spellIngredient[1] && spellIngredient[2])
         {
             print("PIZZA TIME");
-            for (int i = 0; i < buttons.Length; i++)
-            {
-                buttons[i].GetComponent<Image>().color = Color.white;
-            }
+            spellText.text = "PIZZA SLAM!";
+           
         }
         if (spellIngredient[0] && spellIngredient[1] && spellIngredient[3])
         {
             print("PIZZA TIME");
-            for (int i = 0; i < buttons.Length; i++)
-            {
-                buttons[i].GetComponent<Image>().color = Color.white;
-            }
+            spellText.text = "Meatball Parmageddon";
+
+           
         }
         if (spellIngredient[0] && spellIngredient[1] && spellIngredient[4])
         {
             print("PIZZA TIME");
-            for (int i = 0; i < buttons.Length; i++)
-            {
-                buttons[i].GetComponent<Image>().color = Color.white;
-            }
+            spellText.text = "Socked Cheese";
+            
         }
         if (spellIngredient[1] && spellIngredient[2] && spellIngredient[3])
         {
             print("PIZZA TIME");
-            for (int i = 0; i < buttons.Length; i++)
-            {
-                buttons[i].GetComponent<Image>().color = Color.white;
-            }
+            spellText.text = "Chicken Parm Pulverizer";
+            
         }
-        if (spellIngredient[1] && spellIngredient[2] && spellIngredient[4])
+        if (spellIngredient[0] && spellIngredient[2] && spellIngredient[3])
         {
             print("PIZZA TIME");
-            for (int i = 0; i < buttons.Length; i++)
-            {
-                buttons[i].GetComponent<Image>().color = Color.white;
-            }
+            spellText.text = "Meatball Submission";
+           
+        }
+        if (spellIngredient[1] && spellIngredient[3] && spellIngredient[4])
+        {
+            print("PIZZA TIME");
+            spellText.text = "Something disgusting";
+
+        }
+        if (spellIngredient[1] && spellIngredient[3] && spellIngredient[4])
+        {
+            print("PIZZA TIME");
+            spellText.text = "Something disgusting";
+
         }
         if (spellIngredient[2] && spellIngredient[3] && spellIngredient[4])
         {
             print("PIZZA TIME");
-            for (int i = 0; i < buttons.Length; i++)
-            {
-                buttons[i].GetComponent<Image>().color = Color.white;
-            }
+            spellText.text = "Spaghetti and Feetballs (Spaghetti not included)";
+           
         }
-        if (spellIngredient[1] && spellIngredient[2] && spellIngredient[5])
+       
+       
+        for (int i = 0; i < buttons.Length; i++)
         {
-            print("PIZZA TIME");
-            for (int i = 0; i < buttons.Length; i++)
-            {
-                buttons[i].GetComponent<Image>().color = Color.white;
-            }
+            buttons[i].GetComponent<Image>().color = Color.white;
         }
-        if (spellIngredient[2] && spellIngredient[3] && spellIngredient[4])
-        {
-            print("PIZZA TIME");
-            for (int i = 0; i < buttons.Length; i++)
-            {
-                buttons[i].GetComponent<Image>().color = Color.white;
-            }
-        }
-        if (spellIngredient[2] && spellIngredient[3] && spellIngredient[5])
-        {
-            print("PIZZA TIME");
-            for (int i = 0; i < buttons.Length; i++)
-            {
-                buttons[i].GetComponent<Image>().color = Color.white;
-            }
-        }
-    
-   
+        spellIngredient[0] = false;
+        spellIngredient[1] = false;
+        spellIngredient[2] = false;
+        spellIngredient[3] = false;
+        spellIngredient[4] = false;
 
 
     }

@@ -81,6 +81,13 @@ public class sampleEnemyRunSpot : MonoBehaviour {
             {
                 //HarvestManager.hm.ingredientCountB++;
                 HarvestManager.hm.BagAddition();
+
+                HarvestManager.hm.bag.Add(HarvestManager.hm.sauce);
+                HarvestManager.hm.sauceCount++;
+
+                HarvestManager.hm.bag.Add(HarvestManager.hm.meat);
+                HarvestManager.hm.meatCount++;
+
                 Destroy(gameObject);
             }
         }
