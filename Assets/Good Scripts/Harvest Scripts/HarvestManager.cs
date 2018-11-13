@@ -32,7 +32,9 @@ public class HarvestManager : MonoBehaviour {
 
     [Header ("Bag")]
     public List<int> bag = new List<int>();
-   
+
+    public GameObject allMyEnemies;
+    public GameObject buttonTray;
 
     public GameObject enemyA;
     public GameObject enemyB;
@@ -46,6 +48,7 @@ public class HarvestManager : MonoBehaviour {
     public enemyHarvest eH;
 
     public int gameState;
+   
     // Use this for initialization
     void Start()
     {
@@ -64,6 +67,26 @@ public class HarvestManager : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
+        if (gameState == 0)
+        {
+            allMyEnemies.SetActive(false);
+        }
+        if (gameState == 1)
+        {
+            allMyEnemies.SetActive(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (gameState == 0)
+            {
+                gameState = 1;
+            }
+            else
+            {
+                gameState = 0;
+            }
+        }
         //ingredientTextA.text = "Ingredient A: " + ingredientCountA.ToString();
         //ingredientTextB.text = "Ingredient B: " + ingredientCountB.ToString();
         //ingredientTextC.text = "Ingredient C: " + ingredientCountC.ToString();

@@ -554,6 +554,8 @@ MonoBehaviour:
   sockText: {fileID: 1858521872}
   spellText: {fileID: 1799451491}
   bag: 
+  allMyEnemies: {fileID: 642470657}
+  buttonTray: {fileID: 978731928}
   enemyA: {fileID: 1279165401257872, guid: de6a2a07e9032e04db1555003399c107, type: 2}
   enemyB: {fileID: 1406671555161302, guid: 35e5eabfd0b24194c954649c4c82c42c, type: 2}
   enemyC: {fileID: 1119189555174078, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
