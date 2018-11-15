@@ -58,6 +58,13 @@ public class HarvestManager : MonoBehaviour {
     public GameObject fireSpellButton;
 
     float gameFeelTimer;
+    bool breadCastable;
+    bool cheeseCastable;
+    bool sauceCastable;
+    bool meatCastable;
+    bool sockCastable;
+
+    public int castability;
     // Use this for initialization
     void Start()
     {
@@ -83,6 +90,35 @@ public class HarvestManager : MonoBehaviour {
             optionSelectButtons.SetActive(true);
             fireSpellButton.SetActive(false);
             buttonTray.SetActive(false);
+
+            if (breadCount > 0)
+            {
+                breadCastable=true;
+                castability += 1;
+            }
+            
+            if (cheeseCount > 0)
+            {
+                cheeseCastable = true;
+                castability += 1;
+            }
+           
+            if (sauceCount > 0)
+            {
+                sauceCastable = true;
+                castability += 1;
+            }
+            if (meatCount > 0)
+            {
+                meatCastable = true;
+                castability += 1;
+            }
+            
+            if (sockCount > 0)
+            {
+                sockCastable = true;
+                castability += 1;
+            }
         }
         else
         {
