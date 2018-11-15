@@ -56,6 +56,8 @@ public class HarvestManager : MonoBehaviour {
 
     public GameObject optionSelectButtons;
     public GameObject fireSpellButton;
+
+    float gameFeelTimer;
     // Use this for initialization
     void Start()
     {
@@ -79,6 +81,7 @@ public class HarvestManager : MonoBehaviour {
             allMyEnemies.SetActive(false);
             entireTimer.gameObject.SetActive(false);
             optionSelectButtons.SetActive(true);
+            fireSpellButton.SetActive(false);
             buttonTray.SetActive(false);
         }
         else
@@ -87,7 +90,8 @@ public class HarvestManager : MonoBehaviour {
         }
         if (gameState == 1)
         {
-           
+            fireSpellButton.SetActive(false);
+            buttonTray.SetActive(false);
             allMyEnemies.SetActive(true);
             collectTimer += Time.deltaTime;
             radialTimer.fillAmount = collectTimer / totalCollectTimer;
@@ -102,10 +106,15 @@ public class HarvestManager : MonoBehaviour {
             buttonTray.SetActive(true);
             fireSpellButton.SetActive(true);
         }
-        else
+       
+
+        if (gameState == 3)
         {
-            fireSpellButton.SetActive(false);
-            buttonTray.SetActive(true);
+            gameFeelTimer -= Time.deltaTime;
+            if (gameFeelTimer <= 0)
+            {
+                gameState = 0;
+            }
         }
        
         //ingredientTextA.text = "Ingredient A: " + ingredientCountA.ToString();
@@ -184,7 +193,7 @@ public class HarvestManager : MonoBehaviour {
         gameState = 1;
         collectTimer = 0;
         entireTimer.gameObject.SetActive(true);
-        totalCollectTimer = 3;
+        //totalCollectTimer = 3;
         
     }
     public void ButtonSelectCook()
@@ -197,6 +206,10 @@ public class HarvestManager : MonoBehaviour {
         if (totalIngredients == 3)
         {
             MakeASpell();
+        }
+        else
+        {
+            gameState = 0;
         }
     }
     public void MakeASpell()
@@ -275,6 +288,8 @@ public class HarvestManager : MonoBehaviour {
         spellIngredient[4] = false;
 
 
+        gameState = 3;
+        gameFeelTimer = 1f;
     }
 
     //public void generateEnemies(int min, int max)
