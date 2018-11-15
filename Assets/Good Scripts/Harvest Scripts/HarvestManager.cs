@@ -13,6 +13,7 @@ public class HarvestManager : MonoBehaviour {
     public int sauce;
     public int meat;
     public int sock;
+    public int numIngredients;
 
     [Header ("Ingredient Counts")]
     public int breadCount;
@@ -65,6 +66,9 @@ public class HarvestManager : MonoBehaviour {
     bool sockCastable;
 
     public int castability;
+
+    public Button cook;
+
     // Use this for initialization
     void Start()
     {
@@ -83,6 +87,18 @@ public class HarvestManager : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
+        numIngredients = (int)(Mathf.Clamp01(breadCount) + Mathf.Clamp01(cheeseCount) + Mathf.Clamp01(sauceCount) + Mathf.Clamp01(meatCount) + Mathf.Clamp01(sockCount));
+        //print(numIngredients);
+
+        if(numIngredients >= 3)
+        {
+            cook.interactable = true;
+        }
+        else
+        {
+            cook.interactable = false;
+        }
+
         if (gameState == 0)
         {
             allMyEnemies.SetActive(false);
@@ -91,34 +107,8 @@ public class HarvestManager : MonoBehaviour {
             fireSpellButton.SetActive(false);
             buttonTray.SetActive(false);
 
-            if (breadCount > 0)
-            {
-                breadCastable=true;
-                castability += 1;
-            }
-            
-            if (cheeseCount > 0)
-            {
-                cheeseCastable = true;
-                castability += 1;
-            }
            
-            if (sauceCount > 0)
-            {
-                sauceCastable = true;
-                castability += 1;
-            }
-            if (meatCount > 0)
-            {
-                meatCastable = true;
-                castability += 1;
-            }
-            
-            if (sockCount > 0)
-            {
-                sockCastable = true;
-                castability += 1;
-            }
+           
         }
         else
         {
@@ -163,6 +153,7 @@ public class HarvestManager : MonoBehaviour {
         sockText.text = "Socks: " + sockCount.ToString();
         
     }
+   
     public void BagAddition()
     {
         bagObject.transform.DOPunchScale(new Vector3(1, 1, 0), .5f, 1, 0);
