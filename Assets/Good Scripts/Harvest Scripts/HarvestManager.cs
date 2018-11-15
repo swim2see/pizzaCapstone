@@ -32,7 +32,9 @@ public class HarvestManager : MonoBehaviour {
 
     [Header ("Bag")]
     public List<int> bag = new List<int>();
-   
+
+    public GameObject allMyEnemies;
+    public GameObject buttonTray;
 
     public GameObject enemyA;
     public GameObject enemyB;
@@ -42,9 +44,22 @@ public class HarvestManager : MonoBehaviour {
 
     public GameObject[] buttons;
     public bool[] spellIngredient;
+
+    public enemyHarvest eH;
+
+    public int gameState;
+
+    float collectTimer;
+    public float totalCollectTimer;
+    public Image radialTimer;
+    public GameObject entireTimer;
+
+    public GameObject optionSelectButtons;
+    public GameObject fireSpellButton;
     // Use this for initialization
     void Start()
     {
+        gameState = 0;
         hm = this;
         //  bag.Add(ingredientCountA);
         //  bag.Remove(3);
@@ -59,6 +74,40 @@ public class HarvestManager : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
+        if (gameState == 0)
+        {
+            allMyEnemies.SetActive(false);
+            entireTimer.gameObject.SetActive(false);
+            optionSelectButtons.SetActive(true);
+            buttonTray.SetActive(false);
+        }
+        else
+        {
+            optionSelectButtons.SetActive(false);
+        }
+        if (gameState == 1)
+        {
+           
+            allMyEnemies.SetActive(true);
+            collectTimer += Time.deltaTime;
+            radialTimer.fillAmount = collectTimer / totalCollectTimer;
+
+            if (collectTimer >= totalCollectTimer)
+            {
+                gameState = 0;
+            }
+        }
+        if (gameState == 2)
+        {
+            buttonTray.SetActive(true);
+            fireSpellButton.SetActive(true);
+        }
+        else
+        {
+            fireSpellButton.SetActive(false);
+            buttonTray.SetActive(true);
+        }
+       
         //ingredientTextA.text = "Ingredient A: " + ingredientCountA.ToString();
         //ingredientTextB.text = "Ingredient B: " + ingredientCountB.ToString();
         //ingredientTextC.text = "Ingredient C: " + ingredientCountC.ToString();
@@ -67,10 +116,7 @@ public class HarvestManager : MonoBehaviour {
         sauceText.text = "Sauce: " + sauceCount.ToString();
         meatText.text = "Meat: " + meatCount.ToString();
         sockText.text = "Socks: " + sockCount.ToString();
-        if (totalIngredients == 3)
-        {
-            makeASpell();
-        }
+        
     }
     public void BagAddition()
     {
@@ -133,7 +179,27 @@ public class HarvestManager : MonoBehaviour {
             sockCount--;
         }
     }
-    public void makeASpell()
+    public void ButtonSelectCollect()
+    {
+        gameState = 1;
+        collectTimer = 0;
+        entireTimer.gameObject.SetActive(true);
+        totalCollectTimer = 3;
+        
+    }
+    public void ButtonSelectCook()
+    {
+        gameState = 2;
+
+    }
+    public void SendSpell()
+    {
+        if (totalIngredients == 3)
+        {
+            MakeASpell();
+        }
+    }
+    public void MakeASpell()
     {
         //0= bread
         //1= cheese
@@ -144,50 +210,56 @@ public class HarvestManager : MonoBehaviour {
         {
             print("PIZZA TIME");
             spellText.text = "PIZZA SLAM!";
+            eH.health -= 10;
            
         }
         if (spellIngredient[0] && spellIngredient[1] && spellIngredient[3])
         {
             print("PIZZA TIME");
             spellText.text = "Meatball Parmageddon";
+            eH.health -= 10;
 
-           
+
         }
         if (spellIngredient[0] && spellIngredient[1] && spellIngredient[4])
         {
             print("PIZZA TIME");
             spellText.text = "Socked Cheese";
-            
+            eH.health -= 10;
+
         }
         if (spellIngredient[1] && spellIngredient[2] && spellIngredient[3])
         {
             print("PIZZA TIME");
             spellText.text = "Chicken Parm Pulverizer";
-            
+            eH.health -= 10;
+
         }
         if (spellIngredient[0] && spellIngredient[2] && spellIngredient[3])
         {
             print("PIZZA TIME");
             spellText.text = "Meatball Submission";
-           
-        }
-        if (spellIngredient[1] && spellIngredient[3] && spellIngredient[4])
-        {
-            print("PIZZA TIME");
-            spellText.text = "Something disgusting";
+            eH.health -= 10;
 
         }
         if (spellIngredient[1] && spellIngredient[3] && spellIngredient[4])
         {
             print("PIZZA TIME");
-            spellText.text = "Something disgusting";
-
+            spellText.text = "Food Abomination";
+            eH.health -= 10;
         }
+        if (spellIngredient[1] && spellIngredient[2] && spellIngredient[4])
+        {
+            print("PIZZA TIME");
+            spellText.text = "Sock Soup w/ Cheese";
+            eH.health -= 10;
+        }
+
         if (spellIngredient[2] && spellIngredient[3] && spellIngredient[4])
         {
             print("PIZZA TIME");
             spellText.text = "Spaghetti and Feetballs (Spaghetti not included)";
-           
+            eH.health -= 10;
         }
        
        
@@ -195,6 +267,7 @@ public class HarvestManager : MonoBehaviour {
         {
             buttons[i].GetComponent<Image>().color = Color.white;
         }
+        totalIngredients = 0;
         spellIngredient[0] = false;
         spellIngredient[1] = false;
         spellIngredient[2] = false;
