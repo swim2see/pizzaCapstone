@@ -55,8 +55,8 @@ public void attack()
         }
         else
         {
-            isDefending = true;
-            enemyBarks.text = "I'm defending!";
+           normAttack();
+            enemyBarks.text = "Take this!";
         }
     }
     if (health < 10)
@@ -91,13 +91,13 @@ public void ResetEnemyBark()
 
 public void normAttack()
 {
-    transform.DOPunchScale(new Vector3(0, .01f, 0), .5f, 1, 0);
+    transform.DOPunchScale(new Vector3(0, 5f, 0), .5f, 1, 0);
 
 
 
     if (halfAttack != true)
     {
-        HarvestManager.hm.p.health -= (int)Random.Range(10, 15);
+        HarvestManager.hm.p.health -= (int)Random.Range(15, 20);
     }
     else
     {

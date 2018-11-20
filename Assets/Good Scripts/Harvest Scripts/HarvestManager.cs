@@ -59,11 +59,6 @@ public class HarvestManager : MonoBehaviour {
     public GameObject fireSpellButton;
 
     float gameFeelTimer;
-    bool breadCastable;
-    bool cheeseCastable;
-    bool sauceCastable;
-    bool meatCastable;
-    bool sockCastable;
 
     public int castability;
 
@@ -73,6 +68,7 @@ public class HarvestManager : MonoBehaviour {
     public GameObject bossEnemy;
 
     public HarvestPlayer p;
+    public GameObject playergameObject;
 
     // Use this for initialization
     void Start()
@@ -94,7 +90,7 @@ public class HarvestManager : MonoBehaviour {
 	void Update () {
         numIngredients = (int)(Mathf.Clamp01(breadCount) + Mathf.Clamp01(cheeseCount) + Mathf.Clamp01(sauceCount) + Mathf.Clamp01(meatCount) + Mathf.Clamp01(sockCount));
         //print(numIngredients);
-
+        print(gameState);
         if(numIngredients >= 3)
         {
             cook.interactable = true;
@@ -111,8 +107,8 @@ public class HarvestManager : MonoBehaviour {
             optionSelectButtons.SetActive(true);
             fireSpellButton.SetActive(false);
             buttonTray.SetActive(false);
-
-           
+            bossEnemy.SetActive(false);
+            playergameObject.SetActive(false);
            
         }
         else
@@ -130,7 +126,9 @@ public class HarvestManager : MonoBehaviour {
             if (collectTimer >= totalCollectTimer)
             {
                 gameState = 3;
+                gameFeelTimer = 2;
                 allMyEnemies.SetActive(false);
+                entireTimer.SetActive(false);
 
             }
         }
@@ -138,12 +136,15 @@ public class HarvestManager : MonoBehaviour {
         {
             buttonTray.SetActive(true);
             fireSpellButton.SetActive(true);
+            bossEnemy.SetActive(true);
+            playergameObject.SetActive(true);
         }
        
 
         if (gameState == 3)
         {
             bossEnemy.SetActive(true);
+            playergameObject.SetActive(true);
             gameFeelTimer -= Time.deltaTime;
             if (gameFeelTimer <= 0)
             {
@@ -153,16 +154,23 @@ public class HarvestManager : MonoBehaviour {
         if (gameState == 4)
         {
             bossEnemy.SetActive(true);
+            playergameObject.SetActive(true);
+            gameFeelTimer = 2;
             bossTurnActions.attack();
-            gameFeelTimer = 3;
             gameState = 6;
+            
+            //gameFeelTimer = 3;
+            
         }
         if (gameState == 6)
         {
-            if (Input.GetMouseButtonDown(0))
+            gameFeelTimer -= Time.deltaTime;
+            if (gameFeelTimer <= 0)
             {
+                
                 gameState = 0;
             }
+            
         }
        
         //ingredientTextA.text = "Ingredient A: " + ingredientCountA.ToString();
@@ -256,10 +264,7 @@ public class HarvestManager : MonoBehaviour {
         {
             MakeASpell();
         }
-        else
-        {
-            gameState = 0;
-        }
+       
     }
     public void MakeASpell()
     {
@@ -323,8 +328,9 @@ public class HarvestManager : MonoBehaviour {
             spellText.text = "Spaghetti and Feetballs (Spaghetti not included)";
             eH.health -= 10;
         }
-       
-       
+        playergameObject.transform.DOPunchScale(new Vector3(0, 5f, 0), .5f, 1, 0);
+
+
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].GetComponent<Image>().color = Color.white;

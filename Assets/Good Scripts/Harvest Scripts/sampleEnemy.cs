@@ -19,7 +19,7 @@ public class sampleEnemy : MonoBehaviour
         //cam = GameObject.Find("Main Camera").GetComponent<CamControl>();
         player = GameObject.FindWithTag("Player");
         transform.position = new Vector2(Random.Range(-6, 6), Random.Range(-3, 3));
-        print(transform.position);
+        //print(transform.position);
 
        
     }
