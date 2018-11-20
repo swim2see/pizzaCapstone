@@ -375,11 +375,12 @@ public class HarvestManager : MonoBehaviour {
             listOut = true;
             ingredientMenu.SetActive(true);
             menuText.text = "Bread: " + breadCount.ToString() + "\n" + "Cheese: " + cheeseCount.ToString() + "\n" + "Sauce: " + sauceCount.ToString() + "\n" + "Meat:" + meatCount.ToString() + "\n" + "Socks:" + sockCount.ToString();
-        }
-        if (listOut == true && Input.GetMouseButtonDown(0))
+        }else if (listOut == true)
         {
+            ingredientMenu.SetActive(false);
             listOut = false;
         }
+        
     }
 
     //public void generateEnemies(int min, int max)
