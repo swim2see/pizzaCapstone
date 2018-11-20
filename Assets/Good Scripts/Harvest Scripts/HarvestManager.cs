@@ -69,6 +69,11 @@ public class HarvestManager : MonoBehaviour {
 
     public Button cook;
 
+    public enemyHarvest bossTurnActions;
+    public GameObject bossEnemy;
+
+    public HarvestPlayer p;
+
     // Use this for initialization
     void Start()
     {
@@ -124,7 +129,9 @@ public class HarvestManager : MonoBehaviour {
 
             if (collectTimer >= totalCollectTimer)
             {
-                gameState = 0;
+                gameState = 3;
+                allMyEnemies.SetActive(false);
+
             }
         }
         if (gameState == 2)
@@ -136,8 +143,23 @@ public class HarvestManager : MonoBehaviour {
 
         if (gameState == 3)
         {
+            bossEnemy.SetActive(true);
             gameFeelTimer -= Time.deltaTime;
             if (gameFeelTimer <= 0)
+            {
+                gameState = 4;
+            }
+        }
+        if (gameState == 4)
+        {
+            bossEnemy.SetActive(true);
+            bossTurnActions.attack();
+            gameFeelTimer = 3;
+            gameState = 6;
+        }
+        if (gameState == 6)
+        {
+            if (Input.GetMouseButtonDown(0))
             {
                 gameState = 0;
             }
