@@ -5,28 +5,39 @@ using UnityEngine;
 
 public class GridMovement : MonoBehaviour
 {
-	private Vector3 startPos;
-	private Transform mTransform;
+    public TileType[] tileTypes;
 
-	public AnimationCurve yCurve;
-	public float curveScale = 0.01f;
+    public int[,] tiles;
 
-	// Use this for initialization
-	void Start ()
-	{
-		//Gathers the player's location and starting position
-		mTransform = this.transform;
-		startPos = mTransform.localPosition;
-	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-		float t = Time.deltaTime;
-		float y = yCurve.Evaluate(t);
+    public int mapSizeX = 10;
+    public int mapSizeY = 10;
 
-		Vector3 targetPos = Vector3.zero;
-		targetPos.y = startPos.y + y;
-		mTransform.localPosition = targetPos;
-	}
+    void Start()
+    {
+        tiles = new int [mapSizeX, mapSizeY];
+
+        for (int x = 0; x < mapSizeX; x++)
+        {
+            for (int y = 0; y < mapSizeY; y++)
+            {
+                tiles[x, y] = 0; 
+            }
+        }
+
+//        tiles[4, 4] = 1;
+        tiles[5, 4] = 1;
+    }
+
+    public void GenerateMapVisual()
+    {
+        for (int x = 0; x < mapSizeX; x++)
+        {
+            for (int y = 0; y < mapSizeY; y++)
+            {
+                TileType tt = tileTypes[tiles[x, y]];
+
+                Instantiate(tt.tileVisualPrefab, new Vector3(x, y, 0), Quaternion.identity);
+            }
+        }
+    }
 }

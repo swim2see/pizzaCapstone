@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerNavigation : MonoBehaviour {
 
-	private float speed = 2.0f;
+	private float speed = 3.0f;
 	private new Vector3 direction;
 	private Transform position;
 

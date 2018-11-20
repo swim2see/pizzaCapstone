@@ -808,7 +808,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.16337204, y: 0.44083858}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -819,7 +819,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.9605207, y: 4.9992394}
+  m_Size: {x: 20, y: 20}
   m_EdgeRadius: 0
 --- !u!50 &348023366
 Rigidbody2D:
@@ -856,6 +856,7 @@ MonoBehaviour:
   pHere: 0
   inMenu: 0
   buttonPressed: 0
+  distanceTrigger: 0
 --- !u!1 &421523198
 GameObject:
   m_ObjectHideFlags: 0
@@ -1393,10 +1394,12 @@ GameObject:
   - component: {fileID: 1009904896}
   - component: {fileID: 1009904894}
   - component: {fileID: 1009904900}
+  - component: {fileID: 1009904903}
   - component: {fileID: 1009904901}
-  - component: {fileID: 1009904902}
+  - component: {fileID: 1009904905}
+  - component: {fileID: 1009904904}
   m_Layer: 0
-  m_Name: Flowchart
+  m_Name: PizzaRat Flowchart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1427,8 +1430,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1009904886}
-  selectedCommands: []
+  - {fileID: 1009904903}
+  selectedCommands:
+  - {fileID: 1009904901}
   variables:
   - {fileID: 1009904889}
   description: 
@@ -1457,7 +1461,7 @@ MonoBehaviour:
   storyText: Ay! Whats can I gets for you?
   description: 
   character: {fileID: 1037724004}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 4f82dd642b4604c4294298a9da8c8a4f, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1483,17 +1487,15 @@ MonoBehaviour:
     serializedVersion: 2
     x: 37
     y: 66
-    width: 139
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
   itemId: 0
   blockName: TalkBlock
   description: 
-  eventHandler: {fileID: 1009904902}
+  eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 1009904900}
-  - {fileID: 1009904901}
   - {fileID: 1009904885}
   - {fileID: 1009904893}
   - {fileID: 1009904899}
@@ -1754,7 +1756,7 @@ MonoBehaviour:
   storyText: Get ova here, ya cazool!
   description: 
   character: {fileID: 1037724004}
-  portrait: {fileID: 21300000, guid: d7ecbad1cbbf62447ba1921132f36908, type: 3}
+  portrait: {fileID: 21300000, guid: 4f82dd642b4604c4294298a9da8c8a4f, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1780,7 +1782,7 @@ MonoBehaviour:
   storyText: Absolutely not, you bozo!
   description: 
   character: {fileID: 1037724004}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 4f82dd642b4604c4294298a9da8c8a4f, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1839,6 +1841,7 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 1009904896}
+  - {fileID: 1009904900}
 --- !u!114 &1009904899
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1871,24 +1874,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1009904883}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemId: 13
   indentLevel: 0
-  storyText: 
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
+  targetObject: {fileID: 348023362}
+  methodName: RegainControl
+  delay: 0
 --- !u!114 &1009904901
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1900,12 +1893,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 14
+  itemId: 15
   indentLevel: 0
-  storyText: 
+  storyText: Ay, you. Get ova here!
   description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
+  character: {fileID: 1037724004}
+  portrait: {fileID: 21300000, guid: 4f82dd642b4604c4294298a9da8c8a4f, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -1915,20 +1908,65 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
---- !u!114 &1009904902
+--- !u!114 &1009904903
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1009904883}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 000864f8e9e1748a39807861d0e60e29, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentBlock: {fileID: 1009904886}
-  keyPressType: 0
-  keyCode: 331
+  nodeRect:
+    serializedVersion: 2
+    x: 202
+    y: 60
+    width: 125
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 14
+  blockName: GetOverHere
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 1009904901}
+  - {fileID: 1009904905}
+  - {fileID: 1009904904}
+--- !u!114 &1009904904
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1009904883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 17
+  indentLevel: 0
+  targetObject: {fileID: 348023362}
+  methodName: ResetTriggerSize
+  delay: 0
+--- !u!114 &1009904905
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1009904883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 16
+  indentLevel: 0
+  targetObject: {fileID: 348023362}
+  methodName: RegainControl
+  delay: 0
 --- !u!1 &1037724003
 GameObject:
   m_ObjectHideFlags: 0
@@ -1962,7 +2000,7 @@ MonoBehaviour:
   nameColor: {r: 0, g: 0, b: 0, a: 1}
   soundEffect: {fileID: 0}
   portraits:
-  - {fileID: 21300000, guid: d7ecbad1cbbf62447ba1921132f36908, type: 3}
+  - {fileID: 21300000, guid: 4f82dd642b4604c4294298a9da8c8a4f, type: 3}
   portraitsFace: 1
   setSayDialog: {fileID: 0}
   description: 
@@ -1979,6 +2017,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1043995502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1043995503}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1043995503
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1043995502}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.9123409, y: 2.4408553, z: 0.16492955}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1065678802
 GameObject:
@@ -2704,7 +2770,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1414466918
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3428,4 +3494,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2145476748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2145476750}
+  - component: {fileID: 2145476749}
+  m_Layer: 0
+  m_Name: Map
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2145476749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2145476748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f626088a87d09a4998f87a0ee5ba6eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileTypes:
+  - name: 
+    tileVisualPrefab: {fileID: 1680819945666600, guid: e4d747a661c1e8f47ba875bb0d35acf9,
+      type: 2}
+  - name: 
+    tileVisualPrefab: {fileID: 1014102700221024, guid: de13cb8cfe55513478f71d2e9e891a21,
+      type: 2}
+  - name: 
+    tileVisualPrefab: {fileID: 1179188043060726, guid: ae585767736119441bfaee6984c4b1b5,
+      type: 2}
+  mapSizeX: 10
+  mapSizeY: 10
+--- !u!4 &2145476750
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2145476748}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.2312084, y: -0.5094449, z: 4.8359375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

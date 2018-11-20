@@ -9,6 +9,10 @@ TagManager:
   - oCircle3
   - OreganoBar
   - NPC
+  - Canvas
+  - Bag
+  - Pan
+  - Ingredient
   layers:
   - Default
   - TransparentFX

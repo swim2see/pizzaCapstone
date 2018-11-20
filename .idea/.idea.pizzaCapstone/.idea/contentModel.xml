@@ -915,11 +915,14 @@
           </e>
         </e>
         <e p="Good Scripts" t="Include">
-          <e p="ComboAttack.cs" t="Include" />
-          <e p="Enemy.cs" t="Include" />
-          <e p="EnemyChefRevamp.cs" t="Include" />
-          <e p="GameManager.cs" t="Include" />
-          <e p="Minigames.cs" t="Include" />
+          <e p="Harvest Scripts" t="Include">
+            <e p="myCursor.cs" t="Include" />
+          </e>
+          <e p="mixScripts" t="Include">
+            <e p="Bag.cs" t="Include" />
+            <e p="Ingredient.cs" t="Include" />
+            <e p="Pan.cs" t="Include" />
+          </e>
           <e p="Overworld Scripts" t="Include">
             <e p="CameraScript.cs" t="Include" />
             <e p="FungusBoolTrigger.cs" t="Include" />
@@ -927,27 +930,7 @@
             <e p="GridMovement.cs" t="Include" />
             <e p="InteractableObject.cs" t="Include" />
             <e p="PlayerNavigation.cs" t="Include" />
-          </e>
-          <e p="Player.cs" t="Include" />
-        </e>
-        <e p="Scripts" t="Include">
-          <e p="Enemy.cs" t="Include" />
-          <e p="enemyAIMaster.cs" t="Include" />
-          <e p="enemyChef.cs" t="Include" />
-          <e p="GameManager.cs" t="Include" />
-          <e p="Ingredient.cs" t="Include" />
-          <e p="LemonSqueeze.cs" t="Include" />
-          <e p="LemonSqueezeMinigame.cs" t="Include" />
-          <e p="OreganoCircle.cs" t="Include" />
-          <e p="OreganoStun.cs" t="Include" />
-          <e p="Player.cs" t="Include" />
-          <e p="potSpinning.cs" t="Include" />
-          <e p="TestScripts" t="Include">
-            <e p="testEnemy.cs" t="Include" />
-            <e p="testEnemyChef.cs" t="Include" />
-            <e p="testGameManager.cs" t="Include" />
-            <e p="testMinigames.cs" t="Include" />
-            <e p="testPlayer.cs" t="Include" />
+            <e p="TileType.cs" t="Include" />
           </e>
         </e>
         <e p="Sounds" t="Include">
