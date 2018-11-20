@@ -10,6 +10,7 @@ TagManager:
   - OreganoBar
   - NPC
   - bag
+  - Enemy
   layers:
   - Default
   - TransparentFX
