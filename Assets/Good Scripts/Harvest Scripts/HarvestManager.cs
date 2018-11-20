@@ -30,6 +30,7 @@ public class HarvestManager : MonoBehaviour {
     public Text meatText;
     public Text sockText;
     public Text spellText;
+    public Text menuText;
 
     [Header ("Bag")]
     public List<int> bag = new List<int>();
@@ -70,6 +71,10 @@ public class HarvestManager : MonoBehaviour {
     public HarvestPlayer p;
     public GameObject playergameObject;
 
+    public GameObject ingredientMenu;
+
+    bool listOut;
+
     // Use this for initialization
     void Start()
     {
@@ -85,9 +90,14 @@ public class HarvestManager : MonoBehaviour {
         //  }
         //}
         //generateEnemies(3,5);
+        listOut = false;
     }
 	// Update is called once per frame
 	void Update () {
+        if (!listOut)
+        {
+            ingredientMenu.SetActive(false);
+        }
         numIngredients = (int)(Mathf.Clamp01(breadCount) + Mathf.Clamp01(cheeseCount) + Mathf.Clamp01(sauceCount) + Mathf.Clamp01(meatCount) + Mathf.Clamp01(sockCount));
         //print(numIngredients);
         print(gameState);
@@ -109,6 +119,7 @@ public class HarvestManager : MonoBehaviour {
             buttonTray.SetActive(false);
             bossEnemy.SetActive(false);
             playergameObject.SetActive(false);
+            
            
         }
         else
@@ -123,16 +134,17 @@ public class HarvestManager : MonoBehaviour {
             collectTimer += Time.deltaTime;
             radialTimer.fillAmount = collectTimer / totalCollectTimer;
 
-            GameObject[] numberOfEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-            if (numberOfEnemies.Length < 12)
-            {
-                for (int i = 0; i < 3; i++)
-                {
-                    Instantiate(enemyA, transform.position, Quaternion.identity);
-                    Instantiate(enemyB, transform.position, Quaternion.identity);
-                    Instantiate(enemyC, transform.position, Quaternion.identity);
-                }
-            }
+            //GameObject[] numberOfEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+            //if (numberOfEnemies.Length < 16)
+            //{
+            //    for (int i = 0; i < 3; i++)
+            //    {
+            //        Instantiate(enemyA, transform.position, Quaternion.Euler(new Vector3 (0,0,-90)));
+            //        Instantiate(enemyB, transform.position, Quaternion.identity);
+            //        Instantiate(enemyC, transform.position, Quaternion.identity);
+            //    }
+                
+            //}
             if (collectTimer >= totalCollectTimer)
             {
                 gameState = 3;
@@ -287,14 +299,14 @@ public class HarvestManager : MonoBehaviour {
         {
             print("PIZZA TIME");
             spellText.text = "PIZZA SLAM!";
-            eH.health -= 10;
+            eH.health -= 35;
            
         }
         if (spellIngredient[0] && spellIngredient[1] && spellIngredient[3])
         {
             print("PIZZA TIME");
             spellText.text = "Meatball Parmageddon";
-            eH.health -= 10;
+            eH.health -= 25;
 
 
         }
@@ -302,41 +314,41 @@ public class HarvestManager : MonoBehaviour {
         {
             print("PIZZA TIME");
             spellText.text = "Socked Cheese";
-            eH.health -= 10;
+            eH.health -= 3;
 
         }
         if (spellIngredient[1] && spellIngredient[2] && spellIngredient[3])
         {
             print("PIZZA TIME");
             spellText.text = "Chicken Parm Pulverizer";
-            eH.health -= 10;
+            eH.health -= 20;
 
         }
         if (spellIngredient[0] && spellIngredient[2] && spellIngredient[3])
         {
             print("PIZZA TIME");
             spellText.text = "Meatball Submission";
-            eH.health -= 10;
+            eH.health -= 15;
 
         }
         if (spellIngredient[1] && spellIngredient[3] && spellIngredient[4])
         {
             print("PIZZA TIME");
             spellText.text = "Food Abomination";
-            eH.health -= 10;
+            eH.health -= 1;
         }
         if (spellIngredient[1] && spellIngredient[2] && spellIngredient[4])
         {
             print("PIZZA TIME");
             spellText.text = "Sock Soup w/ Cheese";
-            eH.health -= 10;
+            eH.health -= 4;
         }
 
         if (spellIngredient[2] && spellIngredient[3] && spellIngredient[4])
         {
             print("PIZZA TIME");
             spellText.text = "Spaghetti and Feetballs (Spaghetti not included)";
-            eH.health -= 10;
+            eH.health -= 8;
         }
         playergameObject.transform.DOPunchScale(new Vector3(0, 5f, 0), .5f, 1, 0);
 
@@ -355,6 +367,19 @@ public class HarvestManager : MonoBehaviour {
 
         gameState = 3;
         gameFeelTimer = 1f;
+    }
+    public void BagCheck()
+    {
+        
+        if (gameState == 0 && listOut==false) {
+            listOut = true;
+            ingredientMenu.SetActive(true);
+            menuText.text = "Bread: " + breadCount.ToString() + "\n" + "Cheese: " + cheeseCount.ToString() + "\n" + "Sauce: " + sauceCount.ToString() + "\n" + "Meat:" + meatCount.ToString() + "\n" + "Socks:" + sockCount.ToString();
+        }
+        if (listOut == true && Input.GetMouseButtonDown(0))
+        {
+            listOut = false;
+        }
     }
 
     //public void generateEnemies(int min, int max)
