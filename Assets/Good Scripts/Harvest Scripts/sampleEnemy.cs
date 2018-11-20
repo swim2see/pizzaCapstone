@@ -68,6 +68,10 @@ public class sampleEnemy : MonoBehaviour
             {
                 HarvestManager.hm.bag.Add(HarvestManager.hm.bread);
                 HarvestManager.hm.breadCount++;
+                HarvestManager.hm.bag.Add(HarvestManager.hm.bread);
+                HarvestManager.hm.breadCount++;
+                HarvestManager.hm.bag.Add(HarvestManager.hm.cheese);
+                HarvestManager.hm.cheeseCount++;
                 HarvestManager.hm.bag.Add(HarvestManager.hm.cheese);
                 HarvestManager.hm.cheeseCount++;
                 HarvestManager.hm.BagAddition();

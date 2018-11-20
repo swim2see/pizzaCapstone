@@ -32,48 +32,50 @@ public class HarvestManager : MonoBehaviour {
     public Text spellText;
     public Text menuText;
 
-    [Header ("Bag")]
+    [Header ("Bag Object")]
     public List<int> bag = new List<int>();
+    public GameObject bagObject;
+    public GameObject ingredientMenu;
+    bool listOut;
 
+
+    [Header("GameObject Parents")]
     public GameObject allMyEnemies;
     public GameObject buttonTray;
 
+    [Header ("Enemy Prefabs")]
     public GameObject enemyA;
     public GameObject enemyB;
     public GameObject enemyC;
 
-    public GameObject bagObject;
 
-    public GameObject[] buttons;
-    public bool[] spellIngredient;
-
+    [Header ("Public Classes")]
     public enemyHarvest eH;
+    public HarvestPlayer p;
+    public enemyHarvest bossTurnActions;
 
     public int gameState;
 
+    [Header ("Timers")]
     float collectTimer;
     public float totalCollectTimer;
     public Image radialTimer;
     public GameObject entireTimer;
-
-    public GameObject optionSelectButtons;
-    public GameObject fireSpellButton;
-
     float gameFeelTimer;
 
-    public int castability;
-
+    [Header("GameState Functions")]
+    public GameObject optionSelectButtons;
+    public GameObject fireSpellButton;
+    public GameObject[] buttons;
+    public bool[] spellIngredient;
     public Button cook;
 
-    public enemyHarvest bossTurnActions;
+    //public int castability;
+    
     public GameObject bossEnemy;
-
-    public HarvestPlayer p;
     public GameObject playergameObject;
 
-    public GameObject ingredientMenu;
-
-    bool listOut;
+   
 
     // Use this for initialization
     void Start()
@@ -314,6 +316,7 @@ public class HarvestManager : MonoBehaviour {
         {
             print("PIZZA TIME");
             spellText.text = "Socked Cheese";
+            HarvestPlayer.hp.health += 10;
             eH.health -= 3;
 
         }

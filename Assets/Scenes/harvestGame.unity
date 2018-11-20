@@ -908,12 +908,22 @@ MonoBehaviour:
   spellText: {fileID: 1799451491}
   menuText: {fileID: 1807161466}
   bag: 
+  bagObject: {fileID: 1203952422}
+  ingredientMenu: {fileID: 1610485176}
   allMyEnemies: {fileID: 642470657}
   buttonTray: {fileID: 978731928}
   enemyA: {fileID: 1279165401257872, guid: de6a2a07e9032e04db1555003399c107, type: 2}
   enemyB: {fileID: 1406671555161302, guid: 35e5eabfd0b24194c954649c4c82c42c, type: 2}
   enemyC: {fileID: 1119189555174078, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
-  bagObject: {fileID: 1203952422}
+  eH: {fileID: 1662960877}
+  p: {fileID: 1351041573}
+  bossTurnActions: {fileID: 1662960877}
+  gameState: 0
+  totalCollectTimer: 5
+  radialTimer: {fileID: 1242233491}
+  entireTimer: {fileID: 1087207255}
+  optionSelectButtons: {fileID: 2019486509}
+  fireSpellButton: {fileID: 945584320}
   buttons:
   - {fileID: 932443726}
   - {fileID: 1574291816}
@@ -921,20 +931,9 @@ MonoBehaviour:
   - {fileID: 2105771897}
   - {fileID: 2076622910}
   spellIngredient: 0000000000
-  eH: {fileID: 1662960877}
-  gameState: 0
-  totalCollectTimer: 5
-  radialTimer: {fileID: 1242233491}
-  entireTimer: {fileID: 1087207255}
-  optionSelectButtons: {fileID: 2019486509}
-  fireSpellButton: {fileID: 945584320}
-  castability: 0
   cook: {fileID: 1376957499}
-  bossTurnActions: {fileID: 1662960877}
   bossEnemy: {fileID: 1662960874}
-  p: {fileID: 1351041573}
   playergameObject: {fileID: 1351041571}
-  ingredientMenu: {fileID: 1610485176}
 --- !u!4 &742754707
 Transform:
   m_ObjectHideFlags: 0
@@ -2252,26 +2251,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 21
       objectReference: {fileID: 0}
-    - target: {fileID: 212948511876920746, guid: 4fae9070051650f40bc79e06931f7a3b,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1066574829571794, guid: 4fae9070051650f40bc79e06931f7a3b, type: 2}
       propertyPath: m_Name
       value: GrossRat (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4794451529263414, guid: 4fae9070051650f40bc79e06931f7a3b, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.01963622
-      objectReference: {fileID: 0}
-    - target: {fileID: 4794451529263414, guid: 4fae9070051650f40bc79e06931f7a3b, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.9825401
-      objectReference: {fileID: 0}
-    - target: {fileID: 1066574829571794, guid: 4fae9070051650f40bc79e06931f7a3b, type: 2}
-      propertyPath: m_TagString
-      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fae9070051650f40bc79e06931f7a3b, type: 2}
@@ -2513,11 +2495,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4292483456271710, guid: 35e5eabfd0b24194c954649c4c82c42c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -13.841638
+      value: -13.8
       objectReference: {fileID: 0}
     - target: {fileID: 4292483456271710, guid: 35e5eabfd0b24194c954649c4c82c42c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.11271543
+      value: 0.043
       objectReference: {fileID: 0}
     - target: {fileID: 4292483456271710, guid: 35e5eabfd0b24194c954649c4c82c42c, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3209,31 +3191,6 @@ Prefab:
     - target: {fileID: 4977405277067094, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
       propertyPath: m_RootOrder
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119189555174078, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119189555174078, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212901872418606972, guid: 29e6cba55087fa44a978fe9ee6d2465e,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4977405277067094, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.01963622
-      objectReference: {fileID: 0}
-    - target: {fileID: 4977405277067094, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.9825401
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119189555174078, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
-      propertyPath: m_TagString
-      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
@@ -4332,7 +4289,7 @@ MonoBehaviour:
   enemyBarks: {fileID: 1520656329}
   possibleBarks:
   - Take this!
-  - You'll never save dollar pizza kid!
+  - You'll never save dollar pizza, kid!
   - This city belongs to Big Pizza!
   halfAttack: 0
   dead: 0
@@ -4490,7 +4447,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -336, y: 11}
+  m_AnchoredPosition: {x: -336, y: 17.8}
   m_SizeDelta: {x: 152.1, y: 11.3}
   m_Pivot: {x: 0.12217952, y: 0.5}
 --- !u!114 &1799451491
