@@ -11,6 +11,8 @@ TagManager:
   - NPC
   - bag
   - Enemy
+  - Ingredient
+  - IngredientMenu
   layers:
   - Default
   - TransparentFX

@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 50262789540111572}
   m_Layer: 8
   m_Name: Red Rat
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,9 +36,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1119189555174078}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.01, y: 3.043, z: 0}
-  m_LocalScale: {x: 0.331, y: 0.331, z: 0.331}
+  m_LocalRotation: {x: 0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -22.916029, y: 0.17500554, z: 0}
+  m_LocalScale: {x: 0.01963621, y: 0.9825397, z: 0.331}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
