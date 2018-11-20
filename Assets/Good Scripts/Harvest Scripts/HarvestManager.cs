@@ -123,6 +123,13 @@ public class HarvestManager : MonoBehaviour {
             collectTimer += Time.deltaTime;
             radialTimer.fillAmount = collectTimer / totalCollectTimer;
 
+            for(int i = 0; i < 3; i++)
+            {
+                Instantiate(enemyA, transform.position, Quaternion.identity);
+                Instantiate(enemyB, transform.position, Quaternion.identity);
+                Instantiate(enemyC, transform.position, Quaternion.identity);
+            }
+
             if (collectTimer >= totalCollectTimer)
             {
                 gameState = 3;
