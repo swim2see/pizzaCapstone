@@ -80,6 +80,10 @@ public class HarvestManager : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        //ensures enemies don't activate when game starts
+        allMyEnemies.SetActive(false);
+        entireTimer.gameObject.SetActive(false);
+        
         gameState = 0;
         hm = this;
         //  bag.Add(ingredientCountA);
@@ -112,10 +116,11 @@ public class HarvestManager : MonoBehaviour {
             cook.interactable = false;
         }
 
+	    //Cook/Collect selection menu 
         if (gameState == 0)
         {
-            allMyEnemies.SetActive(false);
-            entireTimer.gameObject.SetActive(false);
+            //allMyEnemies.SetActive(false);
+            //entireTimer.gameObject.SetActive(false);
             optionSelectButtons.SetActive(true);
             fireSpellButton.SetActive(false);
             buttonTray.SetActive(false);
@@ -128,10 +133,11 @@ public class HarvestManager : MonoBehaviour {
         {
             optionSelectButtons.SetActive(false);
         }
+	    //Harvesting portion 
         if (gameState == 1)
         {
-            fireSpellButton.SetActive(false);
-            buttonTray.SetActive(false);
+            //fireSpellButton.SetActive(false);
+            //buttonTray.SetActive(false);
             allMyEnemies.SetActive(true);
             collectTimer += Time.deltaTime;
             radialTimer.fillAmount = collectTimer / totalCollectTimer;
@@ -151,6 +157,7 @@ public class HarvestManager : MonoBehaviour {
             {
                 gameState = 3;
                 gameFeelTimer = 2;
+                //Deactivates the enemies and timer
                 allMyEnemies.SetActive(false);
                 entireTimer.SetActive(false);
 
@@ -213,6 +220,7 @@ public class HarvestManager : MonoBehaviour {
         bagObject.transform.DOPunchScale(new Vector3(1, 1, 0), .5f, 1, 0);
     }
 
+    //Bread button
     public void Button1()
     {
         if (!spellIngredient[0] && breadCount>0)
@@ -223,8 +231,20 @@ public class HarvestManager : MonoBehaviour {
             bag.Remove(bread);
             breadCount--;
         }
+        
+        //Allows you to deselect an ingredient
+        else if (spellIngredient[0])
+        {
+            buttons[0].GetComponent<Image>().color = Color.clear;
+            totalIngredients--;
+            spellIngredient[0] = false;
+            bag.Add(bread);
+            breadCount++;
+        }
 
     }
+    
+    //Cheese button
     public void Button2()
     {
         if (!spellIngredient[1] && cheeseCount > 0)
@@ -235,7 +255,19 @@ public class HarvestManager : MonoBehaviour {
             bag.Remove(cheese);
             cheeseCount--;
         }
+        
+        //Allows you to deselect an ingredient
+        else if (spellIngredient[1])
+        {
+            buttons[1].GetComponent<Image>().color = Color.clear;
+            totalIngredients--;
+            spellIngredient[1] = false;
+            bag.Add(cheese);
+            cheeseCount++;
+        }
     }
+    
+    //sauce button
     public void Button3()
     {
         if (!spellIngredient[2] && sauceCount > 0)
@@ -246,7 +278,19 @@ public class HarvestManager : MonoBehaviour {
             bag.Remove(sauce);
             sauceCount--;
         }
+        
+        //Allows you to deselect an ingredient
+        else if (spellIngredient[2])
+        {
+            buttons[2].GetComponent<Image>().color = Color.clear;
+            totalIngredients--;
+            spellIngredient[2] = false;
+            bag.Add(sauce);
+            sauceCount++;
+        }
     }
+    
+    //meat button
     public void Button4()
     {
         if (!spellIngredient[3] && meatCount > 0)
@@ -257,7 +301,19 @@ public class HarvestManager : MonoBehaviour {
             bag.Remove(meat);
             meatCount--;
         }
+        
+        //Allows you to deselect an ingredient
+        else if (spellIngredient[3])
+        {
+            buttons[3].GetComponent<Image>().color = Color.clear;
+            totalIngredients--;
+            spellIngredient[3] = false;
+            bag.Add(meat);
+            meatCount++;
+        }
     }
+    
+    //sock button 
     public void Button5()
     {
         if (!spellIngredient[4] && sockCount > 0)
@@ -267,6 +323,16 @@ public class HarvestManager : MonoBehaviour {
             spellIngredient[4] = true;
             bag.Remove(sock);
             sockCount--;
+        }
+        
+        //Allows you to deselect an ingredient
+         else if (spellIngredient[4])
+        {
+            buttons[4].GetComponent<Image>().color = Color.clear;
+            totalIngredients--;
+            spellIngredient[4] = false;
+            bag.Add(sock);
+            sockCount++;
         }
     }
     public void ButtonSelectCollect()
@@ -383,6 +449,11 @@ public class HarvestManager : MonoBehaviour {
             ingredientMenu.SetActive(false);
             listOut = false;
         }
+        
+    }
+
+    public void SelectIngredient(int x)
+    {
         
     }
 
