@@ -223,118 +223,111 @@ public class HarvestManager : MonoBehaviour {
     //Bread button
     public void Button1()
     {
-        if (!spellIngredient[0] && breadCount>0)
-        {
-            buttons[0].GetComponent<Image>().color = Color.red;
-            totalIngredients++;
-            spellIngredient[0] = true;
-            bag.Remove(bread);
-            breadCount--;
-        }
-        
-        //Allows you to deselect an ingredient
-        else if (spellIngredient[0])
-        {
-            buttons[0].GetComponent<Image>().color = Color.clear;
-            totalIngredients--;
-            spellIngredient[0] = false;
-            bag.Add(bread);
-            breadCount++;
-        }
+        SelectIngredient(0);
 
     }
     
     //Cheese button
     public void Button2()
     {
-        if (!spellIngredient[1] && cheeseCount > 0)
-        {
-            buttons[1].GetComponent<Image>().color = Color.red;
-            totalIngredients++;
-            spellIngredient[1] = true;
-            bag.Remove(cheese);
-            cheeseCount--;
-        }
-        
-        //Allows you to deselect an ingredient
-        else if (spellIngredient[1])
-        {
-            buttons[1].GetComponent<Image>().color = Color.clear;
-            totalIngredients--;
-            spellIngredient[1] = false;
-            bag.Add(cheese);
-            cheeseCount++;
-        }
+        SelectIngredient(1);
     }
     
     //sauce button
     public void Button3()
     {
-        if (!spellIngredient[2] && sauceCount > 0)
-        {
-            buttons[2].GetComponent<Image>().color = Color.red;
-            totalIngredients++;
-            spellIngredient[2] = true;
-            bag.Remove(sauce);
-            sauceCount--;
-        }
-        
-        //Allows you to deselect an ingredient
-        else if (spellIngredient[2])
-        {
-            buttons[2].GetComponent<Image>().color = Color.clear;
-            totalIngredients--;
-            spellIngredient[2] = false;
-            bag.Add(sauce);
-            sauceCount++;
-        }
+        SelectIngredient(2);
     }
     
     //meat button
     public void Button4()
     {
-        if (!spellIngredient[3] && meatCount > 0)
-        {
-            buttons[3].GetComponent<Image>().color = Color.red;
-            totalIngredients++;
-            spellIngredient[3] = true;
-            bag.Remove(meat);
-            meatCount--;
-        }
-        
-        //Allows you to deselect an ingredient
-        else if (spellIngredient[3])
-        {
-            buttons[3].GetComponent<Image>().color = Color.clear;
-            totalIngredients--;
-            spellIngredient[3] = false;
-            bag.Add(meat);
-            meatCount++;
-        }
+        SelectIngredient(3);
     }
     
     //sock button 
     public void Button5()
     {
-        if (!spellIngredient[4] && sockCount > 0)
-        {
-            buttons[4].GetComponent<Image>().color = Color.red;
-            totalIngredients++;
-            spellIngredient[4] = true;
-            bag.Remove(sock);
-            sockCount--;
+        SelectIngredient(4);
+    }
+    
+    //Detects which ingredients have been selected
+    public void SelectIngredient(int x)
+    {
+        
+        if (!spellIngredient[x])
+        {   
+            if (x == 0 && breadCount > 0)
+            {
+                buttons[x].GetComponent<Image>().color = Color.red;
+                totalIngredients++;
+                spellIngredient[x] = true;
+                bag.Remove(bread);
+                breadCount--;
+            } else if (x == 1 && cheeseCount > 0)
+            {
+                buttons[x].GetComponent<Image>().color = Color.red;
+                totalIngredients++;
+                spellIngredient[x] = true;
+                bag.Remove(cheese);
+                cheeseCount--;
+            }
+            else if (x == 2 && sauceCount > 0)
+            {
+                buttons[x].GetComponent<Image>().color = Color.red;
+                totalIngredients++;
+                spellIngredient[x] = true;
+                bag.Remove(sauce);
+                sauceCount--;
+            } else if (x == 3 && meatCount > 0)
+            {
+                buttons[x].GetComponent<Image>().color = Color.red;
+                totalIngredients++;
+                spellIngredient[x] = true;
+                bag.Remove(meat);
+                meatCount--;
+            } else if (x == 4 && sockCount > 0)
+            {
+                buttons[x].GetComponent<Image>().color = Color.red;
+                totalIngredients++;
+                spellIngredient[x] = true;
+                bag.Remove(sock);
+                sockCount--;
+            }      
         }
         
-        //Allows you to deselect an ingredient
-         else if (spellIngredient[4])
+        //Allows you to deselect ingredients
+        else if (spellIngredient[x])
         {
-            buttons[4].GetComponent<Image>().color = Color.clear;
+            buttons[x].GetComponent<Image>().color = Color.clear;
             totalIngredients--;
-            spellIngredient[4] = false;
-            bag.Add(sock);
-            sockCount++;
+            spellIngredient[x] = false;
+            if (x == 0)
+            {
+                bag.Add(bread);
+                breadCount++;
+            } else if (x == 1)
+            {
+                bag.Add(cheese);
+                cheeseCount++;
+            }
+            else if (x == 2)
+            {
+                bag.Add(sauce);
+                sauceCount++;
+            } else if (x == 3)
+            {
+                bag.Add(meat);
+                meatCount++;
+            } else if (x == 1)
+            {
+                bag.Add(sock);
+                sockCount++;
+            }
         }
     }
+    
+    
     public void ButtonSelectCollect()
     {
         gameState = 1;
@@ -343,11 +336,15 @@ public class HarvestManager : MonoBehaviour {
         //totalCollectTimer = 3;
         
     }
+    
+    //Activates the cook gameState
     public void ButtonSelectCook()
     {
         gameState = 2;
 
     }
+    
+    //allows you to fire a spell
     public void SendSpell()
     {
         if (totalIngredients == 3)
@@ -452,10 +449,7 @@ public class HarvestManager : MonoBehaviour {
         
     }
 
-    public void SelectIngredient(int x)
-    {
-        
-    }
+    
 
     //public void generateEnemies(int min, int max)
     //{
