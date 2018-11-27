@@ -946,6 +946,7 @@ MonoBehaviour:
   enemyA: {fileID: 1279165401257872, guid: de6a2a07e9032e04db1555003399c107, type: 2}
   enemyB: {fileID: 1406671555161302, guid: 35e5eabfd0b24194c954649c4c82c42c, type: 2}
   enemyC: {fileID: 1119189555174078, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
+  enemyD: {fileID: 1066574829571794, guid: 4fae9070051650f40bc79e06931f7a3b, type: 2}
   eH: {fileID: 1662960877}
   p: {fileID: 1351041573}
   bossTurnActions: {fileID: 1662960877}

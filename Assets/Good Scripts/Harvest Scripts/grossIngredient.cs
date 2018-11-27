@@ -51,6 +51,17 @@ public class grossIngredient : MonoBehaviour {
 
         transform.position = objectPos;
 
+        float throwTimer = .1f;
+        if (isDragging == true)
+        {
+            throwTimer -= Time.deltaTime;
+            if (throwTimer == 0)
+            {
+                print("sure");
+            }
+        }
+
+
     }
     private void OnMouseUp()
     {

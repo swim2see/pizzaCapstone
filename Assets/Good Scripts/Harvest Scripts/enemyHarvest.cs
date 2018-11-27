@@ -55,8 +55,8 @@ public void attack()
         }
         else
         {
-           normAttack();
-            enemyBarks.text = "Take this!";
+           spawnEnemies();
+            enemyBarks.text = "You want socks pal? WELL I GOT EM FOR YA!";
         }
     }
     if (health < 10)
@@ -89,6 +89,11 @@ public void ResetEnemyBark()
     enemyBarks.text = "";
 }
 
+public void spawnEnemies()
+    {
+        GameObject spawnSock = Instantiate(HarvestManager.hm.enemyD, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+        spawnSock.transform.parent = GameObject.Find("Enemies").transform;
+    }
 public void normAttack()
 {
     transform.DOPunchScale(new Vector3(0, 5f, 0), .5f, 1, 0);

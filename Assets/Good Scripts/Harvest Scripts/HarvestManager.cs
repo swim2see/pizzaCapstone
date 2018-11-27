@@ -47,7 +47,7 @@ public class HarvestManager : MonoBehaviour {
     public GameObject enemyA;
     public GameObject enemyB;
     public GameObject enemyC;
-
+    public GameObject enemyD;
 
     [Header ("Public Classes")]
     public enemyHarvest eH;
@@ -149,18 +149,21 @@ public class HarvestManager : MonoBehaviour {
             collectTimer += Time.deltaTime;
             radialTimer.fillAmount = collectTimer / totalCollectTimer;
 
-            //GameObject[] numberOfEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-            //if (numberOfEnemies.Length < 16)
-            //{
-            //    for (int i = 0; i < 3; i++)
-            //    {
-            //        Instantiate(enemyA, transform.position, Quaternion.Euler(new Vector3 (0,0,-90)));
-            //        Instantiate(enemyB, transform.position, Quaternion.identity);
-            //        Instantiate(enemyC, transform.position, Quaternion.identity);
-            //    }
-                
-            //}
-            if (collectTimer >= totalCollectTimer)
+            GameObject[] numberOfEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+            if (numberOfEnemies.Length < 16)
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    GameObject type1 = Instantiate(enemyA, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+                    type1.transform.parent = GameObject.Find("Enemies").transform;
+                    GameObject type2 = Instantiate(enemyB, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+                    type2.transform.parent = GameObject.Find("Enemies").transform;
+                    GameObject type3 = Instantiate(enemyC, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+                    type3.transform.parent = GameObject.Find("Enemies").transform;
+                }
+
+                }
+                if (collectTimer >= totalCollectTimer)
             {
                 gameState = 3;
                 gameFeelTimer = 2;
@@ -406,13 +409,6 @@ public class HarvestManager : MonoBehaviour {
             eH.health -= 3;
 
         }
-        if (spellIngredient[1] && spellIngredient[2] && spellIngredient[3])
-        {
-            print("PIZZA TIME");
-            spellText.text = "Chicken Parm Pulverizer";
-            eH.health -= 20;
-
-        }
         if (spellIngredient[0] && spellIngredient[2] && spellIngredient[3])
         {
             print("PIZZA TIME");
@@ -420,17 +416,38 @@ public class HarvestManager : MonoBehaviour {
             eH.health -= 15;
 
         }
-        if (spellIngredient[1] && spellIngredient[3] && spellIngredient[4])
+        if (spellIngredient[0] && spellIngredient[2] && spellIngredient[4])
         {
             print("PIZZA TIME");
-            spellText.text = "Food Abomination";
-            eH.health -= 1;
+            spellText.text = "SOMETHING";
+            eH.health -= 15;
+
+        }
+        if (spellIngredient[0] && spellIngredient[3] && spellIngredient[4])
+        {
+            print("PIZZA TIME");
+            spellText.text = "Meatball Submission";
+            eH.health -= 15;
+
+        }
+        if (spellIngredient[1] && spellIngredient[2] && spellIngredient[3])
+        {
+            print("PIZZA TIME");
+            spellText.text = "Chicken Parm Pulverizer";
+            eH.health -= 20;
+
         }
         if (spellIngredient[1] && spellIngredient[2] && spellIngredient[4])
         {
             print("PIZZA TIME");
             spellText.text = "Sock Soup w/ Cheese";
             eH.health -= 4;
+        }
+        if (spellIngredient[1] && spellIngredient[3] && spellIngredient[4])
+        {
+            print("PIZZA TIME");
+            spellText.text = "Food Abomination";
+            eH.health -= 1;
         }
 
         if (spellIngredient[2] && spellIngredient[3] && spellIngredient[4])
