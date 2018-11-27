@@ -73,7 +73,7 @@ public class HarvestManager : MonoBehaviour {
     [Header("Sound")]
     private AudioSource source;
     public AudioClip error;
-    
+    public AudioClip spellActivate;
 
     //public int castability;
     
@@ -367,6 +367,7 @@ public class HarvestManager : MonoBehaviour {
         if (totalIngredients == 3)
         {
             MakeASpell();
+            source.PlayOneShot(spellActivate);
         }
         else
         {
