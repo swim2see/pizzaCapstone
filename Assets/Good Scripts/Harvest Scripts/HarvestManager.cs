@@ -70,6 +70,11 @@ public class HarvestManager : MonoBehaviour {
     public bool[] spellIngredient;
     public Button cook;
 
+    [Header("Sound")]
+    private AudioSource source;
+    public AudioClip error;
+    
+
     //public int castability;
     
     public GameObject bossEnemy;
@@ -97,6 +102,8 @@ public class HarvestManager : MonoBehaviour {
         //}
         //generateEnemies(3,5);
         listOut = false;
+
+        source = GetComponent<AudioSource>();
     }
 	// Update is called once per frame
 	void Update () {
@@ -254,17 +261,27 @@ public class HarvestManager : MonoBehaviour {
     //Detects which ingredients have been selected
     public void SelectIngredient(int x)
     {
+        //0= bread
+        //1= cheese
+        //2=sauce
+        //3=meat
+        //4=sock
         
         if (!spellIngredient[x])
         {   
-            if (x == 0 && breadCount > 0)
+            if (totalIngredients >= 3)
+            {
+                source.PlayOneShot(error);
+            }
+            
+            if (x == 0 && breadCount > 0 && totalIngredients < 3)
             {
                 buttons[x].GetComponent<Image>().color = Color.red;
                 totalIngredients++;
                 spellIngredient[x] = true;
                 bag.Remove(bread);
                 breadCount--;
-            } else if (x == 1 && cheeseCount > 0)
+            } else if (x == 1 && cheeseCount > 0 && totalIngredients < 3)
             {
                 buttons[x].GetComponent<Image>().color = Color.red;
                 totalIngredients++;
@@ -272,28 +289,28 @@ public class HarvestManager : MonoBehaviour {
                 bag.Remove(cheese);
                 cheeseCount--;
             }
-            else if (x == 2 && sauceCount > 0)
+            else if (x == 2 && sauceCount > 0 && totalIngredients < 3)
             {
                 buttons[x].GetComponent<Image>().color = Color.red;
                 totalIngredients++;
                 spellIngredient[x] = true;
                 bag.Remove(sauce);
                 sauceCount--;
-            } else if (x == 3 && meatCount > 0)
+            } else if (x == 3 && meatCount > 0 && totalIngredients < 3)
             {
                 buttons[x].GetComponent<Image>().color = Color.red;
                 totalIngredients++;
                 spellIngredient[x] = true;
                 bag.Remove(meat);
                 meatCount--;
-            } else if (x == 4 && sockCount > 0)
+            } else if (x == 4 && sockCount > 0 && totalIngredients < 3)
             {
                 buttons[x].GetComponent<Image>().color = Color.red;
                 totalIngredients++;
                 spellIngredient[x] = true;
                 bag.Remove(sock);
                 sockCount--;
-            }      
+            } 
         }
         
         //Allows you to deselect ingredients
@@ -319,7 +336,7 @@ public class HarvestManager : MonoBehaviour {
             {
                 bag.Add(meat);
                 meatCount++;
-            } else if (x == 1)
+            } else if (x == 4)
             {
                 bag.Add(sock);
                 sockCount++;
@@ -351,7 +368,12 @@ public class HarvestManager : MonoBehaviour {
         {
             MakeASpell();
         }
-       
+        else
+        {
+           source.PlayOneShot(error);
+        }
+
+
     }
     public void MakeASpell()
     {
