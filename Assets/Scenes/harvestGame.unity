@@ -951,7 +951,7 @@ MonoBehaviour:
   p: {fileID: 1351041573}
   bossTurnActions: {fileID: 1662960877}
   gameState: 0
-  totalCollectTimer: 5
+  totalCollectTimer: 15
   radialTimer: {fileID: 1242233491}
   entireTimer: {fileID: 1087207255}
   optionSelectButtons: {fileID: 2019486509}
@@ -968,6 +968,7 @@ MonoBehaviour:
   spellActivate: {fileID: 8300000, guid: 2613c2938cbdcea4dbd217cee662abd8, type: 3}
   bossEnemy: {fileID: 1662960874}
   playergameObject: {fileID: 1351041571}
+  sockDrop: 0
 --- !u!4 &742754707
 Transform:
   m_ObjectHideFlags: 0

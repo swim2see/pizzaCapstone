@@ -80,7 +80,7 @@ public class HarvestManager : MonoBehaviour {
     public GameObject bossEnemy;
     public GameObject playergameObject;
 
-   
+    public bool sockDrop;
 
     // Use this for initialization
     void Start()
@@ -113,7 +113,7 @@ public class HarvestManager : MonoBehaviour {
         }
         numIngredients = (int)(Mathf.Clamp01(breadCount) + Mathf.Clamp01(cheeseCount) + Mathf.Clamp01(sauceCount) + Mathf.Clamp01(meatCount) + Mathf.Clamp01(sockCount));
         //print(numIngredients);
-        print(gameState);
+        //print(gameState);
         if(numIngredients >= 3)
         {
             cook.interactable = true;
@@ -150,6 +150,19 @@ public class HarvestManager : MonoBehaviour {
             radialTimer.fillAmount = collectTimer / totalCollectTimer;
 
             GameObject[] numberOfEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+            if (sockDrop == true)
+            {
+                for(int j = 0; j < 3; j++)
+                {
+                    GameObject spawnSock = Instantiate(HarvestManager.hm.enemyD, new Vector3(j*3, j*2, 0), Quaternion.identity) as GameObject;
+                    spawnSock.transform.parent = GameObject.Find("Enemies").transform;
+                    if (j == 2)
+                    {
+                        sockDrop = false;
+                    }
+                }
+                
+            }
             if (numberOfEnemies.Length < 16)
             {
                 for (int i = 0; i < 5; i++)
@@ -488,27 +501,4 @@ public class HarvestManager : MonoBehaviour {
         }
         
     }
-
-    
-
-    //public void generateEnemies(int min, int max)
-    //{
-    //    //Determines the Length of the List
-    //    int num = (int)Random.Range(min, max);
-
-    //    //Spawns list.length number of enemies
-    //    for (int i = 0; i < num; i++)
-    //    {
-
-    //        //Grabs relevant component of Chef
-    //        Vector3 temp = new Vector3(i * 4f, 0f, 0f) + gameObject.transform.position;
-    //        Instantiate(enemyA, temp - new Vector3(3, 0, 0), Quaternion.identity);
-    //        Instantiate(enemyB, temp - new Vector3(3, 0, 0), Quaternion.identity);
-    //        Instantiate(enemyC, temp - new Vector3(3, 0, 0), Quaternion.identity);
-
-    //        //Sets enemy instance to be child of this object
-
-
-    //    }
-    //}
 }

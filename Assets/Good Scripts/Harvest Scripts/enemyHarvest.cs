@@ -34,7 +34,7 @@ public class enemyHarvest : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         healthBar.fillAmount = health / maxHealth;
-        print(health / maxHealth);
+        //print(health / maxHealth);
 	}
 
 public void attack()
@@ -91,8 +91,8 @@ public void ResetEnemyBark()
 
 public void spawnEnemies()
     {
-        GameObject spawnSock = Instantiate(HarvestManager.hm.enemyD, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
-        spawnSock.transform.parent = GameObject.Find("Enemies").transform;
+        HarvestManager.hm.sockDrop = true;
+        
     }
 public void normAttack()
 {
@@ -106,7 +106,7 @@ public void normAttack()
     }
     else
     {
-        print("halfattack" + halfAttack);
+        //print("halfattack" + halfAttack);
         HarvestManager.hm.p.health -= (int)Random.Range(5, 7);
     }
 
