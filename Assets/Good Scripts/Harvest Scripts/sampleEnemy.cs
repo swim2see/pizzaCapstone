@@ -10,6 +10,8 @@ public class sampleEnemy : MonoBehaviour
     public float distance;
     bool isDragging;
 
+    
+
     public ingredientClass thisIngredient;
 
     // Use this for initialization
@@ -64,6 +66,7 @@ public class sampleEnemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "bag")
         {
+            
             if (isDragging)
             {
                 HarvestManager.hm.bag.Add(HarvestManager.hm.bread);

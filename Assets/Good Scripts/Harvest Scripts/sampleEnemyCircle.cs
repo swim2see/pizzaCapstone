@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class sampleEnemyCircle : MonoBehaviour {
@@ -8,6 +9,7 @@ public class sampleEnemyCircle : MonoBehaviour {
 
     public float RotateSpeed;
     public float Radius;
+   
 
     private Vector2 _centre;
     private float _angle;
@@ -51,6 +53,7 @@ public class sampleEnemyCircle : MonoBehaviour {
         {
             if (isDragging)
             {
+                HarvestManager.hm.source.PlayOneShot(HarvestManager.hm.ingAddedSound);
                 //HarvestManager.hm.ingredientCountC++;
                 HarvestManager.hm.BagAddition();
                 HarvestManager.hm.bag.Add(HarvestManager.hm.sauce);

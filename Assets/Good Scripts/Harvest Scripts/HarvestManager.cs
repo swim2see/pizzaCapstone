@@ -71,9 +71,11 @@ public class HarvestManager : MonoBehaviour {
     public Button cook;
 
     [Header("Sound")]
-    private AudioSource source;
+    public AudioSource source;
     public AudioClip error;
+    public AudioClip success;
     public AudioClip spellActivate;
+    public AudioClip ingAddedSound;
 
     //public int castability;
     
@@ -247,9 +249,8 @@ public class HarvestManager : MonoBehaviour {
     public void Button1()
     {
         SelectIngredient(0);
-
     }
-    
+
     //Cheese button
     public void Button2()
     {
@@ -366,6 +367,7 @@ public class HarvestManager : MonoBehaviour {
         gameState = 1;
         collectTimer = 0;
         entireTimer.gameObject.SetActive(true);
+        source.PlayOneShot(success);
         //totalCollectTimer = 3;
         
     }
@@ -374,6 +376,7 @@ public class HarvestManager : MonoBehaviour {
     public void ButtonSelectCook()
     {
         gameState = 2;
+        source.PlayOneShot(success);
 
     }
     
