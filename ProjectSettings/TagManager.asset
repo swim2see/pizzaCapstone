@@ -13,6 +13,7 @@ TagManager:
   - Enemy
   - Ingredient
   - IngredientMenu
+  - Wall
   layers:
   - Default
   - TransparentFX

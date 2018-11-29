@@ -8,7 +8,9 @@ public class grossIngredient : MonoBehaviour {
     public float spd;
     public float distance;
     bool isDragging;
-    Vector2 curPos;
+    public Vector2 curPos;
+    public float throwTimer;
+    Vector3 mousePos;
 
     public ingredientClass thisIngredient;
 
@@ -18,17 +20,27 @@ public class grossIngredient : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         //cam = GameObject.Find("Main Camera").GetComponent<CamControl>();
         bag = GameObject.FindWithTag("bag");
-     
+        throwTimer = 0;
     }
 
     // Update is called once per frame
 
     void FixedUpdate()
     {
+          
         if (bag != null)
         {
+
+            if (throwTimer > 0)
+            {
+                throwTimer -= Time.fixedDeltaTime;
+                if (throwTimer <= 0)
+                {
+                    throwTimer = 0;
+                }
+            }
             //COMMENTED THIS OUT TO FOCUS ON GETTING SOCK THROWING
-            
+
             //GameObject bagObj;
             //Vector3 bagPos;
             //bagObj = GameObject.FindWithTag("bag");
@@ -39,28 +51,35 @@ public class grossIngredient : MonoBehaviour {
             //    vel = (bagPos - transform.position).normalized * spd / 2;
             //    rb.MovePosition(transform.position + vel);
             //}
-            
-            float throwTimer = .1f;//timer that updates every tenth of a second to see how far you are from curPos 
-            if (isDragging == true)//called when mouse is up
+
+            //timer that updates every tenth of a second to see how far you are from curPos 
+            if (Input.GetMouseButtonUp(0))//called when mouse is down
             {
-                throwTimer -= Time.deltaTime;
-                if (throwTimer == 0)
+  
+                Vector2 throwSpeed = ((Vector2)mousePos-curPos);
+                print(throwSpeed);//compare curPos from before to transform position to set velocity
+                if (throwSpeed.magnitude > .02f)
                 {
-                    curPos = transform.position;//set curPos to current location
+                    //rb.MovePosition((Vector2)transform.position + throwSpeed);
+                    rb.velocity = throwSpeed;
+                    throwTimer = 0.3f;
+                    
                 }
+                else
+                {
+                  //  transform.position = new Vector3(0, 0, 0);
+                }
+
             }
-            else
-            {
-                Vector2 throwSpeed = ((Vector2)transform.position - curPos).normalized * .10f;//compare curPos from before to transform position to set velocity
-                rb.MovePosition((Vector2)transform.position + throwSpeed);
-            }
+            curPos = mousePos;
         }
     }
     private void OnMouseDrag()
     {
+        if (throwTimer > 0) return;
         isDragging = true;
         //script below allows object to be picked up and moved
-        Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, distance);
+        mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, distance);
         Vector3 objectPos = Camera.main.ScreenToWorldPoint(mousePos);
 
         transform.position = objectPos;
@@ -81,5 +100,18 @@ public class grossIngredient : MonoBehaviour {
                 Destroy(gameObject);
             
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.collider.tag == "Wall")
+        {
+            //cancel this collision
+            if (throwTimer > 0)
+                Physics2D.IgnoreCollision(col.collider, col.otherCollider, true);
+            else
+                Physics2D.IgnoreCollision(col.collider, col.otherCollider, false);
+        }
+
     }
 }
