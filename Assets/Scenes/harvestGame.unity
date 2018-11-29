@@ -231,6 +231,10 @@ Prefab:
       propertyPath: m_Name
       value: Red Rat (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1119189555174078, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
   m_IsPrefabAsset: 0
@@ -302,7 +306,7 @@ GameObject:
   - component: {fileID: 404115031}
   m_Layer: 0
   m_Name: Square (5)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -712,6 +716,10 @@ Prefab:
       propertyPath: m_Name
       value: Red Rat (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1119189555174078, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
   m_IsPrefabAsset: 0
@@ -951,7 +959,7 @@ MonoBehaviour:
   p: {fileID: 1351041573}
   bossTurnActions: {fileID: 1662960877}
   gameState: 0
-  totalCollectTimer: 15
+  totalCollectTimer: 100
   radialTimer: {fileID: 1242233491}
   entireTimer: {fileID: 1087207255}
   optionSelectButtons: {fileID: 2019486509}
@@ -1524,6 +1532,10 @@ Prefab:
     - target: {fileID: 1119189555174078, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
       propertyPath: m_Name
       value: Red Rat (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1119189555174078, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
@@ -3359,6 +3371,10 @@ Prefab:
       propertyPath: m_Name
       value: Red Rat (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1119189555174078, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
   m_IsPrefabAsset: 0
@@ -3778,6 +3794,10 @@ Prefab:
     - target: {fileID: 1119189555174078, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
       propertyPath: m_Name
       value: Red Rat (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1119189555174078, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
@@ -4873,6 +4893,10 @@ Prefab:
     - target: {fileID: 4977405277067094, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1119189555174078, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
