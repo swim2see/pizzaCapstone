@@ -145,6 +145,7 @@ public class HarvestManager : MonoBehaviour {
 	    //Harvesting portion 
         if (gameState == 1)
         {
+            bossEnemy.SetActive(true);
             //fireSpellButton.SetActive(false);
             //buttonTray.SetActive(false);
             allMyEnemies.SetActive(true);

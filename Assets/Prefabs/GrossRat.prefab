@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 50126262129446948}
   - component: {fileID: 61817589477589624}
   - component: {fileID: 114870484314720716}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: GrossRat
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -37,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1066574829571794}
   m_LocalRotation: {x: 0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -3.18, y: 1.21, z: 0}
-  m_LocalScale: {x: 1.169308, y: 1.2086725, z: 0.40717995}
+  m_LocalPosition: {x: -3.18, y: 5.37, z: 0}
+  m_LocalScale: {x: 0.8789922, y: 0.90858334, z: 0.30608532}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -101,6 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spd: 0.05
   distance: 10
+  curPos: {x: 0, y: 0}
+  throwTimer: 0
   thisIngredient: {fileID: 0}
 --- !u!212 &212948511876920746
 SpriteRenderer:

@@ -62,7 +62,7 @@ public class grossIngredient : MonoBehaviour {
                 {
                     //rb.MovePosition((Vector2)transform.position + throwSpeed);
                     rb.velocity = throwSpeed;
-                    throwTimer = 0.3f;
+                    throwTimer = 1f;
                     
                 }
                 else
@@ -100,18 +100,23 @@ public class grossIngredient : MonoBehaviour {
                 Destroy(gameObject);
             
         }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.collider.tag == "Wall")
+       /* if (col.collider.tag == "Wall")
         {
             //cancel this collision
-            if (throwTimer > 0)
+            if (throwTimer >= 0)
                 Physics2D.IgnoreCollision(col.collider, col.otherCollider, true);
             else
                 Physics2D.IgnoreCollision(col.collider, col.otherCollider, false);
         }
+        if(col.collider.tag=="The Boss")
+        {
+            HarvestManager.hm.bossTurnActions.health -= 10f;
+        }*/
 
     }
 }

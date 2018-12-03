@@ -34,6 +34,19 @@ public class enemyHarvest : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         healthBar.fillAmount = health / maxHealth;
+
+        if (HarvestManager.hm.gameState != 1)
+        {
+            print("WHY");
+            gameObject.GetComponent<RectTransform>().DOAnchorPos(new Vector2(133, 103), .5f);
+            //transform.DOMove(new Vector2(133, 103), .5f);
+        }
+        else if(HarvestManager.hm.gameState==1)
+        {
+            //HarvestManager.hm.bossEnemy.SetActive(true);
+            //transform.position = new Vector2(-12, -184);
+            gameObject.GetComponent<RectTransform>().DOAnchorPos(new Vector2(10, -193), .5f);
+        }
         //print(health / maxHealth);
 	}
 

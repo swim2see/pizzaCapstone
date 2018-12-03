@@ -14,6 +14,7 @@ TagManager:
   - Ingredient
   - IngredientMenu
   - Wall
+  - The Boss
   layers:
   - Default
   - TransparentFX
@@ -24,8 +25,8 @@ TagManager:
   - 
   - 
   - enemyLayer
-  - 
-  - 
+  - sockEnemy
+  - bottomWall
   - 
   - 
   - 
