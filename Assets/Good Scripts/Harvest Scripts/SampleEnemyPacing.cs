@@ -34,12 +34,16 @@ public class SampleEnemyPacing : MonoBehaviour {
 		//tune the *3 to make the distance traveled greater
 		if (!isDragging)
 		{
-		
-			transform.position = new Vector2(Mathf.Sin(distanceCounter) * 3 + centerPosition.x, centerPosition.y);
-			distanceCounter += spd;
-			if (distanceCounter > 2f * Mathf.PI)
+			foreach (GameObject sauce in HarvestManager.hm.sauceEnemyCount)
 			{
-				distanceCounter = 0;
+
+
+				transform.position = new Vector2(Mathf.Sin(distanceCounter) * 2 + centerPosition.x, centerPosition.y);
+				distanceCounter += spd;
+				if (distanceCounter > 2f * Mathf.PI)
+				{
+					distanceCounter = 0;
+				}
 			}
 		}
 		else
@@ -72,14 +76,8 @@ public class SampleEnemyPacing : MonoBehaviour {
             
 			if (isDragging)
 			{
-				HarvestManager.hm.bag.Add(HarvestManager.hm.bread);
-				HarvestManager.hm.breadCount++;
-				HarvestManager.hm.bag.Add(HarvestManager.hm.bread);
-				HarvestManager.hm.breadCount++;
-				HarvestManager.hm.bag.Add(HarvestManager.hm.cheese);
-				HarvestManager.hm.cheeseCount++;
-				HarvestManager.hm.bag.Add(HarvestManager.hm.cheese);
-				HarvestManager.hm.cheeseCount++;
+				HarvestManager.hm.bag.Add(HarvestManager.hm.meat);
+				HarvestManager.hm.meatCount++;
 				HarvestManager.hm.BagAddition();
 				Destroy(gameObject);
 			}

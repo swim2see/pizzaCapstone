@@ -19,6 +19,7 @@ TagManager:
   - Sock
   - Cheese
   - The Boss
+  - Meat
   layers:
   - Default
   - TransparentFX
