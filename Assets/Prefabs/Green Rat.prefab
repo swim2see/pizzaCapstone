@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 61495273464807108}
   - component: {fileID: 114875958160419598}
   - component: {fileID: 50880208750706434}
+  - component: {fileID: 114791028871126582}
   m_Layer: 8
   m_Name: Green Rat
   m_TagString: Cheese
@@ -88,13 +89,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.1440115, y: 5.6863246}
   m_EdgeRadius: 0
---- !u!114 &114875958160419598
+--- !u!114 &114791028871126582
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1279165401257872}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb564b96dc89bb419f85674d4708739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spd: 0
+  distance: 10
+  RotateSpeed: 2.5
+  Radius: 2
+  breadEnemy: {fileID: 0}
+  cheeseEnemy: {fileID: 0}
+  sauceEnemy: {fileID: 0}
+  meatEnemy: {fileID: 0}
+  sockEnemy: {fileID: 0}
+  positions: []
+  speed: 0.1
+  targetDistance: 0
+  thisIngredient: {fileID: 0}
+--- !u!114 &114875958160419598
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1279165401257872}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7cd9b4082ffc774fa46540c36e4a8b3, type: 3}
   m_Name: 
