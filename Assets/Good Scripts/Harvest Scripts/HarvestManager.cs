@@ -498,6 +498,7 @@ public class HarvestManager : MonoBehaviour {
             listOut = true;
             ingredientMenu.SetActive(true);
             menuText.text = "Bread: " + breadCount.ToString() + "\n" + "Cheese: " + cheeseCount.ToString() + "\n" + "Sauce: " + sauceCount.ToString() + "\n" + "Meat:" + meatCount.ToString() + "\n" + "Socks:" + sockCount.ToString();
+            
         }else if (listOut == true)
         {
             ingredientMenu.SetActive(false);

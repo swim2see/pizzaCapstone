@@ -43,7 +43,7 @@ public class sampleEnemy : MonoBehaviour
             }
             else
             {
-                vel = (transform.position - playerPos).normalized * spd * 1.5f;
+                vel = (transform.position - playerPos).normalized * spd * 1.2f;
             }
 
             rb.MovePosition(transform.position + vel);
