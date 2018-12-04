@@ -18,6 +18,7 @@ TagManager:
   - Sauce
   - Sock
   - Cheese
+  - The Boss
   layers:
   - Default
   - TransparentFX
@@ -28,8 +29,8 @@ TagManager:
   - 
   - 
   - enemyLayer
-  - 
-  - 
+  - sockEnemy
+  - bottomWall
   - 
   - 
   - 

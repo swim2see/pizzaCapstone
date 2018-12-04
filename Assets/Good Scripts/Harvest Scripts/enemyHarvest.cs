@@ -13,13 +13,14 @@ public class enemyHarvest : MonoBehaviour {
     public float mana;
     public float maxMana;
     public bool isDefending;
+    
     //public GameObject glowObj;
     //public Image enemyImage;
 
     public Text enemyBarks;
     public string[] possibleBarks;
 
-    public bool halfAttack;
+    public bool finalAttack;
 
     public bool dead;
     //Prefabs & Visuals
@@ -34,6 +35,29 @@ public class enemyHarvest : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         healthBar.fillAmount = health / maxHealth;
+
+        if (HarvestManager.hm.gameState != 1)
+        {
+            print("WHY");
+            gameObject.GetComponent<RectTransform>().DOAnchorPos(new Vector2(133, 103), .5f);
+            //transform.DOMove(new Vector2(133, 103), .5f);
+        }
+        else if(HarvestManager.hm.gameState==1)
+        {
+            RectTransform rectPosition = gameObject.GetComponent<RectTransform>();
+            //HarvestManager.hm.bossEnemy.SetActive(true);
+            //transform.position = new Vector2(-12, -184);
+            if (rectPosition.anchoredPosition.x != 10)
+            {
+                gameObject.tag = "Untagged";
+            }
+            else
+            {
+                gameObject.tag = "The Boss";
+            }
+            gameObject.GetComponent<RectTransform>().DOAnchorPos(new Vector2(10, -193), .5f);
+            
+        }
         //print(health / maxHealth);
 	}
 
@@ -61,12 +85,22 @@ public void attack()
     }
     if (health < 10)
     {
-        heal();
+            if (Random.Range(0, 1) > .5f)
+            {
+                heal();
+            }
+            else
+            {
+                normAttack();
+                finalAttack = true;
+            }
     }
 
     if (health <= 0)
     {
+        
         Destroy(gameObject);
+        
         //Image im = this.gameObject.GetComponent<Image>();
         //Destroy(im);
 
@@ -78,7 +112,7 @@ public void attack()
 
 public void heal()
 {
-    health += (Random.Range(5, 10));//heal by ten percent
+    health += (Random.Range(5, 7));//heal by ten percent
     //mana -= (maxMana * .5f);
     enemyBarks.text = "Ayy, I'm healing here!";
 
@@ -100,14 +134,15 @@ public void normAttack()
 
 
 
-    if (halfAttack != true)
+    if (finalAttack != true)
     {
         HarvestManager.hm.p.health -= (int)Random.Range(15, 20);
     }
     else
     {
         //print("halfattack" + halfAttack);
-        HarvestManager.hm.p.health -= (int)Random.Range(5, 7);
+        HarvestManager.hm.p.health -= (int)Random.Range(25, 40);
+            enemyBarks.text = "I've had enough of this rigaramole!";
     }
 
     if (HarvestManager.hm.gameState == 4)

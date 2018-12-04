@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.EventSystems;
 using UnityScript.Lang;
+using UnityEngine.SceneManagement;
 
 public class HarvestManager : MonoBehaviour {
     public static HarvestManager hm;
@@ -119,7 +120,10 @@ public class HarvestManager : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
-	    
+        if (bossEnemy == null || playergameObject==null)
+        {
+            SceneManager.LoadScene("Overworld");
+        }
         if (!listOut)
         {
             ingredientMenu.SetActive(false);
@@ -156,6 +160,7 @@ public class HarvestManager : MonoBehaviour {
 	    //Harvesting portion 
         if (gameState == 1)
         {
+            bossEnemy.SetActive(true);
             //fireSpellButton.SetActive(false);
             //buttonTray.SetActive(false);
             allMyEnemies.SetActive(true);
@@ -413,6 +418,7 @@ public class HarvestManager : MonoBehaviour {
         {
             MakeASpell();
             source.PlayOneShot(spellActivate);
+            
         }
         else
         {
@@ -523,6 +529,7 @@ public class HarvestManager : MonoBehaviour {
             listOut = true;
             ingredientMenu.SetActive(true);
             menuText.text = "Bread: " + breadCount.ToString() + "\n" + "Cheese: " + cheeseCount.ToString() + "\n" + "Sauce: " + sauceCount.ToString() + "\n" + "Meat:" + meatCount.ToString() + "\n" + "Socks:" + sockCount.ToString();
+            
         }else if (listOut == true)
         {
             ingredientMenu.SetActive(false);

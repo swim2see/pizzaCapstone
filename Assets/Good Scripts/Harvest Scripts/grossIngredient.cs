@@ -11,7 +11,8 @@ public class grossIngredient : MonoBehaviour {
     public Vector2 curPos;
     public float throwTimer;
     Vector3 mousePos;
-
+    Vector2 initialPos;
+    bool resetPosition;
     public ingredientClass thisIngredient;
 
     // Use this for initialization
@@ -21,13 +22,15 @@ public class grossIngredient : MonoBehaviour {
         //cam = GameObject.Find("Main Camera").GetComponent<CamControl>();
         bag = GameObject.FindWithTag("bag");
         throwTimer = 0;
+        initialPos = transform.position;
     }
 
     // Update is called once per frame
 
     void FixedUpdate()
     {
-          
+        
+        
         if (bag != null)
         {
 
@@ -41,16 +44,16 @@ public class grossIngredient : MonoBehaviour {
             }
             //COMMENTED THIS OUT TO FOCUS ON GETTING SOCK THROWING
 
-            //GameObject bagObj;
-            //Vector3 bagPos;
-            //bagObj = GameObject.FindWithTag("bag");
-            //bagPos = bagObj.transform.position;
-            //Vector3 vel;
-            //if (isDragging == false)
-            //{
-            //    vel = (bagPos - transform.position).normalized * spd / 2;
-            //    rb.MovePosition(transform.position + vel);
-            //}
+            GameObject bagObj;
+            Vector3 bagPos;
+            bagObj = GameObject.FindWithTag("bag");
+            bagPos = bagObj.transform.position;
+            Vector3 vel;
+            if (throwTimer<=0)
+            {
+                vel = (bagPos - transform.position).normalized * spd / 2;
+                rb.MovePosition(transform.position + vel);
+            }
 
             //timer that updates every tenth of a second to see how far you are from curPos 
             if (Input.GetMouseButtonUp(0))//called when mouse is down
@@ -58,11 +61,11 @@ public class grossIngredient : MonoBehaviour {
   
                 Vector2 throwSpeed = ((Vector2)mousePos-curPos);
                 print(throwSpeed);//compare curPos from before to transform position to set velocity
-                if (throwSpeed.magnitude > .02f)
+                if (throwSpeed.magnitude > .01f)
                 {
                     //rb.MovePosition((Vector2)transform.position + throwSpeed);
                     rb.velocity = throwSpeed;
-                    throwTimer = 0.3f;
+                    throwTimer = 1f;
                     
                 }
                 else
@@ -100,18 +103,28 @@ public class grossIngredient : MonoBehaviour {
                 Destroy(gameObject);
             
         }
+        if (collision.gameObject.tag == "The Boss")
+        {
+            HarvestManager.hm.bossTurnActions.health -= 10;
+            Destroy(gameObject);
+        }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.collider.tag == "Wall")
+       /* if (col.collider.tag == "Wall")
         {
             //cancel this collision
-            if (throwTimer > 0)
+            if (throwTimer >= 0)
                 Physics2D.IgnoreCollision(col.collider, col.otherCollider, true);
             else
                 Physics2D.IgnoreCollision(col.collider, col.otherCollider, false);
         }
+        if(col.collider.tag=="The Boss")
+        {
+            HarvestManager.hm.bossTurnActions.health -= 10f;
+        }*/
 
     }
 }
