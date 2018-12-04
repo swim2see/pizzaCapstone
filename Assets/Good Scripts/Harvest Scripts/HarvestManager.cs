@@ -170,7 +170,7 @@ public class HarvestManager : MonoBehaviour {
             breadEnemyCount = GameObject.FindGameObjectsWithTag("Bread");
             cheeseEnemyCount = GameObject.FindGameObjectsWithTag("Cheese");
             sauceEnemyCount= GameObject.FindGameObjectsWithTag("Sauce");
-           // meatEnemyCount= GameObject.FindGameObjectsWithTag("Meat");
+            meatEnemyCount= GameObject.FindGameObjectsWithTag("Meat");
             sockEnemyCount= GameObject.FindGameObjectsWithTag("Sock");
 
             //FIGURE OUT HOW TO ADD ARRAYS TOGETHER
@@ -179,9 +179,6 @@ public class HarvestManager : MonoBehaviour {
             numberOfEnemies = breadEnemyCount.Concat(cheeseEnemyCount).Concat(sauceEnemyCount)
                 .Concat(meatEnemyCount).Concat(sockEnemyCount).ToArray();
             
-            Debug.Log("fur:" + numberOfEnemies.Length);
-            Debug.Log("bread:" + breadEnemyCount.Length);
-
             //numberOfEnemies += breadEnemyCount;
             if (sockDrop == true)
             {
@@ -196,6 +193,7 @@ public class HarvestManager : MonoBehaviour {
                 }
                 
             }
+            //put reinstantiate code here if stuff dont work
             if (numberOfEnemies.Length < 16)
             {
                 for (int i = 0; i < 5; i++)
@@ -208,7 +206,7 @@ public class HarvestManager : MonoBehaviour {
                     type3.transform.parent = GameObject.Find("Enemies").transform;
                 }
 
-                }
+            }
                 if (collectTimer >= totalCollectTimer)
             {
                 gameState = 3;
@@ -399,6 +397,9 @@ public class HarvestManager : MonoBehaviour {
         collectTimer = 0;
         entireTimer.gameObject.SetActive(true);
         source.PlayOneShot(success);
+        
+        
+       
         //totalCollectTimer = 3;
         
     }

@@ -17,6 +17,13 @@ public class EnemyBehavior : MonoBehaviour {
 
     private Vector2 _centre;
     private float _angle;
+
+    public GameObject breadEnemy;
+    public GameObject cheeseEnemy;
+    public GameObject sauceEnemy;
+    public GameObject meatEnemy;
+    public GameObject sockEnemy;
+    
     
     public Transform[] positions;
 
@@ -36,6 +43,8 @@ public class EnemyBehavior : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+   
+
         rb = GetComponent<Rigidbody2D>();
         //cam = GameObject.Find("Main Camera").GetComponent<CamControl>();
         player = GameObject.FindWithTag("Player");
@@ -65,7 +74,7 @@ public class EnemyBehavior : MonoBehaviour {
             Vector3 velo;
             if (Vector2.Distance(transform.position, playerPos) > 5f)
             {
-                velo = (transform.position-playerPos).normalized * spd / 2;
+                velo = (transform.position - playerPos).normalized * spd / 2;
             }
             else
             {
@@ -74,21 +83,24 @@ public class EnemyBehavior : MonoBehaviour {
 
             rb.MovePosition(transform.position + velo);
         }
-        
-        
-        
-        
+
+
+
+
         //Sauce
         if (!isDragging)
         {
-            if (Mathf.Abs((Vector2.Distance((Vector2)transform.position, newTarget))) < targetDistance)
+            for(int i = 0; i < HarvestManager.hm.sauceEnemyCount.Length; i++)
+            {
+            if (Mathf.Abs((Vector2.Distance((Vector2) transform.position, newTarget))) < targetDistance)
             {
                 prevPos = newTarget;
                 newTarget = new Vector2(Random.Range(-11, 5), Random.Range(-3, 6));
 
             }
         }
-        //print(Mathf.Abs((Vector2.Distance(prevPos, newTarget))));
+    }
+    //print(Mathf.Abs((Vector2.Distance(prevPos, newTarget))));
 
         vel = (newTarget - prevPos).normalized * speed / 2;
         rb.MovePosition((Vector2)transform.position + vel);
@@ -130,6 +142,7 @@ public class EnemyBehavior : MonoBehaviour {
     void Update () {
         if (!isDragging)
         {
+            
             _angle += RotateSpeed * Time.deltaTime;
 
             var offset = new Vector2(Mathf.Sin(_angle), Mathf.Cos(_angle)) * Radius;
@@ -162,24 +175,30 @@ public class EnemyBehavior : MonoBehaviour {
                     HarvestManager.hm.sauceCount++;
                 }
 
-                HarvestManager.hm.bag.Add(HarvestManager.hm.sock);
-                HarvestManager.hm.sockCount++;
-               
+                if (gameObject.tag == "Sock")
+                {
+                    HarvestManager.hm.bag.Add(HarvestManager.hm.sock);
+                    HarvestManager.hm.sockCount++;
+                }
 
-                HarvestManager.hm.bag.Add(HarvestManager.hm.sauce);
-                HarvestManager.hm.sauceCount++;
+                if (gameObject.tag == "Meat")
+                {
+                    HarvestManager.hm.bag.Add(HarvestManager.hm.meat);
+                    HarvestManager.hm.meatCount++;
+                }
 
-                HarvestManager.hm.bag.Add(HarvestManager.hm.meat);
-                HarvestManager.hm.meatCount++;
-                
-                HarvestManager.hm.bag.Add(HarvestManager.hm.bread);
-                HarvestManager.hm.breadCount++;
-                HarvestManager.hm.bag.Add(HarvestManager.hm.bread);
-                HarvestManager.hm.breadCount++;
-                HarvestManager.hm.bag.Add(HarvestManager.hm.cheese);
-                HarvestManager.hm.cheeseCount++;
-                HarvestManager.hm.bag.Add(HarvestManager.hm.cheese);
-                HarvestManager.hm.cheeseCount++;
+                if (gameObject.tag == "Bread")
+                {
+                    HarvestManager.hm.bag.Add(HarvestManager.hm.bread);
+                    HarvestManager.hm.breadCount++;
+                }
+
+                if (gameObject.tag == "Cheese")
+                {
+                    HarvestManager.hm.bag.Add(HarvestManager.hm.cheese);
+                    HarvestManager.hm.cheeseCount++;
+                }
+
                 HarvestManager.hm.BagAddition();
                 
                 Destroy(gameObject);
