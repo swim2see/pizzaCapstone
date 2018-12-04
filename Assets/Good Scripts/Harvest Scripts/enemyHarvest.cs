@@ -98,7 +98,9 @@ public void attack()
 
     if (health <= 0)
     {
+        
         Destroy(gameObject);
+        
         //Image im = this.gameObject.GetComponent<Image>();
         //Destroy(im);
 

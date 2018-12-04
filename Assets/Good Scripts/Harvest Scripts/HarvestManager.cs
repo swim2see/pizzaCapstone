@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class HarvestManager : MonoBehaviour {
     public static HarvestManager hm;
@@ -109,6 +110,10 @@ public class HarvestManager : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
+        if (bossEnemy == null || playergameObject==null)
+        {
+            SceneManager.LoadScene("Overworld");
+        }
         if (!listOut)
         {
             ingredientMenu.SetActive(false);
@@ -388,6 +393,7 @@ public class HarvestManager : MonoBehaviour {
         {
             MakeASpell();
             source.PlayOneShot(spellActivate);
+            
         }
         else
         {

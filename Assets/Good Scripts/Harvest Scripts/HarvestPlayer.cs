@@ -17,5 +17,9 @@ public class HarvestPlayer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         playerHealthBar.fillAmount = health / maxHealth;
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
 	}
 }
