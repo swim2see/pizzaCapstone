@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/harvestGame.unity
     guid: 38433590739a29e4a96ea8c43ebcdc57
+  - enabled: 1
+    path: Assets/Scenes/Overworld.unity
+    guid: a6005fa1bd7c79e42b362cecd8a72ecb
   m_configObjects: {}
