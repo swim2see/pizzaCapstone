@@ -31,7 +31,7 @@ public class sampleEnemyCircle : MonoBehaviour {
             //transform.position = _centre + offset;
             rb.MovePosition(_centre+offset);
         }
-        }
+    }
     
 
     private void OnMouseDrag()

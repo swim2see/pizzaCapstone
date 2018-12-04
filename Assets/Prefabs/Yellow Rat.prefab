@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114072012754767492}
   - component: {fileID: 50602763572985728}
   - component: {fileID: 61840281804608874}
+  - component: {fileID: 114090258220238790}
   m_Layer: 8
   m_Name: Yellow Rat
   m_TagString: Bread
@@ -94,13 +95,37 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1406671555161302}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16b262fbd719f3b45bfb2263004565d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spd: 0.1
   distance: 10
+  thisIngredient: {fileID: 0}
+--- !u!114 &114090258220238790
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1406671555161302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb564b96dc89bb419f85674d4708739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spd: 0.1
+  distance: 10
+  RotateSpeed: 0
+  Radius: 0
+  breadEnemy: {fileID: 0}
+  cheeseEnemy: {fileID: 0}
+  sauceEnemy: {fileID: 0}
+  meatEnemy: {fileID: 0}
+  sockEnemy: {fileID: 0}
+  positions: []
+  speed: 0.1
+  targetDistance: 10
   thisIngredient: {fileID: 0}
 --- !u!212 &212212315177131968
 SpriteRenderer:

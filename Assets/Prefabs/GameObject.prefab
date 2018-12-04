@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 61885643909737518}
   - component: {fileID: 212898824563970972}
   - component: {fileID: 114152146650264534}
+  - component: {fileID: 114567320450070916}
   m_Layer: 8
   m_Name: GameObject
   m_TagString: Meat
@@ -74,7 +75,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -94,13 +95,32 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1962458697050068}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a30f6cfc1f2303c42a276b24494725da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spd: 0.04
   distance: 0
+  thisIngredient: {fileID: 0}
+--- !u!114 &114567320450070916
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1962458697050068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb564b96dc89bb419f85674d4708739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spd: 0.1
+  distance: 0
+  RotateSpeed: 0
+  Radius: 0
+  positions: []
+  speed: 0.1
+  targetDistance: 0
   thisIngredient: {fileID: 0}
 --- !u!212 &212898824563970972
 SpriteRenderer:

@@ -18,12 +18,6 @@ public class EnemyBehavior : MonoBehaviour {
     private Vector2 _centre;
     private float _angle;
 
-    public GameObject breadEnemy;
-    public GameObject cheeseEnemy;
-    public GameObject sauceEnemy;
-    public GameObject meatEnemy;
-    public GameObject sockEnemy;
-    
     
     public Transform[] positions;
 
@@ -36,6 +30,9 @@ public class EnemyBehavior : MonoBehaviour {
     
     public float targetDistance;
 
+    private Vector2 centerPosition;
+    
+    private float distanceCounter;
     
 
     public ingredientClass thisIngredient;
@@ -59,54 +56,10 @@ public class EnemyBehavior : MonoBehaviour {
         newTarget = new Vector2(0, 0);
         vel = (newTarget - (Vector2)transform.position).normalized * speed / 2;
         prevPos = (Vector2)transform.position;
+        centerPosition = transform.position;
     }
 
     // Update is called once per frame
-
-    void FixedUpdate()
-    {
-        if (player != null)
-        {
-            GameObject playerObj;
-            Vector3 playerPos;
-            playerObj = GameObject.FindWithTag("Player");
-            playerPos = playerObj.transform.position;
-            Vector3 velo;
-            if (Vector2.Distance(transform.position, playerPos) > 5f)
-            {
-                velo = (transform.position - playerPos).normalized * spd / 2;
-            }
-            else
-            {
-                velo = (transform.position - playerPos).normalized * spd * 1.5f;
-            }
-
-            rb.MovePosition(transform.position + velo);
-        }
-
-
-
-
-        //Sauce
-        if (!isDragging)
-        {
-            for(int i = 0; i < HarvestManager.hm.sauceEnemyCount.Length; i++)
-            {
-            if (Mathf.Abs((Vector2.Distance((Vector2) transform.position, newTarget))) < targetDistance)
-            {
-                prevPos = newTarget;
-                newTarget = new Vector2(Random.Range(-11, 5), Random.Range(-3, 6));
-
-            }
-        }
-    }
-    //print(Mathf.Abs((Vector2.Distance(prevPos, newTarget))));
-
-        vel = (newTarget - prevPos).normalized * speed / 2;
-        rb.MovePosition((Vector2)transform.position + vel);
-        //End sauce
-    }
-    
     
     private void OnMouseDrag()
     {
@@ -115,12 +68,88 @@ public class EnemyBehavior : MonoBehaviour {
         Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, distance);
         Vector3 objectPos = Camera.main.ScreenToWorldPoint(mousePos);
 
+        centerPosition.x = objectPos.x;
+        centerPosition.y = objectPos.y;
+
         transform.position = objectPos;
-
-        
-
+  
     }
 
+
+    void FixedUpdate()
+    {
+       
+
+        vel = (newTarget - prevPos).normalized * speed / 2;
+        rb.MovePosition((Vector2)transform.position + vel);
+        //End sauce
+        
+        if (!isDragging)
+        {
+            //foreach (GameObject sauce in HarvestManager.hm.sauceEnemyCount)
+            //sauce movement
+            if(this.gameObject.tag == "Sauce")
+            {
+                if (Mathf.Abs((Vector2.Distance((Vector2) transform.position, newTarget))) < targetDistance)
+                {
+                    prevPos = newTarget;
+                    newTarget = new Vector2(Random.Range(-11, 5), Random.Range(-3, 6));
+
+                }
+            }
+            
+            //cheese movement
+            if (this.gameObject.tag == "Cheese")
+            {
+                _angle += RotateSpeed * Time.deltaTime;
+
+                var offset = new Vector2(Mathf.Sin(_angle), Mathf.Cos(_angle)) * Radius;
+                //transform.position = _centre + offset;
+                rb.MovePosition(_centre+offset);
+            }
+            
+            //bread movement
+            if(this.gameObject.tag == "Bread")
+            {
+                if (player != null)
+                {
+                    GameObject playerObj;
+                    Vector3 playerPos;
+                    playerObj = GameObject.FindWithTag("Player");
+                    playerPos = playerObj.transform.position;
+                    Vector3 velo;
+                    if (Vector2.Distance(transform.position, playerPos) > 5f)
+                    {
+                        velo = (transform.position - playerPos).normalized * spd / 2;
+                    }
+                    else
+                    {
+                        velo = (transform.position - playerPos).normalized * spd * 1.5f;
+                    }
+
+                    rb.MovePosition(transform.position + velo);
+                }
+            }
+            
+            if (this.gameObject.tag == "Meat")
+            {
+                transform.position = new Vector2(Mathf.Sin(distanceCounter) * 2 + centerPosition.x, centerPosition.y);
+                distanceCounter += spd;
+                if (distanceCounter > 2f * Mathf.PI)
+                {
+                    distanceCounter = 0;
+                }
+            }
+            
+        }
+        else
+        {
+            transform.position = centerPosition;
+        }
+    }
+    
+    
+ 
     /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "bag")
@@ -134,22 +163,7 @@ public class EnemyBehavior : MonoBehaviour {
         }
     }*/
     
-    
-    
-
-	
-    // Update is called once per frame
-    void Update () {
-        if (!isDragging)
-        {
-            
-            _angle += RotateSpeed * Time.deltaTime;
-
-            var offset = new Vector2(Mathf.Sin(_angle), Mathf.Cos(_angle)) * Radius;
-            //transform.position = _centre + offset;
-            rb.MovePosition(_centre+offset);
-        }
-    }
+   
     
 
 

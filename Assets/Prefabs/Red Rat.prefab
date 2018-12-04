@@ -130,7 +130,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1119189555174078}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11f9435758db32446840551d3daf8f0c, type: 3}
   m_Name: 
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1119189555174078}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0bb564b96dc89bb419f85674d4708739, type: 3}
   m_Name: 
@@ -155,14 +155,9 @@ MonoBehaviour:
   distance: 0
   RotateSpeed: 0
   Radius: 0
-  breadEnemy: {fileID: 0}
-  cheeseEnemy: {fileID: 0}
-  sauceEnemy: {fileID: 0}
-  meatEnemy: {fileID: 0}
-  sockEnemy: {fileID: 0}
   positions: []
-  speed: 0
-  targetDistance: 0
+  speed: 0.1
+  targetDistance: 1
   thisIngredient: {fileID: 0}
 --- !u!114 &114981948017119442
 MonoBehaviour:
