@@ -916,6 +916,7 @@
         </e>
         <e p="Good Scripts" t="Include">
           <e p="Harvest Scripts" t="Include">
+            <e p="EnemyBehavior.cs" t="Include" />
             <e p="enemyHarvest.cs" t="Include" />
             <e p="grossIngredient.cs" t="Include" />
             <e p="HarvestManager.cs" t="Include" />
@@ -924,6 +925,7 @@
             <e p="myCursor.cs" t="Include" />
             <e p="sampleEnemy.cs" t="Include" />
             <e p="sampleEnemyCircle.cs" t="Include" />
+            <e p="SampleEnemyPacing.cs" t="Include" />
             <e p="sampleEnemyRunSpot.cs" t="Include" />
           </e>
           <e p="mixScripts" t="Include">

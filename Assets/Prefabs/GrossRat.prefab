@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114870484314720716}
   m_Layer: 8
   m_Name: GrossRat
-  m_TagString: Enemy
+  m_TagString: Sock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,6 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spd: 0.05
   distance: 10
+  curPos: {x: 0, y: 0}
+  throwTimer: 0
   thisIngredient: {fileID: 0}
 --- !u!212 &212948511876920746
 SpriteRenderer:

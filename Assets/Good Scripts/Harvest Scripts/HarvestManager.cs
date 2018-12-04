@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.EventSystems;
+using UnityScript.Lang;
 
 public class HarvestManager : MonoBehaviour {
     public static HarvestManager hm;
@@ -21,6 +23,14 @@ public class HarvestManager : MonoBehaviour {
     public int sauceCount;
     public int meatCount;
     public int sockCount;
+    
+    [Header ("Enemy Counts")]
+    public GameObject[] numberOfEnemies;
+    public GameObject[] breadEnemyCount;
+    public GameObject[] cheeseEnemyCount;
+    public GameObject[] sauceEnemyCount;
+    public GameObject[] meatEnemyCount;
+    public GameObject[] sockEnemyCount;
 
     public int totalIngredients;
     [Header ("Text")]
@@ -109,6 +119,7 @@ public class HarvestManager : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
+	    
         if (!listOut)
         {
             ingredientMenu.SetActive(false);
@@ -150,8 +161,23 @@ public class HarvestManager : MonoBehaviour {
             allMyEnemies.SetActive(true);
             collectTimer += Time.deltaTime;
             radialTimer.fillAmount = collectTimer / totalCollectTimer;
+            
+            breadEnemyCount = GameObject.FindGameObjectsWithTag("Bread");
+            cheeseEnemyCount = GameObject.FindGameObjectsWithTag("Cheese");
+            sauceEnemyCount= GameObject.FindGameObjectsWithTag("Sauce");
+           // meatEnemyCount= GameObject.FindGameObjectsWithTag("Meat");
+            sockEnemyCount= GameObject.FindGameObjectsWithTag("Sock");
 
-            GameObject[] numberOfEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+            //FIGURE OUT HOW TO ADD ARRAYS TOGETHER
+            //Figured it out
+
+            numberOfEnemies = breadEnemyCount.Concat(cheeseEnemyCount).Concat(sauceEnemyCount)
+                .Concat(meatEnemyCount).Concat(sockEnemyCount).ToArray();
+            
+            Debug.Log("fur:" + numberOfEnemies.Length);
+            Debug.Log("bread:" + breadEnemyCount.Length);
+
+            //numberOfEnemies += breadEnemyCount;
             if (sockDrop == true)
             {
                 for(int j = 0; j < 3; j++)

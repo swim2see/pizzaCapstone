@@ -938,6 +938,12 @@ MonoBehaviour:
   sauceCount: 0
   meatCount: 0
   sockCount: 0
+  numberOfEnemies: []
+  breadEnemyCount: []
+  cheeseEnemyCount: []
+  sauceEnemyCount: []
+  meatEnemyCount: []
+  sockEnemyCount: []
   totalIngredients: 0
   breadText: {fileID: 298483812}
   cheeseText: {fileID: 1106371240}
@@ -2395,6 +2401,22 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1106371238}
   m_CullTransparentMesh: 0
+--- !u!1 &1140453022 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1119189555174078, guid: 29e6cba55087fa44a978fe9ee6d2465e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1339699876}
+--- !u!114 &1140453027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1140453022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c55d0d498086c9f4dabf854988212ae9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1143449775
 Prefab:
   m_ObjectHideFlags: 0
@@ -3373,7 +3395,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1119189555174078, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
@@ -3797,7 +3819,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1119189555174078, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
@@ -4896,7 +4918,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1119189555174078, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29e6cba55087fa44a978fe9ee6d2465e, type: 2}
