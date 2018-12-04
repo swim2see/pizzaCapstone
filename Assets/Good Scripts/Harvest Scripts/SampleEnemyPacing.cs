@@ -38,8 +38,8 @@ public class SampleEnemyPacing : MonoBehaviour {
 			{
 
 
-				transform.position = new Vector2(Mathf.Sin(distanceCounter) * 2 + centerPosition.x, centerPosition.y);
-				distanceCounter += spd;
+				transform.position = new Vector2(Mathf.Sin(distanceCounter) * 4 + centerPosition.x, centerPosition.y);
+				distanceCounter += .001f;
 				if (distanceCounter > 2f * Mathf.PI)
 				{
 					distanceCounter = 0;

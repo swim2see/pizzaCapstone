@@ -16,6 +16,7 @@ public class sampleEnemyRunSpot : MonoBehaviour {
     Vector2 newTarget;
     Vector2 vel;
     Vector2 prevPos;
+    private Vector2 centerPosition;
 
     public float targetDistance;
     // Use this for initialization
@@ -26,6 +27,7 @@ public class sampleEnemyRunSpot : MonoBehaviour {
         newTarget = new Vector2(0, 0);
         vel = (newTarget - (Vector2)transform.position).normalized * speed / 2;
         prevPos = (Vector2)transform.position;
+        centerPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -39,6 +41,10 @@ public class sampleEnemyRunSpot : MonoBehaviour {
                 newTarget = new Vector2(Random.Range(-11, 5), Random.Range(-3, 6));
 
             }
+        }
+        else
+        {
+            transform.position = centerPosition;
         }
         //print(Mathf.Abs((Vector2.Distance(prevPos, newTarget))));
 
@@ -64,6 +70,9 @@ public class sampleEnemyRunSpot : MonoBehaviour {
         Vector3 objectPos = Camera.main.ScreenToWorldPoint(mousePos);
 
         transform.position = objectPos;
+
+        centerPosition.x = objectPos.x;
+        centerPosition.y = objectPos.y;
 
     }
     private void OnMouseUp()
