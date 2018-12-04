@@ -25,6 +25,8 @@ GameObject:
   - component: {fileID: 114981948017119442}
   - component: {fileID: 61843372943200674}
   - component: {fileID: 50262789540111572}
+  - component: {fileID: 95401121294995066}
+  - component: {fileID: 111045711472354734}
   m_Layer: 8
   m_Name: Red Rat
   m_TagString: Sauce
@@ -90,6 +92,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.9916391, y: 2.5505695}
   m_EdgeRadius: 0
+--- !u!95 &95401121294995066
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1119189555174078}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 523950603113bab468ffe4f8e14cdbea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &111045711472354734
+Animation:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1119189555174078}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: e691193a2d2675c488df27f7a084eb3c, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &114338827004217596
 MonoBehaviour:
   m_ObjectHideFlags: 1
