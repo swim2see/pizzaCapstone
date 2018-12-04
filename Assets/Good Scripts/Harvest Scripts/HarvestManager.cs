@@ -64,6 +64,7 @@ public class HarvestManager : MonoBehaviour {
     public enemyHarvest eH;
     public HarvestPlayer p;
     public enemyHarvest bossTurnActions;
+    public makingSpells ms;
 
     public int gameState;
 
@@ -236,6 +237,19 @@ public class HarvestManager : MonoBehaviour {
                 gameState = 4;
             }
         }
+
+        //click and drag boxes to the respective target boxes (base, flavoring, garnish)
+        //have boxes snap back to original position if they are not within a certain range of the targets
+        //if allowing for multiple copies, instantiate new ingredient underneath old ingredient 
+        //have book pop up showing the ingredients, turn pages to see what the ingredients do as various attributes 
+        //box shaped icons that will fit into the target boxes 
+        //incorprate the book, have tabs for ingredients
+
+        //base is a separate equation that changes with intensity
+        //one of the base effects could be protecting other ingredients
+        //eating certain ingredients makes you sick 
+        //standard buffs/debuffs
+        
         if (gameState == 4)
         {
             bossEnemy.SetActive(true);
@@ -435,6 +449,13 @@ public class HarvestManager : MonoBehaviour {
         //2=sauce
         //3=meat
         //4=sock
+
+        eH.health -= ms.MeatSpell(10, 1);
+        //array of floats that store the values of the flavoring of each ingredient
+        //for garnish, just pass in a number
+
+        
+
         if(spellIngredient[0] && spellIngredient[1] && spellIngredient[2])
         {
             print("PIZZA TIME");
