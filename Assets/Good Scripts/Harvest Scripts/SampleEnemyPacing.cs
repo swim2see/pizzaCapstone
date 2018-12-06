@@ -36,8 +36,6 @@ public class SampleEnemyPacing : MonoBehaviour {
 		{
 			foreach (GameObject sauce in HarvestManager.hm.sauceEnemyCount)
 			{
-
-
 				transform.position = new Vector2(Mathf.Sin(distanceCounter) * 4 + centerPosition.x, centerPosition.y);
 				distanceCounter += .001f;
 				if (distanceCounter > 2f * Mathf.PI)

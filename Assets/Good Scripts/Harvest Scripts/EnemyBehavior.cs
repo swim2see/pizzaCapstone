@@ -33,6 +33,9 @@ public class EnemyBehavior : MonoBehaviour {
     private Vector2 centerPosition;
     
     private float distanceCounter;
+
+    private Animator sauceAnimator;
+    private Animator cheeseAnimator;
     
 
     public ingredientClass thisIngredient;
@@ -40,8 +43,6 @@ public class EnemyBehavior : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-   
-
         rb = GetComponent<Rigidbody2D>();
         //cam = GameObject.Find("Main Camera").GetComponent<CamControl>();
         player = GameObject.FindWithTag("Player");
@@ -52,34 +53,41 @@ public class EnemyBehavior : MonoBehaviour {
         RotateSpeed = Random.Range(1.5f, 2.5f);
 
         DOTween.SetTweensCapacity(2000, 100);
-        rb = GetComponent<Rigidbody2D>();
+        //rb = GetComponent<Rigidbody2D>();
         newTarget = new Vector2(0, 0);
         vel = (newTarget - (Vector2)transform.position).normalized * speed / 2;
         prevPos = (Vector2)transform.position;
+        
         centerPosition = transform.position;
+
+        sauceAnimator = GetComponent<Animator>();
+        cheeseAnimator = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
     
     private void OnMouseDrag()
-    {
-        
+    {        
+       
         isDragging = true;
         Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, distance);
         Vector3 objectPos = Camera.main.ScreenToWorldPoint(mousePos);
-
+        
         centerPosition.x = objectPos.x;
         centerPosition.y = objectPos.y;
 
-        transform.position = objectPos;
+        transform.position = objectPos;      
+        /*if(this.gameObject.tag == "Sauce")
+        {         
+                sauceAnimator.Play("Sauce grabbed");       
+        }*/
   
     }
 
 
     void FixedUpdate()
     {
-       
-
         vel = (newTarget - prevPos).normalized * speed / 2;
         rb.MovePosition((Vector2)transform.position + vel);
         //End sauce
@@ -94,7 +102,8 @@ public class EnemyBehavior : MonoBehaviour {
                 {
                     prevPos = newTarget;
                     newTarget = new Vector2(Random.Range(-11, 5), Random.Range(-3, 6));
-
+                    
+                    //sauceAnimator.Play("Sauce idle animation");
                 }
             }
             
@@ -134,6 +143,7 @@ public class EnemyBehavior : MonoBehaviour {
             if (this.gameObject.tag == "Meat")
             {
                 transform.position = new Vector2(Mathf.Sin(distanceCounter) * 2 + centerPosition.x, centerPosition.y);
+                //+ centerPosition.x, centerPosition.y
                 distanceCounter += spd;
                 if (distanceCounter > 2f * Mathf.PI)
                 {
@@ -143,8 +153,11 @@ public class EnemyBehavior : MonoBehaviour {
             
         }
         else
-        {
-            transform.position = centerPosition;
+        {        
+               transform.position = centerPosition;
+
+            sauceAnimator.Play("Sauce grabbed");
+            cheeseAnimator.Play("Mozzarella grabbed");
         }
     }
     
@@ -171,6 +184,8 @@ public class EnemyBehavior : MonoBehaviour {
     {
         isDragging = false;
         _centre = transform.position;
+        sauceAnimator.Play("Sauce idle animation");
+        cheeseAnimator.Play("Cheese Walk");
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -221,10 +236,5 @@ public class EnemyBehavior : MonoBehaviour {
             }
         }
     }
-    
-    
-
-    
-    
     
 }

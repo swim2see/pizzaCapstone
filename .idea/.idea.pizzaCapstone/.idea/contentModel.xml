@@ -922,6 +922,7 @@
             <e p="HarvestManager.cs" t="Include" />
             <e p="HarvestPlayer.cs" t="Include" />
             <e p="ingredientClass.cs" t="Include" />
+            <e p="makingSpells.cs" t="Include" />
             <e p="myCursor.cs" t="Include" />
             <e p="sampleEnemy.cs" t="Include" />
             <e p="sampleEnemyCircle.cs" t="Include" />
