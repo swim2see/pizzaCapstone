@@ -423,7 +423,6 @@ public class HarvestManager : MonoBehaviour {
     {
         gameState = 2;
         source.PlayOneShot(success);
-
     }
     
     //allows you to fire a spell
