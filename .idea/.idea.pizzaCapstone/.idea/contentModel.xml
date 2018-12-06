@@ -924,6 +924,7 @@
             <e p="ingredientClass.cs" t="Include" />
             <e p="makingSpells.cs" t="Include" />
             <e p="myCursor.cs" t="Include" />
+            <e p="Pupils.cs" t="Include" />
             <e p="sampleEnemy.cs" t="Include" />
             <e p="sampleEnemyCircle.cs" t="Include" />
             <e p="SampleEnemyPacing.cs" t="Include" />

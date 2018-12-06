@@ -151,13 +151,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb564b96dc89bb419f85674d4708739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spd: 0
+  spd: 0.1
   distance: 10
   RotateSpeed: 0
   Radius: 0
   positions: []
   speed: 0.1
-  targetDistance: 1
+  targetDistance: 0
   thisIngredient: {fileID: 0}
 --- !u!114 &114981948017119442
 MonoBehaviour:

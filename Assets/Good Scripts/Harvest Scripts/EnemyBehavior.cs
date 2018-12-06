@@ -10,6 +10,7 @@ public class EnemyBehavior : MonoBehaviour {
     public float spd;
     public float distance;
     bool isDragging;
+    private bool isScared;
 
     public float RotateSpeed;
     public float Radius;
@@ -36,6 +37,8 @@ public class EnemyBehavior : MonoBehaviour {
 
     private Animator sauceAnimator;
     private Animator cheeseAnimator;
+    private Animator breadAnimator;
+    
     
 
     public ingredientClass thisIngredient;
@@ -62,6 +65,7 @@ public class EnemyBehavior : MonoBehaviour {
 
         sauceAnimator = GetComponent<Animator>();
         cheeseAnimator = GetComponent<Animator>();
+        breadAnimator = GetComponent<Animator>();
 
     }
 
@@ -90,13 +94,27 @@ public class EnemyBehavior : MonoBehaviour {
     {
         vel = (newTarget - prevPos).normalized * speed / 2;
         rb.MovePosition((Vector2)transform.position + vel);
+        
+        Vector3 playerPos = player.transform.position;
         //End sauce
+        
+        //Determines if the cursor is close enough to play ingredient scared animations
+        if (Vector2.Distance(transform.position, playerPos) < 3f)
+        {
+            isScared = true;
+        }
+        else
+        {
+            isScared = false;
+        }
         
         if (!isDragging)
         {
             //foreach (GameObject sauce in HarvestManager.hm.sauceEnemyCount)
             //sauce movement
-            if(this.gameObject.tag == "Sauce")
+            
+
+            if(this.gameObject.tag == "Meat")
             {
                 if (Mathf.Abs((Vector2.Distance((Vector2) transform.position, newTarget))) < targetDistance)
                 {
@@ -115,6 +133,16 @@ public class EnemyBehavior : MonoBehaviour {
                 var offset = new Vector2(Mathf.Sin(_angle), Mathf.Cos(_angle)) * Radius;
                 //transform.position = _centre + offset;
                 rb.MovePosition(_centre+offset);
+
+                if (isScared == true)
+                {
+                    cheeseAnimator.Play("Mozzarella scared");
+                }
+                else
+                {
+                    cheeseAnimator.Play("Cheese Walk");
+                }
+
             }
             
             //bread movement
@@ -123,9 +151,6 @@ public class EnemyBehavior : MonoBehaviour {
                 if (player != null)
                 {
                     GameObject playerObj;
-                    Vector3 playerPos;
-                    playerObj = GameObject.FindWithTag("Player");
-                    playerPos = playerObj.transform.position;
                     Vector3 velo;
                     if (Vector2.Distance(transform.position, playerPos) > 5f)
                     {
@@ -137,14 +162,16 @@ public class EnemyBehavior : MonoBehaviour {
                     }
 
                     rb.MovePosition(transform.position + velo);
+                    breadAnimator.Play("Dough walk");
                 }
             }
             
-            if (this.gameObject.tag == "Meat")
+            if (this.gameObject.tag == "Sauce")
             {
                 transform.position = new Vector2(Mathf.Sin(distanceCounter) * 2 + centerPosition.x, centerPosition.y);
                 //+ centerPosition.x, centerPosition.y
                 distanceCounter += spd;
+                //transform.GetChild()
                 if (distanceCounter > 2f * Mathf.PI)
                 {
                     distanceCounter = 0;
@@ -159,6 +186,7 @@ public class EnemyBehavior : MonoBehaviour {
             sauceAnimator.Play("Sauce grabbed");
             cheeseAnimator.Play("Mozzarella grabbed");
         }
+        //scaredAnimations();
     }
     
     
@@ -185,7 +213,7 @@ public class EnemyBehavior : MonoBehaviour {
         isDragging = false;
         _centre = transform.position;
         sauceAnimator.Play("Sauce idle animation");
-        cheeseAnimator.Play("Cheese Walk");
+        //cheeseAnimator.Play("Cheese Walk");
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -236,5 +264,75 @@ public class EnemyBehavior : MonoBehaviour {
             }
         }
     }
-    
+
+    private void scaredAnimations()
+    {
+        //Vector3 playerPos = player.transform.position;
+
+
+
+
+        if (!isDragging)
+        {
+           
+               /* if (this.gameObject.tag == "Meat")
+                {
+                    if (Mathf.Abs((Vector2.Distance((Vector2) transform.position, newTarget))) < targetDistance)
+                    {
+                        prevPos = newTarget;
+                        newTarget = new Vector2(Random.Range(-11, 5), Random.Range(-3, 6));
+
+                        //sauceAnimator.Play("Sauce idle animation");
+                    }
+                }*/
+
+                //cheese movement
+                if (this.gameObject.tag == "Cheese")
+                {
+                    
+
+                    //bread movement
+                /*if (this.gameObject.tag == "Bread")
+                {
+                    if (player != null)
+                    {
+                        GameObject playerObj;
+                        Vector3 velo;
+                        if (Vector2.Distance(transform.position, playerPos) > 5f)
+                        {
+                            velo = (transform.position - playerPos).normalized * spd / 2;
+                        }
+                        else
+                        {
+                            velo = (transform.position - playerPos).normalized * spd * 1.5f;
+                        }
+
+                        rb.MovePosition(transform.position + velo);
+                    }
+                }
+
+                if (this.gameObject.tag == "Sauce")
+                {
+                    transform.position =
+                        new Vector2(Mathf.Sin(distanceCounter) * 2 + centerPosition.x, centerPosition.y);
+                    //+ centerPosition.x, centerPosition.y
+                    distanceCounter += spd;
+                    if (distanceCounter > 2f * Mathf.PI)
+                    {
+                        distanceCounter = 0;
+                    }
+                }*/
+
+            }
+            else
+            {
+                transform.position = centerPosition;
+
+                //sauceAnimator.Play("Sauce grabbed");
+                cheeseAnimator.Play("Mozzarella grabbed");
+            }
+
+        }
+    }
+
 }

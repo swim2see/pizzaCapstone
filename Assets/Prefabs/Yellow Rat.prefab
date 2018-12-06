@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50602763572985728}
   - component: {fileID: 61840281804608874}
   - component: {fileID: 114090258220238790}
+  - component: {fileID: 95946154938512310}
   m_Layer: 8
   m_Name: Yellow Rat
   m_TagString: Bread
@@ -89,6 +90,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.1440115, y: 5.6863246}
   m_EdgeRadius: 0
+--- !u!95 &95946154938512310
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1406671555161302}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 87d5dd9132a08974a92cd6abd416990c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114072012754767492
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -118,11 +137,6 @@ MonoBehaviour:
   distance: 10
   RotateSpeed: 0
   Radius: 0
-  breadEnemy: {fileID: 0}
-  cheeseEnemy: {fileID: 0}
-  sauceEnemy: {fileID: 0}
-  meatEnemy: {fileID: 0}
-  sockEnemy: {fileID: 0}
   positions: []
   speed: 0.1
   targetDistance: 10
