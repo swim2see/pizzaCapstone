@@ -1157,6 +1157,7 @@ MonoBehaviour:
   eH: {fileID: 1662960877}
   p: {fileID: 1351041573}
   bossTurnActions: {fileID: 1662960877}
+  ms: {fileID: 0}
   gameState: 0
   totalCollectTimer: 7
   radialTimer: {fileID: 1242233491}
@@ -4708,7 +4709,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Fire Spell
+  m_Text: Cast Spell
 --- !u!222 &1725800384
 CanvasRenderer:
   m_ObjectHideFlags: 0

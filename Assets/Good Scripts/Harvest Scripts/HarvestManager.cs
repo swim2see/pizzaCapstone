@@ -89,6 +89,11 @@ public class HarvestManager : MonoBehaviour {
     public AudioClip spellActivate;
     public AudioClip ingAddedSound;
 
+    [Header("Make Spells")]
+    int baseNumber;
+    int flavoring;
+    int[] flavoringValues;
+    int garnish;
     //public int castability;
     
     public GameObject bossEnemy;
@@ -105,16 +110,7 @@ public class HarvestManager : MonoBehaviour {
         
         gameState = 0;
         hm = this;
-        //  bag.Add(ingredientCountA);
-        //  bag.Remove(3);
-        //  int temp= bag[1];
-
-        //  for(int i = 0; i < ingredientCountA; i++)
-        //  {
-        //      bag.Add();
-        //  }
-        //}
-        //generateEnemies(3,5);
+        
         listOut = false;
 
         source = GetComponent<AudioSource>();
@@ -130,8 +126,7 @@ public class HarvestManager : MonoBehaviour {
             ingredientMenu.SetActive(false);
         }
         numIngredients = (int)(Mathf.Clamp01(breadCount) + Mathf.Clamp01(cheeseCount) + Mathf.Clamp01(sauceCount) + Mathf.Clamp01(meatCount) + Mathf.Clamp01(sockCount));
-        //print(numIngredients);
-        //print(gameState);
+     
         if(numIngredients >= 3)
         {
             cook.interactable = true;
@@ -144,8 +139,7 @@ public class HarvestManager : MonoBehaviour {
 	    //Cook/Collect selection menu 
         if (gameState == 0)
         {
-            //allMyEnemies.SetActive(false);
-            //entireTimer.gameObject.SetActive(false);
+         
             optionSelectButtons.SetActive(true);
             fireSpellButton.SetActive(false);
             buttonTray.SetActive(false);
@@ -163,7 +157,7 @@ public class HarvestManager : MonoBehaviour {
         {
             bossEnemy.SetActive(true);
             //fireSpellButton.SetActive(false);
-            //buttonTray.SetActive(false);
+          
             allMyEnemies.SetActive(true);
             collectTimer += Time.deltaTime;
             radialTimer.fillAmount = collectTimer / totalCollectTimer;
@@ -174,8 +168,7 @@ public class HarvestManager : MonoBehaviour {
             meatEnemyCount= GameObject.FindGameObjectsWithTag("Meat");
             sockEnemyCount= GameObject.FindGameObjectsWithTag("Sock");
 
-            //FIGURE OUT HOW TO ADD ARRAYS TOGETHER
-            //Figured it out
+           
 
             numberOfEnemies = breadEnemyCount.Concat(cheeseEnemyCount).Concat(sauceEnemyCount)
                 .Concat(meatEnemyCount).Concat(sockEnemyCount).ToArray();
@@ -224,8 +217,34 @@ public class HarvestManager : MonoBehaviour {
             fireSpellButton.SetActive(true);
             bossEnemy.SetActive(true);
             playergameObject.SetActive(true);
+
+            if (baseNumber == 1) {
+                ms.BreadSpell(flavoringValues[flavoring], garnish);
+            }
+            if (baseNumber == 2) {
+                ms.CheeseSpell(flavoringValues[flavoring], garnish);
+            }
+            if (baseNumber == 3) {
+                ms.SauceSpell(flavoringValues[flavoring], garnish);
+            }
+            if (baseNumber == 4) {
+                ms.MeatSpell(flavoringValues[flavoring], garnish);
+            }
+            if (baseNumber == 5) {
+                ms.SockSpell(flavoringValues[flavoring], garnish);
+            }
         }
-       
+        //click and drag boxes to the respective target boxes (base, flavoring, garnish)
+        //have boxes snap back to original position if they are not within a certain range of the targets
+        //if allowing for multiple copies, instantiate new ingredient underneath old ingredient 
+        //have book pop up showing the ingredients, turn pages to see what the ingredients do as various attributes 
+        //box shaped icons that will fit into the target boxes 
+        //incorprate the book, have tabs for ingredients
+
+        //base is a separate equation that changes with intensity
+        //one of the base effects could be protecting other ingredients
+        //eating certain ingredients makes you sick 
+        //standard buffs/debuffs
 
         if (gameState == 3)
         {
@@ -238,17 +257,7 @@ public class HarvestManager : MonoBehaviour {
             }
         }
 
-        //click and drag boxes to the respective target boxes (base, flavoring, garnish)
-        //have boxes snap back to original position if they are not within a certain range of the targets
-        //if allowing for multiple copies, instantiate new ingredient underneath old ingredient 
-        //have book pop up showing the ingredients, turn pages to see what the ingredients do as various attributes 
-        //box shaped icons that will fit into the target boxes 
-        //incorprate the book, have tabs for ingredients
-
-        //base is a separate equation that changes with intensity
-        //one of the base effects could be protecting other ingredients
-        //eating certain ingredients makes you sick 
-        //standard buffs/debuffs
+       
         
         if (gameState == 4)
         {
@@ -257,9 +266,7 @@ public class HarvestManager : MonoBehaviour {
             gameFeelTimer = 2;
             bossTurnActions.attack();
             gameState = 6;
-            
             //gameFeelTimer = 3;
-            
         }
         if (gameState == 6)
         {
@@ -341,6 +348,19 @@ public class HarvestManager : MonoBehaviour {
                 spellIngredient[x] = true;
                 bag.Remove(bread);
                 breadCount--;
+
+                if (totalIngredients == 0)
+                {
+                    baseNumber = x;
+                }
+                else if (totalIngredients == 1)
+                {
+                    flavoring = flavoringValues[x];
+                }
+                else if (totalIngredients == 2)
+                {
+                    garnish = x;
+                }
             } else if (x == 1 && cheeseCount > 0 && totalIngredients < 3)
             {
                 buttons[x].GetComponent<Image>().color = Color.red;
@@ -348,6 +368,19 @@ public class HarvestManager : MonoBehaviour {
                 spellIngredient[x] = true;
                 bag.Remove(cheese);
                 cheeseCount--;
+
+                if (totalIngredients == 0)
+                {
+                    baseNumber = x;
+                }
+                else if (totalIngredients == 1)
+                {
+                    flavoring = flavoringValues[x];
+                }
+                else if (totalIngredients == 2)
+                {
+                    garnish = x;
+                }
             }
             else if (x == 2 && sauceCount > 0 && totalIngredients < 3)
             {
