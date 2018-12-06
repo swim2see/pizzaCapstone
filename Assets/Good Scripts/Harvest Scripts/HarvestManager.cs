@@ -188,9 +188,9 @@ public class HarvestManager : MonoBehaviour {
                 
             }
             //put reinstantiate code here if stuff dont work
-            if (numberOfEnemies.Length < 16)
+            if (numberOfEnemies.Length < 9)
             {
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < 2; i++)
                 {
                     GameObject type1 = Instantiate(enemyA, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
                     type1.transform.parent = GameObject.Find("Enemies").transform;
