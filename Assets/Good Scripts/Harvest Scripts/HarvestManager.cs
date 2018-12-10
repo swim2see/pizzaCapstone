@@ -88,6 +88,8 @@ public class HarvestManager : MonoBehaviour {
     public AudioClip success;
     public AudioClip spellActivate;
     public AudioClip ingAddedSound;
+    public AudioClip takeDamageSound;
+    public AudioClip removeIngredientSound;
 
     [Header("Make Spells")]
     public int baseNumber;
@@ -191,7 +193,8 @@ public class HarvestManager : MonoBehaviour {
                 
             }
             //put reinstantiate code here if stuff dont work
-            if (numberOfEnemies.Length < 9)
+            //UNCOMMENT THIS
+            /*if (numberOfEnemies.Length < 9)
             {
                 for (int i = 0; i < 2; i++)
                 {
@@ -203,7 +206,7 @@ public class HarvestManager : MonoBehaviour {
                     type3.transform.parent = GameObject.Find("Enemies").transform;
                 }
 
-            }
+            }*/
                 if (collectTimer >= totalCollectTimer)
             {
                 gameState = 3;
@@ -254,6 +257,7 @@ public class HarvestManager : MonoBehaviour {
             playergameObject.SetActive(true);
             gameFeelTimer = 2;
             bossTurnActions.attack();
+            source.PlayOneShot(takeDamageSound);
             gameState = 6;
             //gameFeelTimer = 3;
         }
@@ -461,6 +465,7 @@ public class HarvestManager : MonoBehaviour {
             buttons[x].GetComponent<Image>().color = Color.clear;
             totalIngredients--;
             spellIngredient[x] = false;
+            source.PlayOneShot(removeIngredientSound);
             if (x == 0)
             {
                 bag.Add(bread);
