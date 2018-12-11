@@ -35,7 +35,7 @@ public class enemyHarvest : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         healthBar.fillAmount = health / maxHealth;
-
+        print(health);
         if (HarvestManager.hm.gameState != 1)
         {
             print("WHY");

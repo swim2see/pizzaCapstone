@@ -120,6 +120,8 @@ public class HarvestManager : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
+
+        
         if (bossEnemy == null || playergameObject==null)
         {
             SceneManager.LoadScene("Overworld");
@@ -144,6 +146,7 @@ public class HarvestManager : MonoBehaviour {
         {
          
             optionSelectButtons.SetActive(true);
+            optionSelectButtons.GetComponent<RectTransform>().DOAnchorPos(new Vector2(0, 78), 1.5f).SetEase(Ease.OutBack);
             fireSpellButton.SetActive(false);
             buttonTray.SetActive(false);
             bossEnemy.SetActive(false);
@@ -217,12 +220,16 @@ public class HarvestManager : MonoBehaviour {
         if (gameState == 2)
         {
             buttonTray.SetActive(true);
+            buttonTray.GetComponent<RectTransform>().DOAnchorPos(new Vector2(281, -35), 1.5f).SetEase(Ease.OutBack);
             fireSpellButton.SetActive(true);
             bossEnemy.SetActive(true);
             playergameObject.SetActive(true);
 
             spellText.text = firstIngredient + secondIngredient + thirdIngredient;
         }
+        
+        
+        
         //click and drag boxes to the respective target boxes (base, flavoring, garnish)
         //have boxes snap back to original position if they are not within a certain range of the targets
         //if allowing for multiple copies, instantiate new ingredient underneath old ingredient 
@@ -254,7 +261,12 @@ public class HarvestManager : MonoBehaviour {
             playergameObject.SetActive(true);
             gameFeelTimer = 2;
             bossTurnActions.attack();
+            buttonTray.GetComponent<RectTransform>().DOAnchorPos(new Vector2(281, -278), .5f).SetEase(Ease.InBack);
             gameState = 6;
+            firstIngredient = "";
+            secondIngredient = "";
+            thirdIngredient = "";
+            spellText.text = "";
             //gameFeelTimer = 3;
         }
         if (gameState == 6)
@@ -285,34 +297,7 @@ public class HarvestManager : MonoBehaviour {
     }
 
     //Bread button
-    public void Button1()
-    {
-        SelectIngredient(0);
-    }
-
-    //Cheese button
-    public void Button2()
-    {
-        SelectIngredient(1);
-    }
     
-    //sauce button
-    public void Button3()
-    {
-        SelectIngredient(2);
-    }
-    
-    //meat button
-    public void Button4()
-    {
-        SelectIngredient(3);
-    }
-    
-    //sock button 
-    public void Button5()
-    {
-        SelectIngredient(4);
-    }
     
     //Detects which ingredients have been selected
     public void SelectIngredient(int x)
@@ -624,6 +609,7 @@ public class HarvestManager : MonoBehaviour {
         spellIngredient[4] = false;
 
         
+
         gameState = 3;
         gameFeelTimer = 1f;
     }

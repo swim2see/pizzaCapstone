@@ -827,7 +827,7 @@ MonoBehaviour:
   ingAddedSound: {fileID: 8300000, guid: e5333368e06a56041bc1fe61860e8c65, type: 3}
   baseNumber: 0
   flavoring: 0
-  flavoringValues: 050000000a0000000500000019000000f1ffffff
+  flavoringValues: 0a0000000f0000000a00000019000000f1ffffff
   garnish: 0
   bossEnemy: {fileID: 1662960874}
   playergameObject: {fileID: 1351041571}
@@ -1975,7 +1975,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 281.5623, y: -35.47998}
+  m_AnchoredPosition: {x: 281.5623, y: -276}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1003522278
@@ -2257,21 +2257,6 @@ Prefab:
     - target: {fileID: 4292483456271710, guid: 35e5eabfd0b24194c954649c4c82c42c, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 95946154938512310, guid: 35e5eabfd0b24194c954649c4c82c42c,
-        type: 2}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 87d5dd9132a08974a92cd6abd416990c, type: 2}
-    - target: {fileID: 61840281804608874, guid: 35e5eabfd0b24194c954649c4c82c42c,
-        type: 2}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 61840281804608874, guid: 35e5eabfd0b24194c954649c4c82c42c,
-        type: 2}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35e5eabfd0b24194c954649c4c82c42c, type: 2}
@@ -5016,7 +5001,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 78}
+  m_AnchoredPosition: {x: 0, y: 286}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2050481500
