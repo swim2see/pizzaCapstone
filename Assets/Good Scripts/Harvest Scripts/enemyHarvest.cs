@@ -147,7 +147,7 @@ public void normAttack()
 
     if (HarvestManager.hm.gameState == 4)
     {
-        int barkNumber = Random.Range(0, 3);
+        int barkNumber = Random.Range(0, 10);
         enemyBarks.text = possibleBarks[barkNumber].ToString();
 
     }

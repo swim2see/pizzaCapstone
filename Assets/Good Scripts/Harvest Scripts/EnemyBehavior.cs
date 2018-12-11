@@ -49,7 +49,7 @@ public class EnemyBehavior : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         //cam = GameObject.Find("Main Camera").GetComponent<CamControl>();
         player = GameObject.FindWithTag("Player");
-        transform.position = new Vector2(Random.Range(-6, 6), Random.Range(-3, 3));
+        transform.position = new Vector2(Random.Range(-6, 6), Random.Range(-3, 6));
         //print(transform.position);
         
         _centre = transform.position;
@@ -119,7 +119,7 @@ public class EnemyBehavior : MonoBehaviour {
                 if (Mathf.Abs((Vector2.Distance((Vector2) transform.position, newTarget))) < targetDistance)
                 {
                     prevPos = newTarget;
-                    newTarget = new Vector2(Random.Range(-11, 5), Random.Range(-3, 6));
+                    newTarget = new Vector2(Random.Range(-10, 10), Random.Range(-3, 5));
                     
                     //sauceAnimator.Play("Sauce idle animation");
                 }

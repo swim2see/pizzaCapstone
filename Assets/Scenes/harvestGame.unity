@@ -4348,9 +4348,16 @@ MonoBehaviour:
   isDefending: 0
   enemyBarks: {fileID: 1520656329}
   possibleBarks:
-  - Take this!
+  - You really thought you could beat the Rat King?
   - You'll never save dollar pizza, kid!
   - This city belongs to Big Pizza!
+  - 'Get lost! '
+  - 'The Rats will rule this town! '
+  - I'll smash ya!
+  - 'Alright Pizzaiolo, no messin'' around! '
+  - 'How come all your moves have special names? '
+  - Secret Technique! Uhh...Rat...Attack?
+  - Ratabing baby! Ugh, that just sounds bad...
   finalAttack: 0
   dead: 0
   enemyHealthBar: {fileID: 1232299816}
