@@ -265,6 +265,8 @@ public class HarvestManager : MonoBehaviour {
             gameFeelTimer = 2;
             bossTurnActions.attack();
             buttonTray.GetComponent<RectTransform>().DOAnchorPos(new Vector2(281, -278), .5f).SetEase(Ease.InBack);
+
+            source.PlayOneShot(takeDamageSound);
             gameState = 6;
             firstIngredient = "";
             secondIngredient = "";
