@@ -137,10 +137,22 @@ public class EnemyBehavior : MonoBehaviour {
                 if (isScared == true)
                 {
                     cheeseAnimator.Play("Mozzarella scared");
+                    for(int i=0; i< this.gameObject.transform.childCount; i++)
+                    {
+                        GameObject child = this.gameObject.transform.GetChild(i).gameObject;
+                        if(child != null)
+                            child.SetActive(true);
+                    }
                 }
                 else
                 {
                     cheeseAnimator.Play("Cheese Walk");
+                    for(int i=0; i< this.gameObject.transform.childCount; i++)
+                    {
+                        GameObject child = this.gameObject.transform.GetChild(i).gameObject;
+                        if(child != null)
+                            child.SetActive(false);
+                    }
                 }
 
             }
@@ -185,6 +197,7 @@ public class EnemyBehavior : MonoBehaviour {
 
             sauceAnimator.Play("Sauce grabbed");
             cheeseAnimator.Play("Mozzarella grabbed");
+            breadAnimator.Play("Dough grabbed");
         }
         //scaredAnimations();
     }
