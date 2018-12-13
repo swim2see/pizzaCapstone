@@ -152,7 +152,7 @@ public class HarvestManager : MonoBehaviour {
         {
          
             optionSelectButtons.SetActive(true);
-            optionSelectButtons.GetComponent<RectTransform>().DOAnchorPos(new Vector2(0, 78), 1.5f).SetEase(Ease.OutBack);
+            optionSelectButtons.GetComponent<RectTransform>().DOAnchorPos(new Vector2(0, 286), 1.5f).SetEase(Ease.OutBack);
             fireSpellButton.SetActive(false);
             buttonTray.SetActive(false);
             bossEnemy.SetActive(false);
@@ -542,7 +542,7 @@ public class HarvestManager : MonoBehaviour {
 
         //array of floats that store the values of the flavoring of each ingredient
         //for garnish, just pass in a number
-
+        print("Flavoring: " + flavoring + "| Garnish:" + garnish);
         if (baseNumber == 0)
         {
             
@@ -560,18 +560,20 @@ public class HarvestManager : MonoBehaviour {
         }
         if (baseNumber==1)
         {
+            
             if (flavoring == flavoringValues[3] && garnish == 2)
             {
                 p.health += ms.CheeseSpell(flavoring, garnish);
                 spellText.text = "Meatball Parmageddon";
             }
+            else
+            {
+                p.health += ms.CheeseSpell(flavoring, garnish) * 2;
+                spellText.text = spellName1 + spellName2 + spellName3;
+            }
 
         }
-        else
-        {
-            p.health += ms.CheeseSpell(flavoring, garnish)*2;
-            spellText.text = spellName1 + spellName2 + spellName3;
-        }
+
         
         if (baseNumber==2)
         {
@@ -581,13 +583,13 @@ public class HarvestManager : MonoBehaviour {
                 spellText.text = "Sauce Salvation";
             }
             //HarvestPlayer.hp.health += 10;
+            else
+            {
+                p.health += ms.SauceSpell(flavoring, garnish);
+                spellText.text = spellName1 + spellName2 + spellName3;
+            }
+        }
 
-        }
-        else
-        {
-            p.health += ms.SauceSpell(flavoring, garnish);
-            spellText.text = spellName1 + spellName2 + spellName3;
-        }
         if (baseNumber==3)
         {
             if (flavoring == flavoringValues[0] && garnish == 2)
@@ -595,13 +597,13 @@ public class HarvestManager : MonoBehaviour {
                 eH.health -= ms.MeatSpell(flavoring, garnish);
                 spellText.text = "Meatball Submission";
             }
+            else
+            {
+                eH.health -= ms.MeatSpell(flavoring, garnish);
+                spellText.text = spellName1 + spellName2 + spellName3;
+            }
+        }
 
-        }
-        else
-        {
-            eH.health -= ms.MeatSpell(flavoring, garnish);
-            spellText.text = spellName1 + spellName2 + spellName3;
-        }
         if (baseNumber==4)
         {
             if(flavoring!=flavoringValues[1] || garnish != 1){
