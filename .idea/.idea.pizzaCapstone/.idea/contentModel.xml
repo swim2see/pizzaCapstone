@@ -916,6 +916,7 @@
         </e>
         <e p="Good Scripts" t="Include">
           <e p="Harvest Scripts" t="Include">
+            <e p="BagScript.cs" t="Include" />
             <e p="buttonTooltips.cs" t="Include" />
             <e p="EnemyBehavior.cs" t="Include" />
             <e p="enemyHarvest.cs" t="Include" />
