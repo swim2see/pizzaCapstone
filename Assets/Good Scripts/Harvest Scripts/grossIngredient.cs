@@ -14,6 +14,8 @@ public class grossIngredient : MonoBehaviour {
     Vector2 initialPos;
     bool resetPosition;
     public ingredientClass thisIngredient;
+    
+    private Animator sockAnimator;
 
     // Use this for initialization
     void Start()
@@ -23,6 +25,8 @@ public class grossIngredient : MonoBehaviour {
         bag = GameObject.FindWithTag("bag");
         throwTimer = 0;
         initialPos = transform.position;
+        
+        sockAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -76,6 +80,16 @@ public class grossIngredient : MonoBehaviour {
             }
             curPos = mousePos;
         }
+
+        if (isDragging)
+        {
+            sockAnimator.Play("Sock grabbed");
+        }
+        else
+        {
+            sockAnimator.Play("Sock hop");
+        }
+
     }
     private void OnMouseDrag()
     {
@@ -86,6 +100,7 @@ public class grossIngredient : MonoBehaviour {
         Vector3 objectPos = Camera.main.ScreenToWorldPoint(mousePos);
 
         transform.position = objectPos;
+        
 
     }
     private void OnMouseUp()
@@ -96,9 +111,10 @@ public class grossIngredient : MonoBehaviour {
     {
         if (collision.gameObject.tag == "bag")
         {
-
+            HarvestManager.hm.source.PlayOneShot(HarvestManager.hm.ingAddedSound);
             HarvestManager.hm.bag.Add(HarvestManager.hm.sock);
             HarvestManager.hm.bag.Add(HarvestManager.hm.sock);
+            HarvestManager.hm.BagAddition();
             HarvestManager.hm.sockCount += 2;
                 Destroy(gameObject);
             

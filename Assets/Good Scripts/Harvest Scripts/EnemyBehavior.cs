@@ -11,6 +11,7 @@ public class EnemyBehavior : MonoBehaviour {
     public float distance;
     bool isDragging;
     private bool isScared;
+    private bool isPicked;
 
     public float RotateSpeed;
     public float Radius;
@@ -38,9 +39,8 @@ public class EnemyBehavior : MonoBehaviour {
     private Animator sauceAnimator;
     private Animator cheeseAnimator;
     private Animator breadAnimator;
+    private Animator meatAnimator;
     
-    
-
     public ingredientClass thisIngredient;
 
     // Use this for initialization
@@ -66,6 +66,7 @@ public class EnemyBehavior : MonoBehaviour {
         sauceAnimator = GetComponent<Animator>();
         cheeseAnimator = GetComponent<Animator>();
         breadAnimator = GetComponent<Animator>();
+        meatAnimator = GetComponent<Animator>();
 
     }
 
@@ -124,7 +125,9 @@ public class EnemyBehavior : MonoBehaviour {
                     newTarget = new Vector2(Random.Range(-10, 10), Random.Range(-3, 5));
                     
                     //sauceAnimator.Play("Sauce idle animation");
+                    
                 }
+                meatAnimator.Play("Meat walk");
             }
             
             //cheese movement
@@ -200,6 +203,7 @@ public class EnemyBehavior : MonoBehaviour {
             sauceAnimator.Play("Sauce grabbed");
             cheeseAnimator.Play("Mozzarella grabbed");
             breadAnimator.Play("Dough grabbed");
+            meatAnimator.Play("Meat grabbed");
         }
         //scaredAnimations();
     }
