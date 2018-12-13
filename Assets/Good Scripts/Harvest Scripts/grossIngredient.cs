@@ -96,9 +96,10 @@ public class grossIngredient : MonoBehaviour {
     {
         if (collision.gameObject.tag == "bag")
         {
-
+            HarvestManager.hm.source.PlayOneShot(HarvestManager.hm.ingAddedSound);
             HarvestManager.hm.bag.Add(HarvestManager.hm.sock);
             HarvestManager.hm.bag.Add(HarvestManager.hm.sock);
+            HarvestManager.hm.BagAddition();
             HarvestManager.hm.sockCount += 2;
                 Destroy(gameObject);
             

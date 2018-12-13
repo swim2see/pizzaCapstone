@@ -842,6 +842,7 @@ MonoBehaviour:
   takeDamageSound: {fileID: 8300000, guid: 538509b8910af7943ada43933635e8f2, type: 3}
   removeIngredientSound: {fileID: 8300000, guid: aac144b48fa6e3e40b8c023edd5b3862,
     type: 3}
+  magicCastSpell: {fileID: 8300000, guid: f12acfae5c8c91c47828f8438958a029, type: 3}
   baseNumber: 0
   flavoring: 0
   flavoringValues: 050000000a0000000500000019000000f1ffffff

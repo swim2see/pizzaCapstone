@@ -90,6 +90,7 @@ public class HarvestManager : MonoBehaviour {
     public AudioClip ingAddedSound;
     public AudioClip takeDamageSound;
     public AudioClip removeIngredientSound;
+    public AudioClip magicCastSpell;
 
     [Header("Make Spells")]
     public int baseNumber;
@@ -194,7 +195,7 @@ public class HarvestManager : MonoBehaviour {
             }
             //put reinstantiate code here if stuff dont work
             //UNCOMMENT THIS
-            /*if (numberOfEnemies.Length < 9)
+            if (numberOfEnemies.Length < 9)
             {
                 for (int i = 0; i < 2; i++)
                 {
@@ -206,7 +207,7 @@ public class HarvestManager : MonoBehaviour {
                     type3.transform.parent = GameObject.Find("Enemies").transform;
                 }
 
-            }*/
+            }
                 if (collectTimer >= totalCollectTimer)
             {
                 gameState = 3;
@@ -516,7 +517,7 @@ public class HarvestManager : MonoBehaviour {
         if (totalIngredients == 3)
         {
             MakeASpell();
-            source.PlayOneShot(spellActivate);
+            source.PlayOneShot(magicCastSpell);
             
         }
         else
