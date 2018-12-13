@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50126262129446948}
   - component: {fileID: 61817589477589624}
   - component: {fileID: 114870484314720716}
+  - component: {fileID: 95422057056981110}
   m_Layer: 9
   m_Name: GrossRat
   m_TagString: Sock
@@ -38,7 +39,7 @@ Transform:
   m_GameObject: {fileID: 1066574829571794}
   m_LocalRotation: {x: 0, y: -0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -3.18, y: 5.37, z: 0}
-  m_LocalScale: {x: 0.8789922, y: 0.90858334, z: 0.30608532}
+  m_LocalScale: {x: 0.48, y: 0.48, z: 0.30608532}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -88,6 +89,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.264265, y: 2.3742633}
   m_EdgeRadius: 0
+--- !u!95 &95422057056981110
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1066574829571794}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1d6736899464c6f46ade057b34cd7c77, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114870484314720716
 MonoBehaviour:
   m_ObjectHideFlags: 1

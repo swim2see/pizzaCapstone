@@ -42,6 +42,7 @@ public class HarvestManager : MonoBehaviour {
     public Text sockText;
     public Text spellText;
     public Text menuText;
+    public Text endGameText;
 
     [Header ("Bag Object")]
     public List<int> bag = new List<int>();
@@ -91,6 +92,7 @@ public class HarvestManager : MonoBehaviour {
     public AudioClip takeDamageSound;
     public AudioClip removeIngredientSound;
     public AudioClip magicCastSpell;
+    public AudioClip ingPickUp;
 
     [Header("Make Spells")]
     public int baseNumber;
@@ -129,11 +131,24 @@ public class HarvestManager : MonoBehaviour {
 	void Update () {
 
         
-        if (bossEnemy == null || playergameObject==null)
+        if (bossEnemy == null)
         {
-            SceneManager.LoadScene("Overworld");
+            endGameText.text = "You sliced him! You diced him!";
+            endGameText.color = Color.green;
+            Time.timeScale = 0;
+            //SceneManager.LoadScene("Overworld");
+        } else if(playergameObject==null)
+        {
+            endGameText.text = "Enjoy a slice of heaven!";
+            endGameText.color = Color.red;
+            Time.timeScale = 0;
         }
-        if (!listOut)
+	    else
+	    {
+	        endGameText.text = " ";
+	    }
+
+	    if (!listOut)
         {
             ingredientMenu.SetActive(false);
         }
