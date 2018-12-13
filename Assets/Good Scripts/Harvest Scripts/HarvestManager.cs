@@ -177,7 +177,7 @@ public class HarvestManager : MonoBehaviour {
             buttonTray.SetActive(false);
             //bossEnemy.SetActive(false);
             //playergameObject.SetActive(false);
-            
+            bagObject.SetActive(false);
            
         }
         else
@@ -190,7 +190,7 @@ public class HarvestManager : MonoBehaviour {
             bossEnemy.SetActive(true);
             playergameObject.SetActive(false);
             //fireSpellButton.SetActive(false);
-          
+            bagObject.SetActive(true);
             allMyEnemies.SetActive(true);
             collectTimer += Time.deltaTime;
             radialTimer.fillAmount = collectTimer / totalCollectTimer;
@@ -249,11 +249,12 @@ public class HarvestManager : MonoBehaviour {
         if (gameState == 2)
         {
             buttonTray.SetActive(true);
-            buttonTray.GetComponent<RectTransform>().DOAnchorPos(new Vector2(281, -22), 1.5f).SetEase(Ease.OutBack);
+            buttonTray.GetComponent<RectTransform>().DOAnchorPos(new Vector2(281, -42), 1.5f).SetEase(Ease.OutBack);
             fireSpellButton.SetActive(true);
             bossEnemy.SetActive(true);
             playergameObject.SetActive(true);
             textBox.SetActive(true);
+            bagObject.SetActive(false);
             spellText.text = firstIngredient + secondIngredient + thirdIngredient;
         }
         
