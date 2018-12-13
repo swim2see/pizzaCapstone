@@ -44,6 +44,7 @@ public class enemyHarvest : MonoBehaviour {
         }
         else if(HarvestManager.hm.gameState==1)
         {
+            enemyBarks.text = "Go my sock spirits! Infiltrate the Pizzaiolo's book!";
             RectTransform rectPosition = gameObject.GetComponent<RectTransform>();
             //HarvestManager.hm.bossEnemy.SetActive(true);
             //transform.position = new Vector2(-12, -184);
@@ -58,6 +59,7 @@ public class enemyHarvest : MonoBehaviour {
             gameObject.GetComponent<RectTransform>().DOAnchorPos(new Vector2(10, -193), .5f);
             
         }
+        
         //print(health / maxHealth);
 	}
 

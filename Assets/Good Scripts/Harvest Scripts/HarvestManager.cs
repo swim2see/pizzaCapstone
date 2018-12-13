@@ -69,7 +69,7 @@ public class HarvestManager : MonoBehaviour {
     public int gameState;
 
     [Header ("Timers")]
-    float collectTimer;
+    public float collectTimer;
     public float totalCollectTimer;
     public Image radialTimer;
     public GameObject entireTimer;
@@ -110,6 +110,8 @@ public class HarvestManager : MonoBehaviour {
     string spellName1;
     string spellName2;
     string spellName3;
+
+    public GameObject textBox;
     // Use this for initialization
     void Start()
     {
@@ -221,7 +223,8 @@ public class HarvestManager : MonoBehaviour {
                 //Deactivates the enemies and timer
                 allMyEnemies.SetActive(false);
                 entireTimer.SetActive(false);
-
+                eH.enemyBarks.text = "";
+                textBox.SetActive(false);
             }
         }
         if (gameState == 2)
@@ -231,7 +234,7 @@ public class HarvestManager : MonoBehaviour {
             fireSpellButton.SetActive(true);
             bossEnemy.SetActive(true);
             playergameObject.SetActive(true);
-
+            textBox.SetActive(true);
             spellText.text = firstIngredient + secondIngredient + thirdIngredient;
         }
         
@@ -265,6 +268,7 @@ public class HarvestManager : MonoBehaviour {
         if (gameState == 4)
         {
             bossEnemy.SetActive(true);
+            textBox.SetActive(true);
             playergameObject.SetActive(true);
             gameFeelTimer = 2;
             bossTurnActions.attack();
