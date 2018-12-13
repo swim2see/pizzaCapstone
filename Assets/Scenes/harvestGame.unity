@@ -1064,7 +1064,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 721645794}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.092, y: 0.032, z: 0}
+  m_LocalPosition: {x: -0.17, y: 0.032, z: 0}
   m_LocalScale: {x: 5.12253, y: 1.7393363, z: 1}
   m_Children:
   - {fileID: 1558320023}
@@ -2589,7 +2589,8 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.005490765}
   m_LocalScale: {x: 454.27994, y: 182.27278, z: 373.89288}
-  m_Children: []
+  m_Children:
+  - {fileID: 1194785875}
   m_Father: {fileID: 1520656328}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3013,15 +3014,15 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1194785874}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.005490765}
-  m_LocalScale: {x: 486.98105, y: 209.58098, z: 373.89288}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0719844, y: 1.1498206, z: 1}
   m_Children: []
-  m_Father: {fileID: 1520656328}
-  m_RootOrder: 1
+  m_Father: {fileID: 1105349979}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.16616821, y: -0.8567631}
+  m_AnchoredPosition: {x: 0.0019999405, y: -0.004699998}
   m_SizeDelta: {x: 0.976, y: 1.0082}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &1194785876
@@ -4313,7 +4314,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 99d350eabb0d1a74287f1093b26ddac9, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -4448,7 +4449,6 @@ RectTransform:
   m_LocalScale: {x: 0.011115966, y: 0.011115966, z: 0.011115966}
   m_Children:
   - {fileID: 1105349979}
-  - {fileID: 1194785875}
   m_Father: {fileID: 1662960876}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5820,7 +5820,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.846001, y: -0.46}
+  m_AnchoredPosition: {x: -2.846001, y: -0.46000004}
   m_SizeDelta: {x: 160, y: 38.657}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1911862485
