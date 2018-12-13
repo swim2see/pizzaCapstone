@@ -107,6 +107,10 @@ public class HarvestManager : MonoBehaviour {
     string firstIngredient;
     string secondIngredient;
     string thirdIngredient;
+
+    string spellName1;
+    string spellName2;
+    string spellName3;
     // Use this for initialization
     void Start()
     {
@@ -123,6 +127,8 @@ public class HarvestManager : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
+
+        
         if (bossEnemy == null || playergameObject==null)
         {
             SceneManager.LoadScene("Overworld");
@@ -147,6 +153,7 @@ public class HarvestManager : MonoBehaviour {
         {
          
             optionSelectButtons.SetActive(true);
+            optionSelectButtons.GetComponent<RectTransform>().DOAnchorPos(new Vector2(0, 286), 1.5f).SetEase(Ease.OutBack);
             fireSpellButton.SetActive(false);
             buttonTray.SetActive(false);
             bossEnemy.SetActive(false);
@@ -221,12 +228,16 @@ public class HarvestManager : MonoBehaviour {
         if (gameState == 2)
         {
             buttonTray.SetActive(true);
+            buttonTray.GetComponent<RectTransform>().DOAnchorPos(new Vector2(281, -35), 1.5f).SetEase(Ease.OutBack);
             fireSpellButton.SetActive(true);
             bossEnemy.SetActive(true);
             playergameObject.SetActive(true);
 
             spellText.text = firstIngredient + secondIngredient + thirdIngredient;
         }
+        
+        
+        
         //click and drag boxes to the respective target boxes (base, flavoring, garnish)
         //have boxes snap back to original position if they are not within a certain range of the targets
         //if allowing for multiple copies, instantiate new ingredient underneath old ingredient 
@@ -258,8 +269,14 @@ public class HarvestManager : MonoBehaviour {
             playergameObject.SetActive(true);
             gameFeelTimer = 2;
             bossTurnActions.attack();
+            buttonTray.GetComponent<RectTransform>().DOAnchorPos(new Vector2(281, -278), .5f).SetEase(Ease.InBack);
+
             source.PlayOneShot(takeDamageSound);
             gameState = 6;
+            firstIngredient = "";
+            secondIngredient = "";
+            thirdIngredient = "";
+            spellText.text = "";
             //gameFeelTimer = 3;
         }
         if (gameState == 6)
@@ -290,34 +307,7 @@ public class HarvestManager : MonoBehaviour {
     }
 
     //Bread button
-    public void Button1()
-    {
-        SelectIngredient(0);
-    }
-
-    //Cheese button
-    public void Button2()
-    {
-        SelectIngredient(1);
-    }
     
-    //sauce button
-    public void Button3()
-    {
-        SelectIngredient(2);
-    }
-    
-    //meat button
-    public void Button4()
-    {
-        SelectIngredient(3);
-    }
-    
-    //sock button 
-    public void Button5()
-    {
-        SelectIngredient(4);
-    }
     
     //Detects which ingredients have been selected
     public void SelectIngredient(int x)
@@ -348,16 +338,19 @@ public class HarvestManager : MonoBehaviour {
                 {
                     baseNumber = x;
                     firstIngredient = "Bread Base +";
+                    spellName1 = "Doughy ";
                 }
                 else if (totalIngredients == 1)
                 {
                     flavoring = flavoringValues[x];
                     secondIngredient = "Bread Flavoring +";
+                    spellName2= "Carboverloaded ";
                 }
                 else if (totalIngredients == 2)
                 {
                     garnish = x;
                     thirdIngredient = "Bread Garnish";
+                    spellName3 = "Breademption!";
                 }
                 totalIngredients++;
             } else if (x == 1 && cheeseCount > 0 && totalIngredients < 3)
@@ -372,16 +365,19 @@ public class HarvestManager : MonoBehaviour {
                 {
                     baseNumber = x;
                     firstIngredient = "Cheese Base +";
+                    spellName1 = "Cheesy ";
                 }
                 else if (totalIngredients == 1)
                 {
                     flavoring = flavoringValues[x];
                     secondIngredient = "Cheese Flavoring + ";
+                    spellName2 = "Mozzified ";
                 }
                 else if (totalIngredients == 2)
                 {
                     garnish = x;
                     thirdIngredient = "Cheese Garnish";
+                    spellName3 = "Lactoverkill!";
                 }
                 totalIngredients++;
             }
@@ -397,16 +393,19 @@ public class HarvestManager : MonoBehaviour {
                 {
                     baseNumber = x;
                     firstIngredient = "Sauce Base + ";
+                    spellName1 = "Saucy ";
                 }
                 else if (totalIngredients == 1)
                 {
                     flavoring = flavoringValues[x];
                     secondIngredient = "Sauce Flavoring + ";
+                    spellName2= "Red ";
                 }
                 else if (totalIngredients == 2)
                 {
                     garnish = x;
                     thirdIngredient = "Sauce Garnish";
+                    spellName3= "Saucery!";
                 }
                 totalIngredients++;
             } else if (x == 3 && meatCount > 0 && totalIngredients < 3)
@@ -421,16 +420,19 @@ public class HarvestManager : MonoBehaviour {
                 {
                     baseNumber = x;
                     firstIngredient = "Meat Base + ";
+                    spellName1 = "Meaty ";
                 }
                 else if (totalIngredients == 1)
                 {
                     flavoring = flavoringValues[x];
                     secondIngredient = "Meat Flavoring + ";
+                    spellName2 = "Meatballistic ";
                 }
                 else if (totalIngredients == 2)
                 {
                     garnish = x;
                     thirdIngredient = "Meat Garnish(?)";
+                    spellName3 = "Beefstruction!";
                 }
                 totalIngredients++;
             } else if (x == 4 && sockCount > 0 && totalIngredients < 3)
@@ -445,16 +447,19 @@ public class HarvestManager : MonoBehaviour {
                 {
                     baseNumber = x;
                     firstIngredient = "Sock Base + ";
+                    spellName1= "Disgusting ";
                 }
                 else if (totalIngredients == 1)
                 {
                     flavoring = flavoringValues[x];
                     secondIngredient = "Sock Flavoring +";
+                    spellName2 = "Questionable ";
                 }
                 else if (totalIngredients == 2)
                 {
                     garnish = x;
                     thirdIngredient = "Sock Garnish";
+                    spellName3 = "Abombination?!";
                 }
                 totalIngredients++;
             } 
@@ -538,7 +543,7 @@ public class HarvestManager : MonoBehaviour {
 
         //array of floats that store the values of the flavoring of each ingredient
         //for garnish, just pass in a number
-
+        print("Flavoring: " + flavoring + "| Garnish:" + garnish);
         if (baseNumber == 0)
         {
             
@@ -550,35 +555,67 @@ public class HarvestManager : MonoBehaviour {
             else
             {
                 eH.health -= ms.BreadSpell(flavoring, garnish);
+                spellText.text = spellName1 + spellName2 + spellName3;
             }
             
         }
         if (baseNumber==1)
         {
-            p.health += ms.CheeseSpell(flavoring, garnish);
-            spellText.text = "Meatball Parmageddon";
-           
+            
+            if (flavoring == flavoringValues[3] && garnish == 2)
+            {
+                p.health += ms.CheeseSpell(flavoring, garnish);
+                spellText.text = "Meatball Parmageddon";
+            }
+            else
+            {
+                p.health += ms.CheeseSpell(flavoring, garnish) * 2;
+                spellText.text = spellName1 + spellName2 + spellName3;
+            }
 
         }
+
+        
         if (baseNumber==2)
         {
-            p.health += ms.SauceSpell(flavoring, garnish);
-            
-            spellText.text = "Sauce Salvation";
+            if (flavoring == flavoringValues[1] && garnish == 3)
+            {
+                p.health += ms.SauceSpell(flavoring, garnish)*1.5f;
+                spellText.text = "Sauce Salvation";
+            }
             //HarvestPlayer.hp.health += 10;
-            
+            else
+            {
+                p.health += ms.SauceSpell(flavoring, garnish);
+                spellText.text = spellName1 + spellName2 + spellName3;
+            }
         }
+
         if (baseNumber==3)
         {
-            eH.health -= ms.MeatSpell(flavoring, garnish);
-            spellText.text = "Meatball Submission";
-           
+            if (flavoring == flavoringValues[0] && garnish == 2)
+            {
+                eH.health -= ms.MeatSpell(flavoring, garnish);
+                spellText.text = "Meatball Submission";
+            }
+            else
+            {
+                eH.health -= ms.MeatSpell(flavoring, garnish);
+                spellText.text = spellName1 + spellName2 + spellName3;
+            }
         }
+
         if (baseNumber==4)
         {
-            p.health -= ms.SockSpell(flavoring, garnish);
-            eH.health += ms.SockSpell(flavoring, garnish);
-            spellText.text = "Socked Cheese";
+            if(flavoring!=flavoringValues[1] || garnish != 1){
+                p.health -= ms.SockSpell(flavoring, garnish);
+                eH.health += ms.SockSpell(flavoring, garnish);
+                spellText.text = spellName1 + spellName2 + spellName3;
+            }else{
+                spellText.text = "Socked Cheese";
+                p.health -= ms.SockSpell(flavoring, garnish);
+                eH.health += ms.SockSpell(flavoring, garnish);
+            }
             
 
         }
@@ -630,6 +667,7 @@ public class HarvestManager : MonoBehaviour {
         spellIngredient[4] = false;
 
         
+
         gameState = 3;
         gameFeelTimer = 1f;
     }

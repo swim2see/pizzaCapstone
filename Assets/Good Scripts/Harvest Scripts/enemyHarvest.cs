@@ -35,7 +35,7 @@ public class enemyHarvest : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         healthBar.fillAmount = health / maxHealth;
-
+        print(health);
         if (HarvestManager.hm.gameState != 1)
         {
             print("WHY");
@@ -147,7 +147,7 @@ public void normAttack()
 
     if (HarvestManager.hm.gameState == 4)
     {
-        int barkNumber = Random.Range(0, 3);
+        int barkNumber = Random.Range(0, 10);
         enemyBarks.text = possibleBarks[barkNumber].ToString();
 
     }

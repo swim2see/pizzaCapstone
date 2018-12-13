@@ -30,6 +30,7 @@ public class sampleEnemy : MonoBehaviour
 
     void FixedUpdate()
     {
+        
         if (player != null)
         {
             GameObject playerObj;

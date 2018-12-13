@@ -25,7 +25,7 @@ public class makingSpells : MonoBehaviour {
     {
         float temp = 0;
         if (flavoring > 0) {
-             temp = Random.Range(0f,flavoring);
+             temp = Random.Range(flavoring-3,flavoring);
         }
         else if(flavoring<0)
         {
@@ -59,7 +59,7 @@ public class makingSpells : MonoBehaviour {
         float temp = 0;
         if (flavoring > 0)
         {
-            temp = Random.Range(0f, flavoring);
+            temp = Random.Range(flavoring-3, flavoring);
         }
         else if (flavoring < 0)
         {
@@ -121,7 +121,7 @@ public class makingSpells : MonoBehaviour {
     public float MeatSpell(int flavoring, int garnish) {
 
         //Randomizes damage inflicted, based on integer passed
-        float temp = Random.Range(0f, Mathf.Abs(flavoring));
+        float temp = Random.Range(flavoring-3, Mathf.Abs(flavoring));
 
         switch (garnish)
         {
