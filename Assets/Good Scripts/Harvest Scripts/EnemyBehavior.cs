@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mime;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class EnemyBehavior : MonoBehaviour {
 
@@ -9,13 +11,14 @@ public class EnemyBehavior : MonoBehaviour {
     Rigidbody2D rb;
     public float spd;
     public float distance;
-    bool isDragging;
+    public bool isDragging;
     private bool isScared;
     private bool isPicked;
 
     public float RotateSpeed;
     public float Radius;
-   
+
+
 
     private Vector2 _centre;
     private float _angle;
@@ -207,25 +210,24 @@ public class EnemyBehavior : MonoBehaviour {
         }
         //scaredAnimations();
     }
-    
-    
- 
-    /*private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "bag")
-        {
-            
-            if (isDragging)
-            {
-                
-                Destroy(gameObject);
-            }
-        }
-    }*/
-    
-   
-    
 
+/*
+    public IEnumerator IngCollected(float x)
+    {
+
+        var startTime = Time.realtimeSinceStartup;
+        while (Time.realtimeSinceStartup < startTime + 2f)
+        {
+            var randomPoint = new Vector3(Random.Range(initialPos.x - 1, initialPos.x + 1), Random.Range(initialPos.y - 1, initialPos.y + 1), initialPos.z);
+            target.localPosition = randomPoint;
+            yield return null;
+        }
+
+        pendingShakeDuration = 0f;
+        target.localPosition = initialPos; 
+        isShaking = false;
+    }
+*/
 
     private void OnMouseUp()
     {
