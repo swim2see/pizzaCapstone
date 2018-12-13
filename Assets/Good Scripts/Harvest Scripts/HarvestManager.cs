@@ -159,6 +159,7 @@ public class HarvestManager : MonoBehaviour {
         if(numIngredients >= 3)
         {
             cook.interactable = true;
+            cook.GetComponent<Image>().color = Color.white;
         }
         else
         {
@@ -246,7 +247,7 @@ public class HarvestManager : MonoBehaviour {
         if (gameState == 2)
         {
             buttonTray.SetActive(true);
-            buttonTray.GetComponent<RectTransform>().DOAnchorPos(new Vector2(281, -35), 1.5f).SetEase(Ease.OutBack);
+            buttonTray.GetComponent<RectTransform>().DOAnchorPos(new Vector2(281, -22), 1.5f).SetEase(Ease.OutBack);
             fireSpellButton.SetActive(true);
             bossEnemy.SetActive(true);
             playergameObject.SetActive(true);

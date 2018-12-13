@@ -39,7 +39,7 @@ public class enemyHarvest : MonoBehaviour {
         if (HarvestManager.hm.gameState != 1)
         {
             print("WHY");
-            gameObject.GetComponent<RectTransform>().DOAnchorPos(new Vector2(133, 103), .5f);
+            gameObject.GetComponent<RectTransform>().DOAnchorPos(new Vector2(133, 110), .5f);
             //transform.DOMove(new Vector2(133, 103), .5f);
         }
         else if(HarvestManager.hm.gameState==1)
