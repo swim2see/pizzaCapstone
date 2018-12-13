@@ -21,5 +21,9 @@ public class HarvestPlayer : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+        if (health >= maxHealth)
+        {
+            health = maxHealth;
+        }
 	}
 }

@@ -93,6 +93,8 @@ public class EnemyBehavior : MonoBehaviour {
 
     void FixedUpdate()
     {
+
+        
         vel = (newTarget - prevPos).normalized * speed / 2;
         rb.MovePosition((Vector2)transform.position + vel);
         
@@ -273,7 +275,7 @@ public class EnemyBehavior : MonoBehaviour {
                     HarvestManager.hm.cheeseCount++;
                 }
 
-                HarvestManager.hm.BagAddition();
+                //HarvestManager.hm.BagAddition();
                 
                 Destroy(gameObject);
                 
