@@ -23,6 +23,9 @@ public class enemyHarvest : MonoBehaviour {
     public bool finalAttack;
 
     public bool dead;
+
+    public bool randomize;
+    public float ranBark;
     //Prefabs & Visuals
     [Header("Visuals")]
     public Image enemyHealthBar;
@@ -36,7 +39,8 @@ public class enemyHarvest : MonoBehaviour {
 	void Update () {
         healthBar.fillAmount = health / maxHealth;
         print(health);
-        if (HarvestManager.hm.gameState != 1)
+
+        if (HarvestManager.hm.gameState != 1 && HarvestManager.hm.gameState!=0)
         {
             print("WHY");
             gameObject.GetComponent<RectTransform>().DOAnchorPos(new Vector2(133, 110), .5f);
@@ -44,7 +48,7 @@ public class enemyHarvest : MonoBehaviour {
         }
         else if(HarvestManager.hm.gameState==1)
         {
-            enemyBarks.text = "Go my sock spirits! Infiltrate the Pizzaiolo's book!";
+            enemyBarks.text = "Are you just...picking up food? In front of me?";
             RectTransform rectPosition = gameObject.GetComponent<RectTransform>();
             //HarvestManager.hm.bossEnemy.SetActive(true);
             //transform.position = new Vector2(-12, -184);
@@ -56,7 +60,30 @@ public class enemyHarvest : MonoBehaviour {
             {
                 gameObject.tag = "The Boss";
             }
-            gameObject.GetComponent<RectTransform>().DOAnchorPos(new Vector2(10, -193), .5f);
+            gameObject.GetComponent<RectTransform>().DOAnchorPos(new Vector2(10, -192), .5f);
+            
+        }else if (HarvestManager.hm.gameState == 0)
+        {
+            gameObject.GetComponent<RectTransform>().DOAnchorPos(new Vector2(133, 110), .5f);
+            if (randomize == true)
+            {
+                 ranBark = Random.Range(0f, 1f);
+                randomize = false;
+            }
+            print(ranBark);
+            if (ranBark >= 0f && ranBark< .25f) {
+                enemyBarks.text = "Make your move kid!";
+            }else if(ranBark>=.25f && ranBark < .5f)
+            {
+                enemyBarks.text = "I'm waiting!";
+            }else if (ranBark >= .5f && ranBark<.75f)
+            {
+                enemyBarks.text = "Hurry it up so I can slam ya!";
+            }
+            else
+            {
+                enemyBarks.text = "Less thinking, more me hitting you!";
+            }
             
         }
         

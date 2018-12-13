@@ -495,14 +495,14 @@ RectTransform:
   m_GameObject: {fileID: 553082984}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.034661386, y: 0.034661386, z: 0.034661386}
+  m_LocalScale: {x: 0.002, y: 0.002, z: 0.0039572907}
   m_Children: []
   m_Father: {fileID: 1574291817}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.8459997, y: -0.46003008}
+  m_AnchoredPosition: {x: -2.8459997, y: 0.03999996}
   m_SizeDelta: {x: 160, y: 38.659}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &553082986
@@ -526,16 +526,16 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d20200409e8a71e48b4c47f60c3f6700, type: 3}
-    m_FontSize: 14
+    m_FontSize: 150
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 40
+    m_MaxSize: 150
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'HEALING SPELL:
 
@@ -574,14 +574,14 @@ RectTransform:
   m_GameObject: {fileID: 568858827}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.034661233, y: 0.034661233, z: 0.034661233}
+  m_LocalScale: {x: 0.002, y: 0.002, z: 0.0037437598}
   m_Children: []
   m_Father: {fileID: 932443728}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.8460026, y: -0.45979095}
+  m_AnchoredPosition: {x: -2.8460026, y: 0.03999996}
   m_SizeDelta: {x: 160, y: 38.645}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &568858829
@@ -605,16 +605,16 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d20200409e8a71e48b4c47f60c3f6700, type: 3}
-    m_FontSize: 14
+    m_FontSize: 150
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 40
+    m_MaxSize: 150
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'DAMAGE SPELL:
 
@@ -653,14 +653,14 @@ RectTransform:
   m_GameObject: {fileID: 574190857}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.034661386, y: 0.034661386, z: 0.034661386}
+  m_LocalScale: {x: 0.022589518, y: 0.022589518, z: 0.022589518}
   m_Children: []
   m_Father: {fileID: 2076622911}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.8460007, y: -0.46000004}
+  m_AnchoredPosition: {x: -2.8460007, y: -0.6199999}
   m_SizeDelta: {x: 160, y: 38.657}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &574190859
@@ -3928,7 +3928,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -170.2, y: 35.4}
+  m_AnchoredPosition: {x: -218, y: 71.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1351041573
@@ -4398,7 +4398,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 99d350eabb0d1a74287f1093b26ddac9, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5089,7 +5089,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11, y: -218}
+  m_AnchoredPosition: {x: -11, y: -191.3}
   m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1662960877
@@ -5123,6 +5123,8 @@ MonoBehaviour:
   - Ratabing baby! Ugh, that just sounds bad...
   finalAttack: 0
   dead: 0
+  randomize: 0
+  ranBark: 0
   enemyHealthBar: {fileID: 1232299816}
 --- !u!61 &1662960878
 BoxCollider2D:
@@ -5174,14 +5176,14 @@ RectTransform:
   m_GameObject: {fileID: 1688694112}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.034661386, y: 0.034661386, z: 0.034661386}
+  m_LocalScale: {x: 0.002048696, y: 0.002048696, z: 0.002048696}
   m_Children: []
   m_Father: {fileID: 2105771898}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.8460007, y: -0.46000004}
+  m_AnchoredPosition: {x: -2.8460007, y: 0.03999996}
   m_SizeDelta: {x: 160, y: 38.657}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1688694114
@@ -5205,16 +5207,16 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d20200409e8a71e48b4c47f60c3f6700, type: 3}
-    m_FontSize: 14
+    m_FontSize: 150
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 1
-    m_MaxSize: 40
+    m_MaxSize: 150
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'DAMAGE SPELL:
 
@@ -5425,7 +5427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5972,14 +5974,14 @@ RectTransform:
   m_GameObject: {fileID: 1911862483}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.034661386, y: 0.034661386, z: 0.034661386}
+  m_LocalScale: {x: 0.002, y: 0.002, z: 0.0021268614}
   m_Children: []
   m_Father: {fileID: 1183456206}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.846001, y: -0.46000004}
+  m_AnchoredPosition: {x: -2.846001, y: 0.03999996}
   m_SizeDelta: {x: 160, y: 38.657}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1911862485
@@ -6003,16 +6005,16 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d20200409e8a71e48b4c47f60c3f6700, type: 3}
-    m_FontSize: 14
+    m_FontSize: 150
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 40
+    m_MaxSize: 150
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'HEALING SPELL:
 
@@ -6251,7 +6253,7 @@ RectTransform:
   m_GameObject: {fileID: 2019486509}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.31635815, y: 0.31635815, z: 0.31635815}
   m_Children:
   - {fileID: 970575969}
   - {fileID: 1376957498}
@@ -6260,7 +6262,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 615}
+  m_AnchoredPosition: {x: 0, y: 350}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2050481500
@@ -6333,7 +6335,7 @@ Transform:
   m_GameObject: {fileID: 2050481500}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.149, y: 1.711, z: 0}
-  m_LocalScale: {x: 9.051235, y: 3.8089426, z: 0.40738901}
+  m_LocalScale: {x: 9.164376, y: 3.8089426, z: 0.40738901}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3

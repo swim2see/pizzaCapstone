@@ -123,8 +123,9 @@ public class HarvestManager : MonoBehaviour {
         entireTimer.gameObject.SetActive(false);
         
         gameState = 0;
+        eH.randomize = true;
         hm = this;
-        
+        Cursor.lockState = CursorLockMode.Locked;
         listOut = false;
 
         source = GetComponent<AudioSource>();
@@ -171,11 +172,11 @@ public class HarvestManager : MonoBehaviour {
         {
          
             optionSelectButtons.SetActive(true);
-            optionSelectButtons.GetComponent<RectTransform>().DOAnchorPos(new Vector2(0, 286), 1.5f).SetEase(Ease.OutBack);
+            optionSelectButtons.GetComponent<RectTransform>().DOAnchorPos(new Vector2(0, 18), 1.5f).SetEase(Ease.OutBack);
             fireSpellButton.SetActive(false);
             buttonTray.SetActive(false);
-            bossEnemy.SetActive(false);
-            playergameObject.SetActive(false);
+            //bossEnemy.SetActive(false);
+            //playergameObject.SetActive(false);
             
            
         }
@@ -187,6 +188,7 @@ public class HarvestManager : MonoBehaviour {
         if (gameState == 1)
         {
             bossEnemy.SetActive(true);
+            playergameObject.SetActive(false);
             //fireSpellButton.SetActive(false);
           
             allMyEnemies.SetActive(true);
@@ -306,6 +308,7 @@ public class HarvestManager : MonoBehaviour {
             {
                 
                 gameState = 0;
+                eH.randomize = true;
             }
             
         }
