@@ -271,7 +271,7 @@ public class EnemyBehavior : MonoBehaviour {
                     HarvestManager.hm.cheeseCount++;
                 }
 
-                HarvestManager.hm.BagAddition();
+                //HarvestManager.hm.BagAddition();
                 
                 Destroy(gameObject);
                 

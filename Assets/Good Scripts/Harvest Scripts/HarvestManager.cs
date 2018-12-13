@@ -306,7 +306,9 @@ public class HarvestManager : MonoBehaviour {
    
     public void BagAddition()
     {
-        bagObject.transform.DOPunchScale(new Vector3(1, 1, 0), .5f, 1, 0);
+        Vector3 currentScale = bagObject.GetComponent<RectTransform>().localScale;
+        bagObject.GetComponent<RectTransform>().DOPunchScale(new Vector3(5,5,0), .5f, 10, 0).SetEase(Ease.InBounce)
+           .OnComplete(() => bagObject.GetComponent<RectTransform>().localScale = currentScale);
     }
 
     //Bread button
