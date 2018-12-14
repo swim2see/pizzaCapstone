@@ -23,7 +23,8 @@ GameObject:
   - component: {fileID: 50126262129446948}
   - component: {fileID: 61817589477589624}
   - component: {fileID: 114870484314720716}
-  - component: {fileID: 95422057056981110}
+  - component: {fileID: 95522277562375742}
+  - component: {fileID: 114463684313293026}
   m_Layer: 9
   m_Name: GrossRat
   m_TagString: Sock
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1066574829571794}
   m_LocalRotation: {x: 0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -3.18, y: 5.37, z: 0}
+  m_LocalPosition: {x: -3.18, y: -4.52, z: 0}
   m_LocalScale: {x: 0.48, y: 0.48, z: 0.30608532}
   m_Children: []
   m_Father: {fileID: 0}
@@ -89,7 +90,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.264265, y: 2.3742633}
   m_EdgeRadius: 0
---- !u!95 &95422057056981110
+--- !u!95 &95522277562375742
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -107,13 +108,35 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114870484314720716
+--- !u!114 &114463684313293026
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1066574829571794}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb564b96dc89bb419f85674d4708739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spd: 0.05
+  distance: 10
+  isDragging: 0
+  RotateSpeed: 0
+  Radius: 0
+  positions: []
+  speed: 0
+  targetDistance: 10
+  thisIngredient: {fileID: 0}
+  curPos: {x: 0, y: 0}
+  throwTimer: 0
+--- !u!114 &114870484314720716
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1066574829571794}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e51221d04127bd479a7ec56cbf99c13, type: 3}
   m_Name: 
